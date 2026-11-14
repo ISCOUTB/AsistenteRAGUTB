@@ -1,0 +1,7 @@
+data/pdf/*
+data/texto/*
+data/*.csv
+data/*.html
+.venv
+.venv/*
+.vscode/*
