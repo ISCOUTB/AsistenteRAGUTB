@@ -1,7 +1,9 @@
+data/pdf
 data/pdf/*
+data/texto
 data/texto/*
-data/*.csv
-data/*.html
 .venv
 .venv/*
 .vscode/*
+*__pycache__
+*.pyc
