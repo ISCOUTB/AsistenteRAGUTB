@@ -1,7 +1,6 @@
 data/pdf
-data/pdf/*
 data/texto
-data/texto/*
+data/chunks
 .venv
 .venv/*
 .vscode/*

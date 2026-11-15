@@ -31,7 +31,7 @@ def main(ROOT):
 
         print(f"Documento guardado: {CARPETA_PDF}/{nombre}")
         
-        sleep(2)
+        sleep(1)
 
 if __name__ == "__main__":
     main("../..")

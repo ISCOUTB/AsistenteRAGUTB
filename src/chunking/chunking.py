@@ -200,15 +200,14 @@ def main(ROOT):
 
     # -------------- Guardar como csv y html ---------------- #
 
-    CARPETA_PROCESADO = ROOT + "/data/procesado"
+    CARPETA_CHUNKS = ROOT + "/data/chunks"
 
-    if not os.path.isdir(CARPETA_PROCESADO):
-        os.mkdir(CARPETA_PROCESADO)
+    if not os.path.isdir(CARPETA_CHUNKS):
+        os.mkdir(CARPETA_CHUNKS)
 
-    df.to_html(CARPETA_PROCESADO + "/db.html", index=False)
-    df.to_csv(CARPETA_PROCESADO + "/db.csv", index=False)
+    df.to_csv(CARPETA_CHUNKS + "/db.csv", index=False)
 
-    print(f"Guardado en {ROOT}/data/procesado/")
+    print(f"Guardado en {CARPETA_CHUNKS}/db.csv")
     
     return df
 
