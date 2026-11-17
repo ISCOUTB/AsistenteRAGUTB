@@ -23,7 +23,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from config import (
+from src.linea_base.config import (
     CODIFICACION_CSV,
     DELIMITADOR,
     DESCRIPCION_TIPOS,
@@ -57,10 +57,6 @@ def cargar(archivo):
     for col in ["exactitud", "fidelidad", "alucinacion"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    df["se_abstuvo"] = df["se_abstuvo"].map(normalizar_si_no) if "se_abstuvo" in df.columns else np.nan
-    df["espera_abstencion"] = (
-        df["espera_abstencion"].map(normalizar_si_no) if "espera_abstencion" in df.columns else np.nan
-    )
     df["error"] = df["error"].fillna("").astype(str).str.strip() if "error" in df.columns else ""
     df["respuesta_generada"] = df.get("respuesta_generada", "").fillna("").astype(str)
 
@@ -106,7 +102,6 @@ def metricas_grupo(g):
             "sin_alucinacion_pct",
             "con_alucinacion_pct",
             "alucinacion_grave_pct",
-            "abstencion_pct",
             "respuesta_ideal_pct",
         ]:
             out[k] = np.nan
@@ -127,9 +122,6 @@ def metricas_grupo(g):
     out["sin_alucinacion_pct"] = (ev["alucinacion"] == 0).mean() * 100
     out["con_alucinacion_pct"] = (ev["alucinacion"] >= 1).mean() * 100
     out["alucinacion_grave_pct"] = (ev["alucinacion"] == ESCALA_ALUCINACION[1]).mean() * 100
-
-    abst = ev["se_abstuvo"].dropna()
-    out["abstencion_pct"] = (abst == "si").mean() * 100 if len(abst) else np.nan
 
     out["respuesta_ideal_pct"] = (
         (ev["exactitud"] == ESCALA_EXACTITUD[1])
@@ -198,9 +190,9 @@ def main():
     print(f"Filas: {n_total} | Calificadas: {n_evaluadas} | Sin calificar: {n_total - n_evaluadas}")
     print(f"Errores de API: {n_errores} | Sin respuesta generada: {n_sin_respuesta}")
 
-    if n_evaluadas == 0:
-        print("\nNo hay filas calificadas. Llena exactitud, fidelidad y alucinación")
-        print("en el CSV (o usa `python calificar.py`) y vuelve a ejecutar este script.")
+    if n_evaluadas < 50:
+        print("\nCalificación no terminada. Llena exactitud, fidelidad y alucinación")
+        print("en el CSV y vuelve a ejecutar este script.")
         return 1
 
     general = metricas_grupo(df)
@@ -224,7 +216,6 @@ def main():
             ("Sin alucinación (%)", round(general["sin_alucinacion_pct"], 2)),
             ("Con alucinación (>=1) (%)", round(general["con_alucinacion_pct"], 2)),
             ("Alucinación grave (2) (%)", round(general["alucinacion_grave_pct"], 2)),
-            ("Abstención (%)", round(general["abstencion_pct"], 2) if not pd.isna(general["abstencion_pct"]) else np.nan),
             ("Respuesta ideal: exactitud 3 + fidelidad 3 + alucinación 0 (%)", round(general["respuesta_ideal_pct"], 2)),
         ],
         columns=["metrica", "valor"],
@@ -239,10 +230,6 @@ def main():
     por_doc = tabla_por(df, "documento", orden=None)
     por_doc.to_csv(salida / "metricas_por_documento.csv", sep=DELIMITADOR, encoding=CODIFICACION_CSV, index=False)
 
-    # Preguntas de control: se espera abstención vs. preguntas normales.
-    df["grupo_control"] = np.where(df["espera_abstencion"] == "si", "espera_abstencion", "respuesta_en_corpus")
-    control = tabla_por(df, "grupo_control", orden=["espera_abstencion", "respuesta_en_corpus"])
-    control.to_csv(salida / "metricas_control.csv", sep=DELIMITADOR, encoding=CODIFICACION_CSV, index=False)
 
     # --- Reporte Markdown -------------------------------------------------
     columnas_tipo = [
@@ -254,7 +241,6 @@ def main():
         "fidelidad_plena_pct",
         "alucinacion_media",
         "con_alucinacion_pct",
-        "abstencion_pct",
         "respuesta_ideal_pct",
     ]
     etiquetas_tipo = {
@@ -266,7 +252,6 @@ def main():
         "fidelidad_plena_pct": "Fidel. plena",
         "alucinacion_media": "Aluc. media",
         "con_alucinacion_pct": "Con aluc.",
-        "abstencion_pct": "Abstención",
         "respuesta_ideal_pct": "Ideal",
     }
 
@@ -287,7 +272,6 @@ def main():
         "fidelidad_media",
         "alucinacion_media",
         "con_alucinacion_pct",
-        "abstencion_pct",
     ]
     etiquetas_control = {
         "grupo_control": "Grupo",
@@ -296,7 +280,6 @@ def main():
         "fidelidad_media": "Fidelidad",
         "alucinacion_media": "Alucinación",
         "con_alucinacion_pct": "Con aluc.",
-        "abstencion_pct": "Abstención",
     }
 
     modelos = sorted(set(df["modelo"].dropna().astype(str))) if "modelo" in df.columns else []
@@ -333,8 +316,6 @@ def main():
     lineas.append(tabla_markdown(por_doc, columnas_doc, etiquetas_doc))
     lineas.append("")
     lineas.append("## Preguntas de control vs. preguntas del corpus")
-    lineas.append("")
-    lineas.append(tabla_markdown(control, columnas_control, etiquetas_control))
     lineas.append("")
     lineas.append("## Lectura rápida")
     lineas.append("")
@@ -377,7 +358,6 @@ def main():
                 "fidelidad_media",
                 "alucinacion_media",
                 "con_alucinacion_pct",
-                "abstencion_pct",
                 "respuesta_ideal_pct",
             ]
         ].to_string(index=False)

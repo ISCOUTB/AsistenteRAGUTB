@@ -66,4 +66,4 @@ if __name__ == "__main__":
     # Leer csv
     df = pd.read_csv("../../data/chunks/db.csv")
 
-    main("../..")
+    main("../..", df)

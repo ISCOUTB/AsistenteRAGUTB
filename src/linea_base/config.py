@@ -10,18 +10,13 @@ import os
 from pathlib import Path
 
 # --- Rutas del proyecto -----------------------------------------------------
-RAIZ = Path(__file__).resolve().parent
-RUTA_PREGUNTAS = RAIZ / "preguntas.csv"
-DIR_RESULTADOS = RAIZ / "resultados"
+RAIZ = Path(__file__).resolve().parent.parent.parent
+RUTA_PREGUNTAS = RAIZ / "data/preguntas/preguntas.csv"
+DIR_RESULTADOS = RAIZ / "experiments/linea_base"
 RUTA_RESPUESTAS = DIR_RESULTADOS / "respuestas_baseline.csv"
 
 # --- LLM --------------------------------------------------------------------
-# Clave tomada del notebook. Para no dejarla escrita aquí:
-#   PowerShell:  $env:GEMINI_API_KEY = "..."
-GEMINI_API_KEY = os.getenv(
-    "GEMINI_API_KEY",
-    "GWMINI_API_KEY",
-)
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 MODELO = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 TEMPERATURA = 0.0
 MAX_TOKENS_SALIDA = 700

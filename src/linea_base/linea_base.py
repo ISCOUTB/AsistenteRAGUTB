@@ -1,10 +1,10 @@
 """
 Línea base SIN RAG: lee `preguntas.csv`, envía cada pregunta al LLM y guarda
-las respuestas en `resultados/respuestas_baseline.csv`.
+las respuestas en `experiments/linea_base/respuestas_baseline.csv`.
 
 El CSV de salida incluye columnas vacías para calificar manualmente:
-  exactitud (0-3), fidelidad (0-3), alucinacion (0-2), se_abstuvo (si/no),
-  notas_evaluador, evaluado_por y fecha_evaluacion.
+  exactitud (0-3), fidelidad (0-3), alucinacion (0-2),
+   notas_evaluador y fecha_evaluacion.
 
 Ejemplos:
   python linea_base.py                     # responde todas (reanuda si ya hay respuestas)
@@ -22,7 +22,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from config import (
+from src.linea_base.config import (
     CODIFICACION_CSV,
     DELIMITADOR,
     DIR_RESULTADOS,
@@ -45,18 +45,14 @@ CAMPOS_ENTRADA = [
     "respuesta_esperada",
     "fuentes",
     "documento",
-    "articulo",
     "criterio_evaluacion",
-    "espera_abstencion",
 ]
 
 CAMPOS_MANUALES = [
     "exactitud",
     "fidelidad",
     "alucinacion",
-    "se_abstuvo",
     "notas_evaluador",
-    "evaluado_por",
     "fecha_evaluacion",
 ]
 
@@ -64,7 +60,6 @@ CAMPOS_SALIDA = CAMPOS_ENTRADA + [
     "respuesta_generada",
     "modelo",
     "fecha_hora",
-    "latencia_s",
     "error",
 ] + CAMPOS_MANUALES
 
@@ -188,8 +183,32 @@ def escribir_csv(ruta, filas):
         writer.writerows(filas)
     os.replace(tmp, ruta)
 
+def mostrar_respuestas_csv(ruta):
+    ruta = Path(ruta)
+    if not ruta.exists():
+        print(f"No existe el archivo: {ruta}")
+        return
 
-def main():
+    with open(ruta, "r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f, delimiter=";")
+        filas = list(reader)
+
+    if not filas:
+        print(f"El archivo {ruta} está vacío.")
+        return
+
+    print("=" * 80)
+    print(f"RESPUESTAS YA GENERADAS: {ruta}")
+    print("=" * 80)
+
+    for fila in filas:
+        print(f"ID: {fila.get('id', '')}")
+        print(f"Pregunta: {fila.get('pregunta', '')[:200]}")
+        print(f"Respuesta: {fila.get('respuesta_generada', '')[:500]}")
+        print("-" * 80)
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser(description="Línea base sin RAG con Gemini")
     parser.add_argument("--preguntas", default=str(RUTA_PREGUNTAS), help="CSV de preguntas")
     parser.add_argument("--salida", default=str(RUTA_RESPUESTAS), help="CSV de respuestas")
@@ -201,7 +220,13 @@ def main():
     parser.add_argument("--reemplazar", action="store_true", help="Regenerar respuestas ya existentes")
     parser.add_argument("--dry-run", action="store_true", help="Mostrar prompts sin llamar a la API")
     parser.add_argument("--silencioso", action="store_true", help="No imprimir cada prompt")
-    args = parser.parse_args()
+    parser.add_argument("--ver-existentes", action="store_true", help="Muestra las respuestas ya guardadas")
+    args = parser.parse_args(argv)
+
+    # Para únicamente ver respuestas ya generadas
+    if args.ver_existentes:
+        mostrar_respuestas_csv(args.salida)
+        return
 
     preguntas = leer_preguntas(args.preguntas)
     if args.limite:
@@ -270,7 +295,6 @@ def main():
         fila["respuesta_generada"] = texto
         fila["modelo"] = args.modelo
         fila["fecha_hora"] = datetime.now().isoformat(timespec="seconds")
-        fila["latencia_s"] = latencia
         fila["error"] = error
         if error:
             errores += 1
