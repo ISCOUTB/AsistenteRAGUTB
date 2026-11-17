@@ -1,0 +1,303 @@
+"""
+Línea base SIN RAG: lee `preguntas.csv`, envía cada pregunta al LLM y guarda
+las respuestas en `resultados/respuestas_baseline.csv`.
+
+El CSV de salida incluye columnas vacías para calificar manualmente:
+  exactitud (0-3), fidelidad (0-3), alucinacion (0-2), se_abstuvo (si/no),
+  notas_evaluador, evaluado_por y fecha_evaluacion.
+
+Ejemplos:
+  python linea_base.py                     # responde todas (reanuda si ya hay respuestas)
+  python linea_base.py --limite 3          # prueba con las primeras 3
+  python linea_base.py --reemplazar        # vuelve a generar todas las respuestas
+  python linea_base.py --dry-run           # muestra los prompts sin llamar a la API
+"""
+
+import argparse
+import csv
+import os
+import re
+import sys
+import time
+from datetime import datetime
+from pathlib import Path
+
+from config import (
+    CODIFICACION_CSV,
+    DELIMITADOR,
+    DIR_RESULTADOS,
+    MAX_TOKENS_SALIDA,
+    MODELO,
+    PLANTILLA_PROMPT,
+    PROMPT_SISTEMA,
+    REINTENTOS,
+    RUTA_PREGUNTAS,
+    RUTA_RESPUESTAS,
+    SEGUNDOS_ENTRE_LLAMADAS,
+    TEMPERATURA,
+    crear_cliente,
+)
+
+CAMPOS_ENTRADA = [
+    "id",
+    "tipo",
+    "pregunta",
+    "respuesta_esperada",
+    "fuentes",
+    "documento",
+    "articulo",
+    "criterio_evaluacion",
+    "espera_abstencion",
+]
+
+CAMPOS_MANUALES = [
+    "exactitud",
+    "fidelidad",
+    "alucinacion",
+    "se_abstuvo",
+    "notas_evaluador",
+    "evaluado_por",
+    "fecha_evaluacion",
+]
+
+CAMPOS_SALIDA = CAMPOS_ENTRADA + [
+    "respuesta_generada",
+    "modelo",
+    "fecha_hora",
+    "latencia_s",
+    "error",
+] + CAMPOS_MANUALES
+
+
+def leer_preguntas(ruta):
+    with open(ruta, "r", encoding=CODIFICACION_CSV, newline="") as f:
+        reader = csv.DictReader(f, delimiter=DELIMITADOR)
+        faltantes = [c for c in CAMPOS_ENTRADA if c not in (reader.fieldnames or [])]
+        if faltantes:
+            raise ValueError(f"Faltan columnas en {ruta}: {faltantes}")
+        return [dict(row) for row in reader]
+
+
+def leer_resultados(ruta):
+    """Devuelve {id: fila} si el archivo existe."""
+    ruta = Path(ruta)
+    if not ruta.exists():
+        return {}
+    with open(ruta, "r", encoding=CODIFICACION_CSV, newline="") as f:
+        reader = csv.DictReader(f, delimiter=DELIMITADOR)
+        return {row["id"]: dict(row) for row in reader if row.get("id")}
+
+
+def fila_vacia(pregunta):
+    fila = {c: pregunta.get(c, "") for c in CAMPOS_ENTRADA}
+    for c in CAMPOS_SALIDA:
+        fila.setdefault(c, "")
+    return fila
+
+
+def construir_prompt(pregunta):
+    return PLANTILLA_PROMPT.format(
+        sistema=PROMPT_SISTEMA,
+        pregunta=pregunta["pregunta"].strip(),
+    )
+
+
+def limpiar_calificacion(fila):
+    for c in CAMPOS_MANUALES:
+        fila[c] = ""
+    fila["notas_evaluador"] = "Respuesta regenerada; la calificación anterior quedó invalidada."
+
+
+def extraer_retry_delay(exc):
+    """Busca `retryDelay: '17s'` en el error 429 que devuelve la API."""
+    candidatos = [str(exc)]
+    for attr in ("details", "response_json", "message"):
+        valor = getattr(exc, attr, None)
+        if valor:
+            candidatos.append(str(valor))
+    for texto in candidatos:
+        m = re.search(r"retryDelay['\"]?\s*[:=]\s*['\"]?(\d+(?:\.\d+)?)s", texto)
+        if m:
+            return float(m.group(1))
+    return None
+
+
+def es_error_de_cuota(exc):
+    codigo = getattr(exc, "code", None)
+    texto = str(exc)
+    return codigo == 429 or "429" in texto or "RESOURCE_EXHAUSTED" in texto
+
+
+def espera_reintento(exc, intento):
+    """Segundos a esperar antes de reintentar, respetando el retryDelay de la API."""
+    retry_delay = extraer_retry_delay(exc)
+    if retry_delay is not None:
+        return min(retry_delay + 1.0, 120.0)
+    if es_error_de_cuota(exc):
+        # Sin retryDelay explícito, esperamos bastante más que un backoff normal.
+        return min(2 ** intento * 2, 60)
+    return 2 ** intento
+
+
+def llamar_modelo(cliente, prompt, modelo, temperatura, max_tokens):
+    """Llama a Gemini con reintentos. Devuelve (texto, error, segundos)."""
+    from google.genai import types
+
+    ultimo_error = None
+    inicio = time.perf_counter()
+    for intento in range(1, REINTENTOS + 1):
+        try:
+            respuesta = cliente.models.generate_content(
+                model=modelo,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=temperatura,
+                    max_output_tokens=max_tokens,
+                ),
+            )
+            texto = (respuesta.text or "").strip()
+            if not texto:
+                raise RuntimeError("La API devolvió una respuesta vacía.")
+            return texto, "", round(time.perf_counter() - inicio, 2)
+        except Exception as exc:  # noqa: BLE001 - queremos guardar cualquier error
+            ultimo_error = f"{type(exc).__name__}: {exc}"
+            if intento < REINTENTOS:
+                espera = espera_reintento(exc, intento)
+                print(f"    error (intento {intento}/{REINTENTOS}): {ultimo_error}")
+                if es_error_de_cuota(exc):
+                    print(f"    cuota agotada; se espera {espera:.1f}s según la API...")
+                else:
+                    print(f"    reintentando en {espera:.1f}s...")
+                time.sleep(espera)
+    return "", ultimo_error, round(time.perf_counter() - inicio, 2)
+
+
+def escribir_csv(ruta, filas):
+    ruta = Path(ruta)
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    tmp = ruta.with_suffix(ruta.suffix + ".tmp")
+    with open(tmp, "w", encoding=CODIFICACION_CSV, newline="") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=CAMPOS_SALIDA,
+            delimiter=DELIMITADOR,
+            quoting=csv.QUOTE_MINIMAL,
+            extrasaction="ignore",
+        )
+        writer.writeheader()
+        writer.writerows(filas)
+    os.replace(tmp, ruta)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Línea base sin RAG con Gemini")
+    parser.add_argument("--preguntas", default=str(RUTA_PREGUNTAS), help="CSV de preguntas")
+    parser.add_argument("--salida", default=str(RUTA_RESPUESTAS), help="CSV de respuestas")
+    parser.add_argument("--modelo", default=MODELO, help="Modelo de Gemini")
+    parser.add_argument("--temperatura", type=float, default=TEMPERATURA)
+    parser.add_argument("--max-tokens", type=int, default=MAX_TOKENS_SALIDA)
+    parser.add_argument("--delay", type=float, default=SEGUNDOS_ENTRE_LLAMADAS, help="Segundos entre llamadas")
+    parser.add_argument("--limite", type=int, default=None, help="Procesar solo las primeras N preguntas")
+    parser.add_argument("--reemplazar", action="store_true", help="Regenerar respuestas ya existentes")
+    parser.add_argument("--dry-run", action="store_true", help="Mostrar prompts sin llamar a la API")
+    parser.add_argument("--silencioso", action="store_true", help="No imprimir cada prompt")
+    args = parser.parse_args()
+
+    preguntas = leer_preguntas(args.preguntas)
+    if args.limite:
+        preguntas = preguntas[: args.limite]
+
+    anteriores = leer_resultados(args.salida)
+    filas = []
+    for pregunta in preguntas:
+        fila = fila_vacia(pregunta)
+        anterior = anteriores.get(pregunta["id"])
+        if anterior:
+            for c in CAMPOS_SALIDA:
+                if c in anterior:
+                    fila[c] = anterior[c]
+        filas.append(fila)
+
+    # Conservar en el CSV final las preguntas que ya no se están procesando
+    # (por ejemplo, si se usó --limite en una corrida posterior).
+    ids_en_curso = {p["id"] for p in preguntas}
+    for pid, anterior in anteriores.items():
+        if pid not in ids_en_curso:
+            fila = fila_vacia(anterior)
+            for c in CAMPOS_SALIDA:
+                fila[c] = anterior.get(c, "")
+            filas.append(fila)
+
+    if args.dry_run:
+        for fila in filas:
+            print("=" * 70)
+            print(f"{fila['id']} [{fila['tipo']}]")
+            print(construir_prompt(fila))
+        print("=" * 70)
+        print(f"Dry-run: {len(filas)} preguntas. No se llamó a la API.")
+        return
+
+    cliente = crear_cliente()
+    total = len(filas)
+    procesadas = 0
+    errores = 0
+
+    print(f"Modelo: {args.modelo}")
+    print(f"Preguntas: {total}")
+    print(f"Salida: {args.salida}")
+    print("-" * 70)
+
+    for i, fila in enumerate(filas, start=1):
+        ya_respondida = bool(fila.get("respuesta_generada", "").strip()) and not fila.get("error", "").strip()
+        if ya_respondida and not args.reemplazar:
+            print(f"[{i}/{total}] {fila['id']} ya respondida; se omite.")
+            continue
+
+        if args.reemplazar and ya_respondida:
+            limpiar_calificacion(fila)
+
+        prompt = construir_prompt(fila)
+        if not args.silencioso:
+            print(f"[{i}/{total}] {fila['id']} [{fila['tipo']}] {fila['pregunta'][:90]}...")
+
+        texto, error, latencia = llamar_modelo(
+            cliente,
+            prompt,
+            modelo=args.modelo,
+            temperatura=args.temperatura,
+            max_tokens=args.max_tokens,
+        )
+        fila["respuesta_generada"] = texto
+        fila["modelo"] = args.modelo
+        fila["fecha_hora"] = datetime.now().isoformat(timespec="seconds")
+        fila["latencia_s"] = latencia
+        fila["error"] = error
+        if error:
+            errores += 1
+            print(f"    ERROR: {error}")
+        else:
+            procesadas += 1
+            print(f"    OK ({latencia}s, {len(texto.split())} palabras)")
+
+        escribir_csv(args.salida, filas)
+
+        if i < total and args.delay > 0:
+            time.sleep(args.delay)
+
+    escribir_csv(args.salida, filas)
+
+    print("-" * 70)
+    print(f"Respuestas nuevas/actualizadas: {procesadas}")
+    print(f"Errores: {errores}")
+    print(f"Archivo: {Path(args.salida).resolve()}")
+    if errores:
+        print("Puedes volver a ejecutar el script: los errores se reintentan y las respuestas válidas se conservan.")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nInterrumpido por el usuario. Las respuestas guardadas se conservan.")
+        sys.exit(130)

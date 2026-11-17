@@ -1,0 +1,427 @@
+﻿id;tipo;pregunta;respuesta_esperada;fuentes;documento;articulo;criterio_evaluacion;espera_abstencion;respuesta_generada;modelo;fecha_hora;latencia_s;error;exactitud;fidelidad;alucinacion;se_abstuvo;notas_evaluador;evaluado_por;fecha_evaluacion
+Q01;articulo_especifico;¿Cuál es la nota mínima aprobatoria de un curso de pregrado y de un curso de posgrado en la UTB?;"En pregrado la nota mínima aprobatoria es 3,0; en posgrado es 3,5. La práctica profesional de pregrado también exige 3,5.";Reglamento Estudiantil UTB 2026, Art. 51 y Parágrafo 1;RE2026;Art. 51 y Parágrafo 1;3 = da 3,0 para pregrado y 3,5 para posgrado (puede añadir la práctica profesional). 2 = acierta solo una de las dos cifras o confunde la práctica. 1 = menciona cifras cercanas sin precisar el ámbito. 0 = cifras incorrectas o inventadas.;no;"¡Hola! Con gusto te comparto la información sobre las notas aprobatorias en la Universidad Tecnológica de Bolívar (UTB):
+
+*   **Pregrado:** La nota mínima para aprobar un curso de pregrado es **tres punto cero (3.0)**.
+*   **Posgrado:** La nota mínima para aprobar un curso de posgrado es **tres punto cinco (3.5)**.
+
+Recuerda que es muy importante revisar el syllabus de cada asignatura al inicio del semestre, ya que allí se detallan los porcentajes de evaluación y los requisitos específicos de aprobación de cada docente. 
+
+Si tienes alguna otra duda sobre el reglamento estudiantil de la UTB, aquí estoy para ayudarte. ¡Muchos éxitos en tus académico!";gemini-3.5-flash-lite;2026-11-14T18:47:50;1.33;;;;;;;;
+Q02;articulo_especifico;¿Cuántas semanas dura un periodo académico regular de pregrado en la modalidad presencial?;16 semanas.;Reglamento Estudiantil UTB 2026, Art. 35;RE2026;Art. 35;3 = 16 semanas. 2 = 16 semanas con una duda o una cifra adicional que no contradiga. 1 = 'alrededor de 16'. 0 = otra duración.;no;"¡Hola! Como asistente académico de la Universidad Tecnológica de Bolívar (UTB), con gusto resuelvo tu duda.
+
+En la modalidad presencial, un periodo académico regular de pregrado (semestre) en la UTB tiene una duración estándar de **16 semanas** de clases, a las cuales posteriormente se suman las semanas correspondientes a los exámenes finales y habilitaciones, según el calendario académico institucional vigente para cada año.
+
+Si tienes más preguntas sobre fechas, matrículas o servicios de la universidad, no dudes en consultarme. ¡Mucho éxito en tus actividades académicas!";gemini-3.5-flash-lite;2026-11-14T18:47:53;0.87;;;;;;;;
+Q03;articulo_especifico;¿Cuántos créditos como máximo puede matricular un estudiante de pregrado presencial en matrícula completa y en matrícula parcial? ¿Hay alguna excepción?;Matrícula completa: hasta 18,5 créditos (o el máximo del nivel del programa). Matrícula parcial: hasta 8,5 créditos. Excepción: la dirección del programa puede autorizar hasta 20 créditos si el PPA es mayor a 4,00.;Reglamento Estudiantil UTB 2026, Art. 36 y Parágrafo 1;RE2026;Art. 36 y Parágrafo 1;3 = 18,5 / 8,5 y excepción de 20 con PPA > 4,00. 2 = 18,5 y 8,5 sin la excepción. 1 = solo una de las dos cifras. 0 = cifras incorrectas.;no;"¡Hola! Como estudiante de pregrado presencial de la UTB, los límites de créditos que puedes matricular por período académico son los siguientes:
+
+*   **Matrícula completa:** El máximo es de **18 créditos**.
+*   **Matrícula parcial:** El máximo es de **9 créditos**.
+
+**Excepciones:**
+Sí existen excepciones para superar el límite de 18 créditos. Puedes matricular hasta un **máximo de 20 créditos** bajo las siguientes condiciones:
+1.  Tener un **promedio acumulado igual o superior a 4.0**.
+2.  Contar con la autorización de tu director de programa o consejero académico. 
+
+Esta medida busca proteger tu rendimiento académico. Si tienes dudas adicionales, te sugiero consultar el Reglamento Estudiantil de la UTB. ¡Mucho éxito en tus estudios!";gemini-3.5-flash-lite;2026-11-14T18:48:03;1.83;;;;;;;;
+Q04;articulo_especifico;¿A cuántas horas de trabajo del estudiante equivale un crédito académico en la UTB?;A 48 horas de trabajo del estudiante, distribuidas en horas de acompañamiento directo y horas de trabajo independiente.;Reglamento Estudiantil UTB 2026, Art. 42;RE2026;Art. 42;3 = 48 horas y menciona la distribución entre acompañamiento e independiente. 2 = 48 horas sin distribución. 1 = 'alrededor de 48'. 0 = otra cifra.;no;"¡Hola! Como asistente académico de la UTB, con gusto resuelvo tu duda. 
+
+En la Universidad Tecnológica de Bolívar, al igual que en el sistema de educación superior en Colombia, **un (1) crédito académico equivale a 48 horas de trabajo del estudiante** durante el periodo académico. 
+
+Estas 48 horas se dividen en dos categorías:
+1. **Horas de acompañamiento directo:** El tiempo que pasas en clases, talleres, tutorías o laboratorios con la guía de tu profesor.
+2. **Horas de trabajo independiente:** El tiempo que dedicas por tu cuenta a la lectura, investigación, desarrollo de trabajos, estudio para exámenes y proyectos.
+
+Por lo general, por cada hora de clase presencial o virtual, se espera que dediques dos horas de trabajo independiente. Por ejemplo, una materia de 3 créditos implica un total de 144 horas de trabajo durante el semestre.
+
+¿Tienes alguna otra duda sobre tu carga académica? ¡Mucho éxito en tus estudios!";gemini-3.5-flash-lite;2026-11-14T18:48:07;1.19;;;;;;;;
+Q05;articulo_especifico;¿Cuál es el Promedio Ponderado Acumulado (PPA) mínimo que debe mantener un estudiante de pregrado?;3,20.;Reglamento Estudiantil UTB 2026, Art. 68;RE2026;Art. 68;3 = 3,20. 2 = 3,2 con explicación correcta. 1 = menciona 3,0 o 3,5 sin precisar. 0 = otra cifra.;no;"¡Hola! Como estudiante de pregrado de la Universidad Tecnológica de Bolívar (UTB), debes mantener un Promedio Ponderado Acumulado (PPA) mínimo de **3.0** para estar al día con tu rendimiento académico. 
+
+Es muy importante que vigiles este promedio semestre a semestre. Si tu PPA se ubica por debajo de 3.0, la universidad podría aplicarte medidas académicas de seguimiento, como prueba académica o restricciones en la cantidad de créditos que puedes matricular. 
+
+Recuerda que puedes consultar tu PPA actualizado en cualquier momento a través del Portal Estudiantil. Si tienes dudas sobre tu rendimiento o necesitas orientación, te recomiendo acercarte al Centro de Éxito Estudiantil (CEE) o hablar con tu director de programa. ¡Muchos éxitos en tus estudios!";gemini-3.5-flash-lite;2026-11-14T18:48:10;1.01;;;;;;;;
+Q06;articulo_especifico;En un proceso disciplinario, ¿cuántos días hábiles tiene el estudiante para presentar sus descargos?;Cinco (5) días hábiles, contados a partir del día siguiente al de la notificación.;Reglamento Estudiantil UTB 2026, Art. 107, numeral 1, literal b;RE2026;Art. 107, numeral 1, literal b;3 = 5 días hábiles y aclara que se cuentan desde el día siguiente a la notificación. 2 = 5 días hábiles sin el cómputo. 1 = 'varios días' o una cifra cercana. 0 = cifra incorrecta.;no;"Hola. Como estudiante de la Universidad Tecnológica de Bolívar (UTB), de acuerdo con el Reglamento Estudiantil, cuentas con **cinco (5) días hábiles** contados a partir del día siguiente de la notificación para presentar por escrito tus descargos, aportar las pruebas que consideres pertinentes y solicitar la práctica de estas dentro del proceso disciplinario. 
+
+Te sugiero revisar el artículo correspondiente en el Reglamento Estudiantil vigente en la página web de la UTB o consultar directamente con la Defensoría del Estudiantil para recibir orientación detallada sobre tu caso. ¡Mucho éxito!";gemini-3.5-flash-lite;2026-11-14T18:48:13;0.95;;;;;;;;
+Q07;articulo_especifico;¿Cuál es el horario de atención al público del Consultorio Jurídico de la UTB?;De 8:00 a.m. a 12:00 p.m. y de 1:00 p.m. a 5:00 p.m., de lunes a viernes, de manera presencial y virtual.;Reglamento del Consultorio Jurídico UTB, Art. 7;CJ2025;Art. 7;3 = ambos bloques (8-12 y 1-5) y lunes a viernes. 2 = ambos bloques sin días o sin la modalidad virtual. 1 = solo un bloque. 0 = horario incorrecto.;no;"¡Hola! Como asistente académico de la Universidad Tecnológica de Bolívar (UTB), con gusto te comparto la información del Consultorio Jurídico.
+
+El horario de atención al público es de **lunes a viernes, de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.** 
+
+Te sugiero acercarte o comunicarte previamente para confirmar la disponibilidad según el trámite o asesoría legal que necesites. ¡Mucho éxito!";gemini-3.5-flash-lite;2026-11-14T18:48:15;0.91;;;;;;;;
+Q08;articulo_especifico;Para obtener la insignia básica Líderes UTB, ¿cuántos eventos y horas se requieren y en qué semestres?;Mínimo 11 eventos de formación en liderazgo, ética y responsabilidad social, equivalentes a 22 horas, entre tercer y sexto semestre académico.;Reglamento de la Ruta de Autonomía y Éxito Profesional, Art. 13;RUTA2026;Art. 13;3 = 11 eventos, 22 horas y rango de semestres (3.º a 6.º). 2 = dos de los tres datos. 1 = uno de los tres. 0 = datos inventados.;no;"¡Hola! Como asistente académico de la UTB, con gusto te comparto la información sobre la insignia básica **Líderes UTB**:
+
+Para obtenerla, debes cumplir con los siguientes requisitos:
+
+*   **Semestres:** Está dirigida principalmente a estudiantes cursando entre **1° y 4° semestre**.
+*   **Eventos:** Debes asistir y participar en un total de **4 eventos** formativos o de liderazgo avalados por la universidad.
+*   **Horas:** Se requiere un acumulado mínimo de **12 horas** de participación en total (un promedio de 3 horas por evento).
+
+Esta insignia busca potenciar tus habilidades blandas y de liderazgo desde el inicio de tu vida universitaria. 
+
+¿Tienes alguna otra duda sobre rutas de formación o bienestar institucional? ¡Aquí estoy para ayudarte!";gemini-3.5-flash-lite;2026-11-14T18:48:19;1.07;;;;;;;;
+Q09;articulo_especifico;¿Cuál es el plazo máximo y el horario para el préstamo de equipos del Estudio de Televisión fuera de la UTB?;48 horas, con solicitud un día antes, de lunes a viernes, de 7:00 a.m. a 3:00 p.m. No hay préstamo después de las 3:00 p.m. ni sábados, domingos o festivos.;Reglamento Estudio de Televisión y Laboratorio de Posproducción, sección 'Utilización de equipos al interior y fuera de la Universidad';TV;Sección 'Utilización de equipos al interior y fuera de la UTB';3 = 48 horas, un día de anticipación, horario 7:00-3:00 y restricción de fines de semana/festivos. 2 = 48 horas y anticipación, sin horario. 1 = solo 48 horas. 0 = plazo incorrecto.;no;"¡Hola! Como asistente académico de la UTB, te informo sobre las condiciones para el préstamo de equipos del Estudio de Televisión fuera del campus:
+
+*   **Plazo máximo:** El préstamo externo tiene una duración máxima de **24 horas hábiles** (o el fin de semana, según la autorización previa del docente a cargo de la asignatura y la disponibilidad del inventario).
+*   **Horario:** La entrega y devolución de los equipos debe realizarse estrictamente en el horario de atención del estudio: **lunes a viernes de 8:00 a.m. a 12:00 m. y de 2:00 p.m. a 6:00 p.m.**
+
+**Recomendación importante:** Debes solicitar el equipo con al menos 48 horas de anticipación a través del sistema de reservas de la universidad y presentar tu carné estudiantil vigente al momento del retiro. Recuerda que eres responsable de la custodia y el buen estado de los dispositivos durante todo el tiempo que estén bajo tu poder. 
+
+¿Tienes alguna otra duda sobre los espacios o recursos de la facultad?";gemini-3.5-flash-lite;2026-11-14T18:48:22;1.14;;;;;;;;
+Q10;articulo_especifico;¿Con cuánta anticipación se deben solicitar los servicios académicos del Laboratorio de Fotografía y a quién?;Con mínimo 48 horas de anticipación, a la auxiliar Mónica Yepes.;Reglamento Laboratorio de Fotografía, Disposiciones generales;FOTO;Disposiciones generales;3 = 48 horas y menciona a la auxiliar o la coordinación del laboratorio. 2 = 48 horas sin destinatario. 1 = 'con anticipación' sin cifra. 0 = otra cifra.;no;"¡Hola, estudiante UTB! 
+
+Para hacer uso de los servicios académicos y equipos del **Laboratorio de Fotografía**, debes tener en cuenta lo siguiente:
+
+* **Anticipación:** Debes realizar tu solicitud con al menos **48 horas hábiles** de anticipación. Esto garantiza la disponibilidad de los espacios y equipos requeridos para tus prácticas o proyectos.
+* **¿A quién?:** La solicitud se debe realizar directamente al **encargado o coordinador del Laboratorio de Fotografía** (habitualmente a través del correo institucional asignado al laboratorio o mediante el sistema de reservas de la facultad). 
+
+Recuerda incluir en tu solicitud tu nombre completo, código de estudiante, el motivo de la reserva (asignatura y profesor), y la fecha y hora exacta en la que requieres el servicio. ¡Mucho éxito en tus proyectos visuales!";gemini-3.5-flash-lite;2026-11-14T18:48:25;1.11;;;;;;;;
+Q11;interpretacion_simple;Un estudiante de pregrado presencial matricula 10 créditos en un periodo. ¿Qué proporción del valor de matrícula le corresponde pagar?;El 100%, porque 10 créditos están en el Rango 2 (más de 8,5 hasta 18,5 créditos).;Reglamento Estudiantil UTB 2026, Art. 120;RE2026;Art. 120;3 = 100% y explica que está en el Rango 2. 2 = 100% sin explicación. 1 = duda entre 60% y 100%. 0 = 60% u otro valor.;no;"¡Hola! Como estudiante de pregrado presencial de la UTB, si matriculas 10 créditos en un periodo académico regular, el valor de tu matrícula no se calcula de forma proporcional por crédito individual, sino bajo la política institucional para cargas académicas reducidas. 
+
+Según el reglamento financiero de la UTB, para los programas de pregrado presencial, **el pago mínimo para matricularte en un periodo es de 12 créditos**. 
+
+Si decides matricular solo 10 créditos (por debajo del mínimo establecido), la universidad te facturará el equivalente a la tarifa correspondiente al **mínimo de 12 créditos**. En otras palabras, pagarás exactamente lo mismo que un estudiante que matricule 12 créditos, ya que no existe un descuento o tarifa proporcional por matricular por debajo de ese límite en la modalidad presencial.
+
+Te sugiero consultar con el departamento de Admisiones y Registro Financiero para validar si tu caso aplica para alguna excepción (como último semestre para graduarse). ¡Mucho éxito en tus trámites!";gemini-3.5-flash-lite;2026-11-14T18:48:28;1.18;;;;;;;;
+Q12;interpretacion_simple;¿Un estudiante que está en un plan de estudios aprobado antes de 2026 está obligado a obtener las insignias de la Ruta de Autonomía y Éxito Profesional?;No. Para los planes anteriores a 2026 la participación y obtención de insignias es voluntaria y no afecta la permanencia, la evaluación académica ni los requisitos de grado. La obligación aplica a los planes vigentes desde 2026 y a quienes se incorporen por el régimen de transición, homologación o cambio de malla.;Reglamento de la Ruta de Autonomía y Éxito Profesional, Art. 20 y Art. 3;RUTA2026;Art. 20 y Art. 3;3 = no es obligatoria y distingue el caso de incorporación al plan 2026. 2 = no es obligatoria, sin el matiz de transición. 1 = duda. 0 = afirma que sí es obligatoria para todos.;no;"¡Hola! Como estudiante de la Universidad Tecnológica de Bolívar (UTB), te contesto de forma directa:
+
+**No**, no estás obligado. La obligatoriedad de obtener las insignias de la **Ruta de Autonomía y Éxito Profesional** aplica exclusivamente para los estudiantes que ingresen a la universidad con planes de estudio aprobados a partir del año **2026**. 
+
+Sin embargo, si tu plan de estudios es anterior a esa fecha, **sí puedes cursarlas de manera voluntaria**. Participar en esta ruta es una excelente oportunidad para fortalecer tus habilidades blandas, tu liderazgo y tu perfil profesional, lo cual sumará un gran valor a tu hoja de vida al momento de graduarte, aunque no sea un requisito obligatorio para recibir tu título.
+
+Si tienes dudas específicas sobre cómo inscribirte o qué espacios están disponibles para tu cohorte, te recomiendo consultar directamente con tu director de programa o con el Centro de Experiencia Éxito Estudiantil (CEEE). ¡Mucho éxito en tus semestre!";gemini-3.5-flash-lite;2026-11-14T18:48:31;1.23;;;;;;;;
+Q13;interpretacion_simple;¿Puedo usar el celular durante una práctica en el Laboratorio de Sonido?;No. Los celulares y demás dispositivos de comunicación a distancia deben permanecer apagados.;Reglamento Laboratorio de Sonido, Disposiciones generales;SONIDO;Disposiciones generales;3 = no y dice que deben estar apagados. 2 = no, sin la precisión de apagados. 1 = 'mejor no usarlo'. 0 = sí se permite.;no;"Hola. Como asistente académico de la UTB, te informo que **no está permitido** usar el celular durante las prácticas en el Laboratorio de Sonido, a menos que el profesor a cargo lo indique expresamente con fines académicos (como mediciones o registro de datos). 
+
+Por razones de seguridad, para evitar distracciones que puedan causar accidentes con equipos sensibles y por respeto a la concentración de tus compañeros, debes mantener tu teléfono guardado y en silencio mientras estés en el laboratorio. 
+
+¡Éxitos en tu práctica!";gemini-3.5-flash-lite;2026-11-14T18:48:34;0.81;;;;;;;;
+Q14;interpretacion_simple;¿Puedo comer o tomar bebidas en la Sala de Redacción?;No. Está prohibido comer, tomar bebidas y fumar en la Sala de Redacción.;Reglamento Sala de Redacción, Disposiciones generales;SALA;Disposiciones generales;3 = no, y menciona comida, bebidas y fumar. 2 = no, solo comida o bebidas. 1 = 'no es recomendable'. 0 = sí se permite.;no;"Hola. Como asistente académico de la UTB, te informo que **no está permitido** comer ni consumir bebidas (excepto agua en envases con Tapa) dentro de la Sala de Redacción ni en las salas de cómputo y biblioteca. 
+
+Esta norma busca proteger los equipos tecnológicos, el mobiliario y mantener un espacio limpio y adecuado para el estudio y la concentración de todos los estudiantes. 
+
+¡Agradecemos tu colaboración para cuidar nuestros espacios universitarios! Si tienes otra duda, con gusto te ayudaré.";gemini-3.5-flash-lite;2026-11-14T18:48:37;1.0;;;;;;;;
+Q15;interpretacion_simple;¿Puedo llevar a un amigo que no estudia Comunicación Social al Laboratorio de Fotografía?;No. Solo pueden ingresar y usar el laboratorio los estudiantes de las asignaturas Producción Fotográfica y Fotografía y Lenguaje Audiovisual que estén inscritos en las listas oficiales del Programa de Comunicación Social.;Reglamento Laboratorio de Fotografía, Disposiciones generales;FOTO;Disposiciones generales;3 = no, y menciona que solo pueden los estudiantes de esas asignaturas y listas oficiales. 2 = no, solo estudiantes de Comunicación Social. 1 = no, sin razón. 0 = sí se permite.;no;"¡Hola! Como estudiante de la UTB, te cuento que el acceso al Laboratorio de Fotografía está prioritariamente reservado para las prácticas académicas de los programas que lo requieren, como Comunicación Social. 
+
+Sin embargo, **sí es posible** que ingresen acompañantes externos o de otros programas, pero **bajo ciertas condiciones**:
+1. Debes solicitar una **autorización previa** con el responsable del laboratorio o el coordinador de tu programa.
+2. El ingreso está sujeto a la disponibilidad de equipos y a que el aforo y las normas de seguridad del espacio no se vean afectados.
+3. Tu amigo no podrá manipular equipos especializados a menos que esté inscrito en la actividad académica correspondiente.
+
+Te sugiero acercarte directamente al laboratorista o escribir al departamento de Comunicación Social para asegurar el acceso y evitar inconvenientes. ¡Mucho éxito con tus prácticas!";gemini-3.5-flash-lite;2026-11-14T18:48:42;3.22;;;;;;;;
+Q16;interpretacion_simple;¿Cuántas insignias básicas debe obtener un estudiante para cumplir la Ruta y cuántas insignias puede obtener como máximo en total?;Debe obtener las cuatro (4) insignias básicas. Las insignias plus son voluntarias y el máximo total es de ocho (8) insignias.;Reglamento de la Ruta de Autonomía y Éxito Profesional, Art. 8;RUTA2026;Art. 8;3 = 4 básicas obligatorias y máximo 8 en total. 2 = 4 básicas sin el máximo. 1 = solo una de las dos cifras. 0 = cifras incorrectas.;no;"¡Hola! Como estudiante de la Universidad Tecnológica de Bolívar (UTB), te explico los detalles sobre las insignias de la Ruta de Formación:
+
+*   **Insignias básicas:** Debes obtener un total de **6 insignias básicas** (una por cada competencia de la Ruta) para cumplir con este requisito de grado.
+*   **Máximo total:** Puedes obtener hasta **12 insignias en total**, ya que por cada competencia existe la posibilidad de ganar una insignia básica y una avanzada (ampliación).
+
+¡Mucho éxito en tu Ruta UTB! Si tienes más dudas, aquí estoy para ayudarte.";gemini-3.5-flash-lite;2026-11-14T18:48:45;0.94;;;;;;;;
+Q17;interpretacion_simple;¿Qué debe hacer un estudiante antes de ingresar a los laboratorios de Psicología (LABPSIC)?;Registrarse en la oficina de coordinación antes de ingresar.;Reglamento de Uso de los Laboratorios de Psicología (LABPSIC), numeral 3;PSICO;Numeral 3;3 = registrarse en la oficina de coordinación antes de ingresar. 2 = avisar o registrarse, sin precisar dónde. 1 = 'pedir permiso'. 0 = no se requiere trámite.;no;"¡Hola, futuro psicólogo UTB! Antes de ingresar a los laboratorios de Psicología (LABPSIC), debes cumplir con las siguientes normas básicas de seguridad y buen uso:
+
+1. **Capacitación previa:** Haber recibido la inducción sobre el manejo de equipos, software especializado y normas del laboratorio.
+2. **Reserva el espacio:** Asegúrate de haber solicitado el laboratorio con anticipación a través de los canales institucionales o con el encargado del área.
+3. **Puntualidad:** Llega a la hora programada. Por respeto al espacio y a tus compañeros, no se permite el ingreso tarde.
+4. **Presentación personal:** Asiste con ropa adecuada y calzado cerrado. Está prohibido el consumo de alimentos y bebidas dentro de las instalaciones.
+5. **Cuidado de equipos:** Utiliza los equipos (computadores, cámaras deGesell, pruebas psicométricas) con responsabilidad y reporta cualquier daño previo al docente o encargado.
+6. **Confidencialidad:** Recuerda firmar y cumplir los acuerdos de confidencialidad ética sobre los casos, datos o simulaciones que se manejen en las prácticas.
+
+¡Mucho éxito en tus prácticas académicas! Si tienes más dudas, acércate a la facultad.";gemini-3.5-flash-lite;2026-11-14T18:48:49;1.42;;;;;;;;
+Q18;interpretacion_simple;¿Se pueden fotocopiar o reproducir las pruebas psicotécnicas del LABPSIC?;No. El uso se realiza dentro de las áreas del LABPSIC y no pueden ser fotocopiadas ni reproducidas por ningún medio, conforme al Código Deontológico y de Ética del Psicólogo.;Reglamento de Uso de los Laboratorios de Psicología (LABPSIC), numeral 4;PSICO;Numeral 4;3 = no, y menciona que el uso es dentro del LABPSIC o el Código Deontológico. 2 = no, sin justificación. 1 = 'solo con permiso'. 0 = sí se permite.;no;"Hola. Como asistente académico de la UTB, te informo que **no está permitido** fotocopiar, escanear, fotografiar ni reproducir de ninguna manera las pruebas psicotécnicas del Laboratorio de Psicología (LABPSIC). 
+
+Estas pruebas y cuestionarios están protegidos por leyes de derecho de autor y normativas éticas profesionales. Su reproducción total o parcial altera la validez y confiabilidad de los instrumentos, compromete los procesos de investigación y evaluación, y puede acarrear sanciones disciplinarias según el reglamento estudiantil de nuestra universidad.
+
+Si necesitas consultar el material para fines académicos o de investigación, debes solicitar la asesoría y el acompañamiento directo del personal encargado del LABPSIC dentro de las instalaciones de la universidad, respetando siempre los protocolos de uso establecidos. 
+
+¿Tienes alguna otra duda sobre los servicios del laboratorio?";gemini-3.5-flash-lite;2026-11-14T18:48:52;1.08;;;;;;;;
+Q19;multi_articulo;¿Qué requisitos debe cumplir un estudiante de pregrado de la UTB para obtener el título académico?;"Debe: aprobar todos los cursos y requisitos del plan; tener PPA mínimo de 3,20; haber presentado Saber Pro con puntaje global mínimo de 100 (si la presentó desde 2024); cumplir los requisitos de la Ruta de Autonomía y Éxito Profesional cuando sean exigibles; estar a paz y salvo; no estar sancionado; elaborar trabajo de grado; y, en pregrado presencial iniciado desde el 1 de enero de 2024, demostrar nivel B2 de inglés. Además, no puede estar en Prueba Académica Parcial, Total o Recuperación Académica.";"Reglamento Estudiantil UTB 2026, Art. 78 (incl. parágrafos 1 y 2) y Art. 72; Reglamento de la Ruta de Autonomía y Éxito Profesional, Art. 8";RE2026;"Art. 78 (parágrafos 1 y 2), Art. 72; Ruta Art. 8";3 = al menos 5 requisitos clave, incluidos PPA 3,20, paz y salvo, trabajo de grado y Ruta cuando aplique. 2 = 3 o 4 requisitos. 1 = 1 o 2. 0 = inventa requisitos o niega los existentes.;no;"¡Hola! Como estudiante de pregrado de la Universidad Tecnológica de Bolívar (UTB), para obtener tu título académico debes cumplir con los siguientes requisitos principales:
+
+1. **Aprobar el plan de estudios:** Haber cursado y aprobado todas las asignaturas y créditos exigidos en el programa académico.
+2. **Requisitos de idioma:** Demostrar la suficiencia en una segunda lengua (generalmente inglés), según el nivel exigido por tu programa.
+3. **Pruebas de Estado:** Presentar el examen de Estado de Calidad de la Educación Superior (Saber Pro) del ICFES.
+4. **Trabajo de grado o prácticas:** Cumplir con la opción de grado seleccionada (tesis, práctica profesional, monografía, entre otras) según los reglamentos de la facultad.
+5. **Paz y salvos:** Estar a paz y salvo por todo concepto con la universidad (biblioteca, finanzas, laboratorios, etc.).
+6. **Derechos de grado:** Pagar los derechos de grado en las fechas establecidas por el calendario académico.
+
+Te sugiero consultar el Reglamento Estudiantil en la página web institucional o acercarte a Admisiones y Registro para verificar casos específicos de tu programa. ¡Mucho éxito en tu proceso!";gemini-3.5-flash-lite;2026-11-14T18:48:55;1.26;;;;;;;;
+Q20;multi_articulo;¿Qué condiciones debe cumplir un estudiante para cursar un doble programa de pregrado y cuánto paga de matrícula?;"Debe haber completado los dos primeros periodos del programa inicial con PPA no inferior a 3,70; no estar en Prueba o Recuperación Académica; no tener sanción disciplinaria vigente; y presentar solicitud a la dirección del segundo programa, que decide. Paga el costo de matrícula del programa de mayor valor.";Reglamento Estudiantil UTB 2026, Art. 74 y Art. 75;RE2026;Art. 74 y Art. 75;3 = PPA 3,70, no estar en Prueba/Recuperación, no tener sanción, solicitud a la dirección y pago del programa de mayor valor. 2 = 3 o 4 condiciones y el pago. 1 = solo condiciones o solo pago. 0 = datos inventados.;no;"¡Hola! Como estudiante de la Universidad Tecnológica de Bolívar (UTB), para cursar un doble programa de pregrado debes cumplir con las siguientes condiciones:
+
+1. **Promedio académico:** Tener un, PAA (Promedio Acumulado Acumulado) mínimo de **3.8** al momento de solicitar el ingreso al segundo programa.
+2. **Aprobación:** Contar con la autorización de los decanos de ambas facultades.
+3. **Avance:** Generalmente se exige haber cursado y aprobado al menos los dos primeros semestres de tu programa de origen.
+
+**Sobre el valor de la matrícula:**
+No pagas el 100% de los dos programas. La UTB aplica un beneficio financiero:
+* Continuarás pagando la matrícula completa de tu programa principal.
+* Por las materias del **segundo programa**, solo pagarás un porcentaje correspondiente a los créditos que inscribas en ese periodo, con una tarifa preferencial establecida por la institución.
+
+Te sugiero consultar directamente con tu director de programa o con la Dirección de Admisiones y Registro para verificar si existen actualizaciones en estas políticas. ¡Mucho éxito en tu proceso!";gemini-3.5-flash-lite;2026-11-14T18:48:58;1.33;;;;;;;;
+Q21;multi_articulo;Un estudiante se transfiere desde otra universidad a la UTB. ¿Cuántos créditos puede homologar y qué porcentaje debe cursar en la UTB para poder titularse aquí?;"La homologación no puede superar el 50% de los créditos del plan de estudios; la Vicerrectoría Académica puede ajustar ese porcentaje por convenios específicos. Además, un estudiante admitido por transferencia externa debe haber cursado en la UTB por lo menos el 50% de los créditos del programa para recibir el título.";Reglamento Estudiantil UTB 2026, Art. 29 Parágrafo 2 y Art. 79;RE2026;Art. 29 Parágrafo 2 y Art. 79;3 = 50% máximo de homologación y 50% mínimo cursado en la UTB para titularse, con la salvedad de convenios. 2 = una de las dos reglas. 1 = menciona 'un porcentaje' sin cifra. 0 = cifras incorrectas.;no;"¡Hola! Como estudiante en transferencia a la Universidad Tecnológica de Bolívar (UTB), ten en cuenta lo siguiente respecto a la homologación y titulación:
+
+1. **Porcentaje máximo de homologación:** Puedes homologar hasta un **50%** del total de los créditos del plan de estudios de tu programa académico en la UTB.
+2. **Porcentaje mínimo a cursar:** Debes cursar y aprobar al menos el **50%** de los créditos restantes directamente en la UTB para poder obtener tu título profesional con nosotros.
+
+**Recomendación:** Para iniciar tu proceso de estudio de homologación, debes presentar el certificado de notas oficiales y los contenidos programáticos (sílabos) de las asignaturas aprobadas en tu universidad de origen ante la decanatura o departamento de admisiones de tu facultad. 
+
+¿Tienes alguna otra duda sobre el proceso? ¡Mucho éxito en tu llegada a la UTB!";gemini-3.5-flash-lite;2026-11-14T18:49:01;1.14;;;;;;;;
+Q22;multi_articulo;Si un estudiante es suspendido de la Universidad y luego reingresa, ¿qué derechos pierde y ante quién debe solicitar el reingreso?;Pierde, durante el doble del tiempo de la sanción contado desde que se autorice el reingreso: ser representante de los estudiantes, ser representante de la Universidad en eventos y ser becario. Debe solicitar el reingreso al Comité Curricular de su programa mediante escrito justificado.;Reglamento Estudiantil UTB 2026, Art. 98 y Art. 108 (ver también Art. 92, literal e);RE2026;Art. 98 y Art. 108;3 = los tres derechos perdidos y el Comité Curricular como instancia de reingreso. 2 = dos derechos y la instancia. 1 = solo los derechos o solo la instancia. 0 = datos inventados.;no;"¡Hola! Como estudiante de la UTB, te explico el proceso de reingreso tras una suspensión:
+
+**Derechos que se pierden:**
+Durante el tiempo de la sanción, el estudiante pierde temporalmente su calidad de estudiante y, por lo tanto, los derechos asociados a ella (asistir a clases, hacer uso de instalaciones, bienestar universitario, etc.). Además, según el Reglamento Estudiantil, la suspensión puede implicar la pérdida de estímulos académicos o becas vigentes, y las calificaciones del periodo en curso al momento de la sanción pueden verse afectadas.
+
+**¿Ante quién se solicita el reingreso?**
+Una vez cumplido el tiempo de la suspensión, debes solicitar el reingreso formalmente ante la **Secretaría General** o la **Dirección de Admisiones y Registro Académico** de la UTB, siguiendo los canales institucionales y cumpliendo con las fechas establecidas en el calendario académico para el trámite de reingresos. 
+
+Recuerda revisar el Reglamento Estudiantil vigente para conocer si existen requisitos adicionales específicos para tu caso. ¡Mucho éxito en tu retorno a la UTB!";gemini-3.5-flash-lite;2026-11-14T18:49:05;1.4;;;;;;;;
+Q23;multi_articulo;Un estudiante comete plagio. ¿Qué tipo de falta es, qué sanción puede recibir, quién decide en primera instancia y qué recursos proceden?;"El plagio es falta gravísima. Puede recibir hasta expulsión; las sanciones incluyen amonestaciones, matrícula condicional, suspensión hasta por dos años o expulsión. El Comité de Escuela y/o Dirección Académica decide en primera instancia. Proceden reposición ante el mismo comité y apelación ante el Comité Disciplinario, dentro de los cinco (5) días hábiles siguientes a la notificación.";Reglamento Estudiantil UTB 2026, Art. 96 literal f, Arts. 91-92, Art. 97, Art. 101 y Arts. 111-113;RE2026;"Art. 96 f; Arts. 91-92, 97, 101 y 111-113";3 = gravísima, hasta expulsión, Comité de Escuela y ruta de reposición/apelación. 2 = gravísima y sanción, sin la ruta de recursos. 1 = identifica la falta pero no la sanción. 0 = la trata como leve o grave.;no;"Hola. Como estudiante de la Universidad Tecnológica de Bolívar (UTB), debes tener en cuenta lo siguiente respecto al plagio, según el Reglamento Estudiantil:
+
+* **Tipo de falta:** El plagio constituye una **falta grave** contra la integridad académica, ya que implica la presentación de trabajos ajenos como propios.
+* **Sanciones:** Puede acarrear sanciones que van desde la calificación de cero (0.0) en la actividad o asignatura correspondiente, hasta la suspensión temporal de la universidad o la expulsión definitiva, dependiendo de la reincidencia y gravedad del caso.
+* **Instancia de decisión:** En **primera instancia**, el Comité de Disciplina de la facultad o el Decano (según el procedimiento interno) es el encargado de evaluar el caso, garantizar el debido proceso y tomar la decisión disciplinaria.
+* **Recursos procedentes:** Contra la decisión de primera instancia procede el **Recurso de Reposición** (para ante la misma autoridad que tomó la decisión) y el **Recurso de Apelación** (para que sea resuelto por una instancia superior, como el Comité Académico o el Consejo Académico), los cuales deben presentarse dentro de los plazos establecidos en el reglamento.
+
+Te recomiendo revisar siempre el Reglamento Estudiantil en la página oficial de la UTB para conocer los detalles de los plazos y procedimientos. ¡Mucho éxito en tus deberes académicos!";gemini-3.5-flash-lite;2026-11-14T18:49:08;1.43;;;;;;;;
+Q24;multi_articulo;¿Cómo se calcula el Promedio Ponderado del Periodo (PPP) y qué ocurre con los cursos reprobados en el primer periodo de un estudiante de primera vez o reinicio?;"El PPP se calcula sumando los productos de los créditos de cada curso por su calificación definitiva y dividiendo entre el total de créditos del periodo; se expresa con dos decimales y se aproxima por defecto a la centésima. Los cursos reprobados en el primer periodo de estudiantes de primera vez o reinicio no se incluyen en el cálculo de los promedios ponderados.";Reglamento Estudiantil UTB 2026, Art. 52 y Art. 54 (ver también Art. 48);RE2026;Art. 52 y Art. 54;3 = fórmula correcta y exclusión de reprobados del primer periodo para primera vez/reinicio. 2 = fórmula correcta sin la exclusión. 1 = idea general de promedio ponderado. 0 = fórmula incorrecta.;no;"¡Hola! Como asistente académico de la UTB, aquí tienes la respuesta a tu consulta:
+
+**1. Cálculo del Promedio Ponderado del Periodo (PPP):**
+El PPP se calcula sumando los productos de la nota definitiva de cada asignatura multiplicada por su respectivo número de créditos. Este resultado se divide entre el total de créditos inscritos y cursados en el periodo académico correspondiente.
+*Fórmula:* $\sum (\text{Nota} \times \text{Créditos}) / \text{Total de créditos}$.
+
+**2. Cursos reprobados en primer periodo (estudiantes de primera vez o reinicio):**
+De acuerdo con el Reglamento Estudiantil de la UTB, si eres un estudiante de primer ingreso (primera vez) o de reinicio y repruebas asignaturas en tu primer periodo académico, **dichas calificaciones no se incluirán** en el cálculo de tu Promedio Ponderado Acumulado (PPA), aunque sí se registran en tu historia académica. 
+
+¿Tienes alguna otra duda sobre tu proceso académico? ¡Mucho éxito en tus estudios!";gemini-3.5-flash-lite;2026-11-14T18:49:12;1.26;;;;;;;;
+Q25;multi_articulo;En el Consultorio Jurídico, ¿qué pasa si el usuario no asiste a tres citas y qué debe hacer el estudiante si no puede asistir a un turno?;"Si el usuario incumple injustificadamente tres citas, el estudiante puede pedir el archivo del caso con visto bueno del tutor. Si el estudiante no puede asistir a un turno, debe presentar por escrito una solicitud de permiso con cinco (5) días hábiles de anticipación y su soporte, comprometiéndose a compensar con un turno equivalente; si es inasistencia, debe radicar la excusa dentro de los tres (3) días hábiles siguientes. Los turnos son obligatorios, inmodificables e intransferibles.";Reglamento del Consultorio Jurídico UTB, Art. 14 literales p) y s), Parágrafo 1, y Art. 18;CJ2025;"Art. 14 p) y s), Parágrafo 1; Art. 18";3 = archivo por 3 citas del usuario y permiso de 5 días / excusa de 3 días del estudiante. 2 = una de las dos situaciones. 1 = idea general sin plazos. 0 = datos inventados.;no;"¡Hola! Como estudiante de la UTB, ten en cuenta lo siguiente respecto al Consultorio Jurídico:
+
+**1. Inasistencia del usuario:** 
+Si el usuario no asiste a tres (3) citas programadas sin justificación previa, se procederá al archivo del caso y se le dará por terminado el trámite por desinterés de su parte.
+
+**2. Inasistencia del estudiante a un turno:**
+Si no puedes asistir a tu turno asignado, debes:
+* **Justificar** la inasistencia con anticipación ante la coordinación del Consultorio Jurídico (presentando soportes válidos, como incapacidad médica o calamidad doméstica).
+* **Reprogramar** o reponer el turno según las directrices de la coordinación, para garantizar que la atención al usuario no se vea afectada.
+
+Recuerda que tu labor en el Consultorio es una responsabilidad académica y legal. ¡Mucho éxito con tus casos!";gemini-3.5-flash-lite;2026-11-14T18:49:15;1.16;;;;;;;;
+Q26;multi_articulo;¿Quiénes pueden usar el Laboratorio de Psicología (LABPSIC) y quiénes el Laboratorio de Fotografía?;El LABPSIC pueden usarlo los estudiantes de pregrado y posgrado de toda la comunidad UTB. El Laboratorio de Fotografía solo los estudiantes de las asignaturas Producción Fotográfica y Fotografía y Lenguaje Audiovisual inscritos en las listas oficiales del Programa de Comunicación Social.;"Reglamento de Uso de los Laboratorios de Psicología (LABPSIC), numeral 1; Reglamento Laboratorio de Fotografía, Disposiciones generales";PSICO;"LABPSIC numeral 1; Foto, Disposiciones generales";3 = LABPSIC toda la comunidad UTB (pregrado y posgrado) y Foto solo esas asignaturas de Comunicación Social. 2 = acierta uno de los dos. 1 = respuesta vaga. 0 = dice que todos pueden usar ambos.;no;"¡Hola! Como asistente académico de la UTB, con gusto resuelvo tu duda:
+
+*   **Laboratorio de Psicología (LABPSIC):** Está destinado principalmente a los estudiantes y docentes del programa de Psicología y áreas afines. Se utiliza para prácticas académicas, investigación y observación en procesos psicológicos. Su acceso está restringido y requiere reserva previa o autorización de la facultad correspondiente.
+
+*   **Laboratorio de Fotografía:** Está abierto a la comunidad estudiantil de la UTB, con prioridad para los programas de Comunicación Social y Medios Digitales, así como para aquellos cursos que incluyan módulos de imagen, diseño o producción audiovisual. Permite el uso de equipos especializados y estudios de iluminación bajo la supervisión de personal técnico.
+
+En ambos casos, el ingreso y uso de los equipos están sujetos a los reglamentos internos de cada laboratorio, los horarios establecidos y la solicitud previa a través de los canales institucionales. 
+
+¿Tienes alguna otra duda sobre los espacios de la universidad?";gemini-3.5-flash-lite;2026-11-14T18:49:18;1.37;;;;;;;;
+Q27;ambigua;¿Cuántos créditos puedo matricular?;"Depende de la modalidad y de la situación del estudiante: en pregrado presencial, matrícula completa hasta 18,5 créditos y parcial hasta 8,5; con PPA mayor a 4,00 la dirección puede autorizar hasta 20. En modalidad virtual, hasta 6 créditos por ciclo. En intersemestral, máximo 6 créditos. La pregunta no especifica modalidad ni tipo de matrícula, así que hay que aclararlo.";Reglamento Estudiantil UTB 2026, Art. 36, Art. 38 y Art. 41;RE2026;Art. 36, 38 y 41;3 = advierte que falta contexto y distingue al menos presencial/virtual o completa/parcial con cifras. 2 = da una sola cifra sin advertir la ambigüedad. 1 = dice que depende pero no concreta. 0 = inventa una regla única.;no;"¡Hola! Como estudiante de la Universidad Tecnológica de Bolívar (UTB), el número de créditos que puedes matricular depende de tu promedio académico del período anterior (PPA o PAPA) y del plan de estudios de tu programa. 
+
+Por regla general:
+* **Carga normal:** Puedes matricular hasta los créditos establecidos en tu malla curricular para el semestre correspondiente (generalmente entre 15 y 18 créditos).
+* **Prueba académica:** Si te encuentras en prueba académica, tendrás un límite de créditos reducido para ayudarte a recuperar tu rendimiento (por lo general, un máximo de 12 créditos).
+* **Sobrecarga académica:** Si tienes un excelente promedio (por encima de 4.0 o 4.5 según tu facultad) y cumples con los requisitos, puedes solicitar una autorización para matricular créditos adicionales.
+
+Te recomiendo consultar tu **Portal Estudiantil** durante el periodo de matrícula para ver el límite exacto asignado a tu perfil, o contactar a tu **consejero académico** o la dirección de tu programa para una asesoría personalizada. ¡Mucho éxito en tu semestre!";gemini-3.5-flash-lite;2026-11-14T18:49:22;1.42;;;;;;;;
+Q28;ambigua;¿Puedo retirar una materia en la semana 10 del periodo?;"Depende de la modalidad. En pregrado presencial se puede retirar hasta el último día hábil de la semana 12, con condiciones: las prácticas profesionales no se retiran salvo autorización; en Prueba o Recuperación se requiere autorización; en Recuperación no se puede retirar todo. En modalidad virtual se puede retirar hasta el último día hábil de la cuarta semana de cada ciclo de 5 semanas, por lo que en la semana 10 habría que ubicar el ciclo. Si retira todos los cursos, pierde la calidad de estudiante regular.";Reglamento Estudiantil UTB 2026, Art. 39 y Art. 40;RE2026;Art. 39 y Art. 40;3 = distingue presencial (semana 12) y virtual (semana 4 de cada ciclo) y advierte condiciones. 2 = solo presencial o solo virtual. 1 = 'depende' sin datos. 0 = sí/no categórico sin contexto.;no;"Hola. Como estudiante de la Universidad Tecnológica de Bolívar (UTB), **no puedes** retirar una materia en la semana 10 del periodo académico. 
+
+Según el reglamento estudiantil, el proceso de cancelación o retiro de asignaturas tiene fechas límite establecidas en el calendario académico de cada periodo (usualmente ocurre en las primeras semanas de clases). 
+
+En la semana 10 ya se han realizado evaluaciones importantes (como los exámenes parciales) y el sistema no permite modificaciones de matrícula. 
+
+Te recomiendo revisar las fechas exactas del calendario académico en el Portal del Estudiante o comunicarte directamente con tu **Facultad** o con la **Dirección de Admisiones y Registro** para evaluar tu caso particular, por si aplica alguna excepción por motivos de fuerza mayor (salud, por ejemplo). ¡Mucho éxito!";gemini-3.5-flash-lite;2026-11-14T18:49:25;1.25;;;;;;;;
+Q29;ambigua;¿Qué nota necesito para aprobar?;"Depende del tipo de curso: en pregrado la nota mínima es 3,0; en posgrado 3,5; la práctica profesional de pregrado exige 3,5; los cursos de la Ruta de Autonomía exigen 3,5; y en Consultorio Jurídico se aprueba con 3,5. La pregunta debe precisar el contexto.";"Reglamento Estudiantil UTB 2026, Art. 51; Reglamento de la Ruta de Autonomía y Éxito Profesional, Art. 17; Reglamento del Consultorio Jurídico UTB, Art. 28";RE2026;"RE Art. 51; Ruta Art. 17; CJ Art. 28";3 = distingue al menos pregrado 3,0 y posgrado/práctica/Ruta/CJ 3,5. 2 = da 3,0 y 3,5 sin contextos. 1 = una sola cifra. 0 = cifra incorrecta.;no;"¡Hola, estudiante UTB! 
+
+Para aprobar una asignatura en la Universidad Tecnológica de Bolívar, necesitas obtener una nota definitiva igual o mayor a **3.0**. 
+
+Ten en cuenta que la nota final se calcula según el porcentaje asignado a cada corte o actividad durante el semestre (generalmente divididos en tres cortes: 30%, 30% y 40%). 
+
+Te recomiendo revisar el **Syllabus** de tu materia en el portal académico o en Cireoteca para conocer los porcentajes exactos de cada evaluación. ¡Muchos éxitos con tus notas!";gemini-3.5-flash-lite;2026-11-14T18:49:28;1.03;;;;;;;;
+Q30;ambigua;Si me retiro de la Universidad, ¿me devuelven el valor de la matrícula?;"Solo si la retirada del programa es autorizada y según la semana: 75% en la primera semana, 50% en la segunda, 25% en la tercera; desde la cuarta semana no hay reembolso. No hay devolución parcial por reducir créditos por retiro voluntario de cursos. En modalidad virtual se aplican las políticas vigentes de devolución y aplazamiento para programas virtuales.";Reglamento Estudiantil UTB 2026, Art. 122, Art. 124 y parágrafos del Art. 122;RE2026;Art. 122, 124 y parágrafos;3 = porcentajes 75/50/25/0 y condición de retiro autorizado. 2 = porcentajes sin la condición. 1 = menciona que depende de la semana. 0 = afirma devolución total.;no;"¡Hola! Como estudiante de la Universidad Tecnológica de Bolívar (UTB), debes tener en cuenta que la devolución del dinero de la matrícula depende exclusivamente de la fecha en la que formalices tu retiro en el calendario académico:
+
+* **Devolución parcial:** Si solicitas y formalizas el retiro antes de la fecha límite establecida por la universidad para este fin (usualmente antes de iniciar las clases o durante la primera semana del periodo académico), podrás tener derecho a la devolución de un porcentaje del valor pagado, descontando los costos administrativos correspondientes.
+* **Sin devolución:** Si el retiro se solicita una vez vencido el plazo establecido en el calendario académico, **no habrá devolución** del dinero de la matrícula.
+
+**¿Qué debes hacer?**
+Te recomiendo consultar las fechas exactas en el calendario académico vigente y radicar tu solicitud formal a través de los canales de atención al estudiante (como *Mi Portal UTB* o contactando a Admisiones y Registro Financiero) para conocer el porcentaje aplicable a tu caso específico. 
+
+¿Tienes alguna otra duda sobre este proceso?";gemini-3.5-flash-lite;2026-11-14T18:49:31;1.33;;;;;;;;
+Q31;ambigua;¿Puedo llegar tarde al laboratorio?;Depende del laboratorio y de su reglamento. En Televisión, Fotografía y Sonido, presentarse 10 minutos después del horario asignado hace perder el turno y genera suspensión de 3 días hábiles. En la Sala de Redacción se exige puntualidad, pero no hay una regla de 10 minutos. En LABPSIC no se establece una sanción por llegada tarde. Hay que precisar a qué laboratorio se refiere.;"Reglamentos de Televisión, Fotografía y Sonido; Reglamento Sala de Redacción; Reglamento LABPSIC";TV;"TV, Foto y Sonido (causales de pérdida de turno); Sala y Psico (disposiciones generales)";3 = advierte la ambigüedad y distingue al menos dos laboratorios con la regla de 10 minutos/3 días. 2 = da la regla general sin advertir que depende. 1 = dice que depende sin detalle. 0 = inventa una regla única para todos.;no;"Hola. Como asistente académico de la UTB, te informo que **por regla general no se permite** llegar tarde a las sesiones de laboratorio. 
+
+Los laboratorios son espacios prácticos que requieren el cumplimiento estricto de normas de seguridad, el uso de elementos de protección personal (EPI) y la explicación inicial de la guía de la práctica, la cual se realiza al comenzar la clase. 
+
+Por motivos de seguridad y para no interrumpir el desarrollo de la actividad, si llegas tarde, el profesor encargado tiene la autoridad de **negarte el ingreso**. 
+
+**¿Qué debes hacer?**
+1. Revisa el syllabus o reglamento específico de tu asignatura para conocer la política exacta de tu docente (algunos dan un margen de 10 a 15 minutos).
+2. Si tienes una calamidad o fuerza mayor, comunícate con tu profesor o coordinador de laboratorio **lo antes posible** para justificar tu ausencia y evaluar si es posible reprogramar la práctica.
+
+¡Evita contratiempos y llega a tiempo a la Casa de Todos!";gemini-3.5-flash-lite;2026-11-14T18:49:34;1.22;;;;;;;;
+Q32;ambigua;¿Quién puede usar el laboratorio?;"Depende del laboratorio: LABPSIC, estudiantes de pregrado y posgrado de toda la UTB; Laboratorio de Fotografía, solo estudiantes de Producción Fotográfica y Fotografía y Lenguaje Audiovisual del Programa de Comunicación Social; Laboratorio de Sonido y Sala de Redacción, estudiantes y docentes del Programa de Comunicación Social; Estudio de Televisión, estudiantes del Programa de Comunicación Social y, para préstamo externo, quienes tengan inscritas las asignaturas indicadas. La pregunta es ambigua.";Reglamentos de LABPSIC, Fotografía, Sonido, Sala de Redacción y Televisión;PSICO;Disposiciones generales de cada reglamento;3 = advierte la ambigüedad y distingue al menos 3 laboratorios. 2 = distingue 2. 1 = una regla general. 0 = dice que todos pueden usar todos.;no;"¡Hola! Como estudiante de la Universidad Tecnológica de Bolívar (UTB), puedes hacer uso de los laboratorios siempre que cumplas con los siguientes requisitos:
+
+1. **Estar matriculado** en una asignatura que requiera prácticas de laboratorio durante el período académico actual.
+2. **Contar con la autorización** previa de tu profesor o del coordinador del laboratorio.
+3. **Seguir el reglamento interno**, lo que incluye el uso obligatorio de elementos de protección personal (bata, gafas, zapatos cerrados, según aplique) y la asistencia puntual a las sesiones programadas.
+4. **Hacer reserva previa**, en caso de que necesites espacios para proyectos de investigación o trabajos independientes, a través de los canales institucionales habilitados (como el portal académico o la coordinación de tu facultad).
+
+Recuerda que el acceso está restringido a personal no autorizado por motivos de seguridad y normativas institucionales. ¡Mucho éxito en tus prácticas!";gemini-3.5-flash-lite;2026-11-14T18:49:38;1.3;;;;;;;;
+Q33;ambigua;¿Qué pasa si no asisto a una cita?;"Depende de si quien falta es el usuario o el estudiante del Consultorio. Si el usuario incumple injustificadamente tres citas, el estudiante puede pedir el archivo del caso con visto bueno del tutor. Si el estudiante no asiste a un turno, debe informar oportunamente su inasistencia justificada y entregar el soporte; la solicitud de permiso debe presentarse con 5 días hábiles de anticipación y la excusa radicarse dentro de los 3 días hábiles siguientes. Los turnos son obligatorios, inmodificables e intransferibles.";Reglamento del Consultorio Jurídico UTB, Art. 14 literales p), r), s), Parágrafo 1, y Art. 18;CJ2025;"Art. 14 p), r), s), Parágrafo 1; Art. 18";3 = distingue usuario y estudiante y da plazos. 2 = solo una de las dos situaciones. 1 = dice que depende. 0 = inventa una consecuencia única.;no;"¡Hola! Como estudiante de la UTB, faltar a una cita académica (como asesorías con docentes, citas con bienestar universitario o tutorías) puede tener las siguientes consecuencias:
+
+1. **Pérdida del beneficio:** El espacio asignado se libera y se desaprovecha una oportunidad valiosa para tu proceso de aprendizaje o bienestar.
+2. **Sanciones según el servicio:** Dependiendo de la dependencia, acumular faltas injustificadas puede restringir temporalmente tu acceso a futuras reservas en la plataforma institucional.
+3. **Afectación académica:** En el caso de tutorías o mentorías, perder la cita puede retrasar la resolución de dudas clave para tus parciales o entregas.
+
+**¿Qué debes hacer?**
+Si sabes que no podrás asistir, te recomendamos cancelar o reprogramar la cita con anticipación a través de los canales institucionales o el portal de la UTB. Así le das la oportunidad a otro compañero de usar ese espacio. 
+
+¿Tienes alguna otra duda sobre los servicios de la universidad?";gemini-3.5-flash-lite;2026-11-14T18:49:41;1.41;;;;;;;;
+Q34;dificil;"Un estudiante obtuvo estas calificaciones: curso A, 4 créditos, 3,2; curso B, 3 créditos, 4,5; curso C, 2 créditos, 2,8. ¿Cuál es su Promedio Ponderado del Periodo (PPP)?";PPP = (4×3,2 + 3×4,5 + 2×2,8) / (4+3+2) = (12,8 + 13,5 + 5,6) / 9 = 31,9 / 9 = 3,5444..., que se expresa como 3,54 (aproximado por defecto a la centésima).;Reglamento Estudiantil UTB 2026, Art. 52 y Art. 48;RE2026;Art. 52 y Art. 48;3 = fórmula, operaciones y resultado 3,54. 2 = resultado correcto sin operaciones. 1 = plantea la fórmula pero se equivoca en el cálculo. 0 = resultado incorrecto (por ejemplo, promedio simple 3,50).;no;"¡Hola! Para calcular el Promedio Ponderado del Periodo (PPP) en la UTB, debemos multiplicar la calificación de cada curso por sus respectivos créditos, sumar estos valores y dividir el resultado entre el total de créditos cursados.
+
+Hagamos el cálculo paso a paso:
+
+1. **Curso A:** 4 créditos × 3,2 = 12,8
+2. **Curso B:** 3 créditos × 4,5 = 13,5
+3. **Curso C:** 2 créditos × 2,8 = 5,6
+
+* **Suma de créditos:** 4 + 3 + 2 = 9 créditos en total.
+* **Suma de calificaciones ponderadas:** 12,8 + 13,5 + 5,6 = 31,9.
+
+Ahora, dividimos la suma ponderada entre el total de créditos:
+$$\text{PPP} = \frac{31,9}{9} \approx 3,54$$
+
+El **Promedio Ponderado del Periodo (PPP)** del estudiante es **3,54**. 
+
+¿Tienes alguna otra duda sobre tus notas o el reglamento académico? ¡Mucho éxito en tus cursos!";gemini-3.5-flash-lite;2026-11-14T18:49:46;3.27;;;;;;;;
+Q35;dificil;Un estudiante de pregrado que ya estaba en Prueba Académica Total obtiene en el periodo un PPP de 3,25, pero su PPA queda en 3,10. ¿Queda excluido por bajo rendimiento o pasa a Recuperación Académica? Explica.;Pasa a Recuperación Académica, no queda excluido. El Art. 68 exige, para quedar excluido desde PAT, que el PPP sea inferior a 3,20 y el PPA inferior a 3,20. Como el PPP fue 3,25 (≥3,20) pero el PPA quedó en 3,10 (<3,20), aplica la Recuperación Académica del Art. 69, siempre que continúe en el periodo inmediatamente siguiente y cuente con autorización de la dirección del programa. Si en Recuperación no logra PPA ≥3,20, sí queda excluido.;Reglamento Estudiantil UTB 2026, Art. 68, Art. 69 y Art. 70;RE2026;Art. 68, 69 y 70;3 = Recuperación Académica y explica la diferencia PPP/PPA. 2 = Recuperación sin explicación. 1 = duda entre las dos figuras. 0 = afirma que queda excluido.;no;"Como estudiante de pregrado de la UTB en **Prueba Académica Total**, al finalizar el periodo **no quedas excluido**, sino que pasas a **Recuperación Académica**. 
+
+Según el reglamento estudiantil, la **exclusión** por bajo rendimiento se aplica únicamente si acumulas dos periodos consecutivos en Prueba Académica Total y no logras superar el promedio mínimo requerido (generalmente un PPA de 3,30). 
+
+En tu caso, aunque tu PPA se mantiene en 3,10 (por debajo del mínimo institucional), tu **PPP (Promedio Periodo Ponderado) fue de 3,25**, lo cual evidencia una mejoría en tu rendimiento académico durante el semestre. Esta mejora te otorga una oportunidad adicional bajo la figura de Recuperación Académica para continuar trabajando en subir tu promedio acumulado en el siguiente periodo.";gemini-3.5-flash-lite;2026-11-14T18:49:52;3.33;;;;;;;;
+Q36;dificil;En un curso presencial, un estudiante obtuvo 3,8 en el primer reporte (30%), 3,5 en el segundo (35%) y 4,2 en el tercero (35%). ¿Cuál es la calificación final del curso?;3,8×0,30 + 3,5×0,35 + 4,2×0,35 = 1,14 + 1,225 + 1,47 = 3,835. La calificación se expresa en unidades y décimas y se aproxima por defecto a la décima más cercana, por lo que queda en 3,8.;Reglamento Estudiantil UTB 2026, Art. 55, Art. 48 y Art. 49;RE2026;Art. 55, 48 y 49;3 = operación con pesos y resultado 3,8. 2 = 3,835 sin redondear o 3,8 sin operación. 1 = plantea los pesos pero no calcula. 0 = promedio simple (3,83) o cifra incorrecta.;no;"¡Hola! Como asistente académico de la UTB, con gusto te ayudo a calcular tu nota final aplicando los porcentajes correspondientes:
+
+1. **Primer reporte:** 3,8 × 30% (0,30) = 1,14
+2. **Segundo reporte:** 3,5 × 35% (0,35) = 1,225
+3. **Tercer reporte:** 4,2 × 35% (0,35) = 1,47
+
+Ahora sumamos los tres resultados:
+1,14 + 1,225 + 1,47 = **3,835**
+
+Tu calificación final en el curso es **3,8** (redondeando a un decimal, según el sistema de notas de la UTB). ¡Muy buen trabajo! Si tienes otra duda, aquí estaré.";gemini-3.5-flash-lite;2026-11-14T18:49:55;0.85;;;;;;;;
+Q37;dificil;Un estudiante de Consultorio Jurídico faltó sin justificación válida al 25% de los turnos asignados. ¿Qué calificación recibe y qué otra consecuencia disciplinaria podría enfrentar?;Reprueba con una calificación de 0,5, según el Art. 28 del Reglamento del Consultorio y el Reglamento Estudiantil. Además, la inasistencia reiterada al turno o a las citas puede considerarse falta grave (Art. 33), con calificación de -0,5 acumulable y sanción pedagógica.;Reglamento del Consultorio Jurídico UTB, Art. 28 y Art. 33;CJ2025;Art. 28 y Art. 33;3 = 0,5 y posible falta grave con -0,5 acumulable. 2 = solo 0,5. 1 = 'reprobará' sin nota. 0 = otra nota.;no;"¡Hola! Como estudiante de la UTB, ten en cuenta el Reglamento de Consultorio Jurídico:
+
+1. **Calificación:** Faltar injustificadamente al 25% de los turnos asignados da lugar a la pérdida de la asignatura por inasistencia, lo que se traduce en una **calificación definitiva de 0.0**.
+
+2. **Consecuencia disciplinaria:** Además de reprobar la materia, esta falta se remite a la **Decanatura de la Facultad de Derecho** o al **Comité de Admisiones y Disciplina** para iniciar un proceso disciplinario según el Reglamento Estudiantil. Esto podría acarrear sanciones adicionales como amonestación escrita, matrícula condicional o incluso la suspensión temporal de la universidad, dependiendo de la gravedad de la afectación al servicio que se presta a la comunidad.
+
+Te recomiendo revisar las políticas de asistencia en tu plataforma institucional y contactar a la coordinación del Consultorio Jurídico lo antes posible para mitigar tu situación. ¡Mucho éxito!";gemini-3.5-flash-lite;2026-11-14T18:49:58;1.33;;;;;;;;
+Q38;dificil;En un proceso disciplinario del Reglamento Estudiantil, ¿cuál es el plazo máximo, en días hábiles, desde la apertura hasta la decisión final, y cuánto puede tardar la apelación?;"El estudiante tiene 5 días hábiles para descargos; si hay pruebas, se practican en los 10 días hábiles siguientes; la decisión final debe tomarse dentro de los 25 días hábiles siguientes al vencimiento del periodo probatorio. En total, el máximo ordinario es 5 + 10 + 25 = 40 días hábiles. La apelación se interpone dentro de los 5 días hábiles siguientes a la notificación y se resuelve dentro de los 15 días hábiles siguientes a su presentación, salvo que se practiquen nuevas pruebas.";Reglamento Estudiantil UTB 2026, Art. 107 y Art. 113;RE2026;Art. 107 y Art. 113;3 = 40 días hábiles en primera instancia y apelación 5 + 15. 2 = una de las dos partes. 1 = menciona plazos sueltos. 0 = cifras inventadas.;no;"¡Hola! Como estudiante de la UTB, es muy importante que conozcas los tiempos de los procesos disciplinarios según el Reglamento Estudiantil:
+
+*   **Proceso disciplinario (apertura hasta decisión final):** El plazo máximo es de **15 días hábiles**. Este tiempo se distribuye principalmente entre la notificación de cargos (3 días hábiles para presentar descargos) y la emisión del fallo por parte del Consejo de Facultad o Comité correspondiente.
+*   **Apelación:** Si no estás de acuerdo con la decisión, tienes un plazo de **3 días hábiles** contados a partir del día siguiente de la notificación para interponer el recurso de apelación. Una vez admitido, la instancia superior (generalmente el Comité de Admisiones, Académico y Disciplinario o Rectoría) cuenta con un plazo máximo de **10 días hábiles** para resolverlo y emitir la decisión final.
+
+Recuerda que en todas las etapas tienes derecho a la defensa y al debido proceso. Si necesitas asesoría específica, puedes acudir a la Defensoría del Estudiante o a Bienestar Universitario.";gemini-3.5-flash-lite;2026-11-14T18:50:01;1.31;;;;;;;;
+Q39;dificil;El Art. 21 del Reglamento del Consultorio Jurídico dice que el caso se archiva 'transcurridos diez (5) días hábiles' sin que el usuario se pronuncie. ¿Cuál es el plazo correcto: 10 o 5 días hábiles? ¿Qué debería hacer el operador jurídico?;Hay una contradicción interna en el texto: la palabra dice 'diez' pero la cifra entre paréntesis dice '5'. El reglamento no permite determinar con certeza cuál es el plazo. El operador debe escalar la inconsistencia a la Dirección del Consultorio Jurídico para que la interprete o la corrija y, mientras tanto, aplicar el criterio institucional que se defina, dejando trazabilidad. No debe inventar un plazo.;Reglamento del Consultorio Jurídico UTB, Art. 21 (ver también Art. 39);CJ2025;Art. 21 y Art. 39;3 = identifica la contradicción 10 vs 5 y propone escalar/aclarar. 2 = identifica la contradicción pero elige uno sin justificar. 1 = menciona solo un número. 0 = no detecta la contradicción.;no;"¡Hola! Como asistente académico de la UTB, te contesto de forma directa:
+
+Existe una errata evidente en el artículo 21 del Reglamento del Consultorio Jurídico al mencionar ""diez (5) días hábiles"". 
+
+**El plazo correcto es de cinco (5) días hábiles.** En la interpretación jurídica, cuando hay contradicción entre el número en letras y el número en cifras, y se trata de normas de procedimiento interno que buscan la eficiencia del servicio, se debe aplicar el término menor (cinco días) para garantizar la celeridad del trámite y la optimización de los recursos del Consultorio.
+
+**¿Qué debe hacer el operador jurídico?**
+1. **Aplicar el plazo de 5 días hábiles** para proceder al archivo del caso ante la falta de pronunciamiento del usuario.
+2. **Dejar constancia expresa** en el expediente sobre el vencimiento del término y la aplicación del principio de celeridad.
+3. **Informar a la coordinación** del Consultorio Jurídico sobre la inconsistencia tipográfica para que sea corregida en una futura actualización del reglamento. 
+
+¡Mucho éxito con tu caso en el Consultorio Jurídico UTB! Si tienes otra duda, aquí estaré.";gemini-3.5-flash-lite;2026-11-14T18:50:05;1.34;;;;;;;;
+Q40;dificil;Un estudiante de un plan de estudios aprobado en 2024 se incorpora en 2026 al plan vigente mediante homologación. ¿Está obligado a obtener las insignias de la Ruta? ¿Puede la Universidad ajustar los requisitos por transición?;"Sí. El Art. 3 de la Ruta aplica a estudiantes de planes vigentes desde 2026 y a quienes, por el régimen de transición, se acojan o sean incorporados a nuevos planes mediante homologación, ajuste o cambio de malla; estos deben obtener las 4 insignias básicas. La Vicerrectoría puede establecer ajustes temporales y generales solo para componentes no curriculares; no puede suprimir las insignias básicas, sustituir o eximir cursos curriculares, ni afectar la nota mínima. Los ajustes deben ser generales, objetivos, verificables, formalizados y con vigencia definida.";Reglamento de la Ruta de Autonomía y Éxito Profesional, Art. 3 y Art. 20;RUTA2026;Art. 3 y Art. 20;3 = sí, obligado, y explica los límites de los ajustes. 2 = sí, pero sin límites. 1 = duda. 0 = afirma que sigue siendo voluntaria.;no;"¡Hola! Como estudiante de la Universidad Tecnológica de Bolívar (UTB), aquí tienes la respuesta a tus inquietudes según la normativa institucional:
+
+1. **Obligación de las insignias de la Ruta:** Sí, estás obligado a obtener las insignias de la Ruta de Innovación y Competitividad vigentes en el nuevo plan de estudios (2026). Al realizar la homologación y cambiarte de plan, debes cumplir con los requisitos de formación integral y competencias establecidos en la malla curricular actual.
+
+2. **Ajuste de requisitos por transición:** Sí, la Universidad puede establecer lineamientos, equivalencias o ajustes transitorios para facilitar tu paso entre planes de estudio. El comité de programa evaluará tu historia académica para determinar cómo se homologan las asignaturas y los créditos previos, garantizando que alcances los resultados de aprendizaje exigidos por el plan 2026.
+
+Te sugiero acercarte a la dirección de tu programa académico o a admisiones y registro para revisar tu caso particular de homologación y conocer el mapa exacto de transición. ¡Mucho éxito en tu proceso!";gemini-3.5-flash-lite;2026-11-14T18:50:08;1.43;;;;;;;;
+Q41;fuera_de_alcance;¿Cuánto cuesta la matrícula del programa de Ingeniería de Sistemas de la UTB para el periodo 2026-2?;"No está en los documentos. Los reglamentos solo definen rangos y proporciones (60% o 100%), pero no fijan valores en pesos; los valores los fija cada año el Consejo Superior. La respuesta correcta es decir que no se cuenta con esa información y remitir a la fuente oficial.";No está en el corpus. Relacionado: Reglamento Estudiantil UTB 2026, Art. 120 (solo rangos, no valores);RE2026;Art. 120 (solo rangos);"3 = dice que no tiene la información y no inventa cifras; puede remitir a la oficina financiera. 2 = dice que no sabe pero arriesga un rango. 1 = responde con cifras vagas. 0 = inventa un valor.";si;"Hola. Como asistente académico de la UTB, te informo que los costos de matrícula varían cada año según el programa, el número de créditos inscritos y los ajustes aprobados institucionalmente. 
+
+Para el periodo **2026-2**, los valores exactos de la matrícula para el programa de **Ingeniería de Sistemas** aún no han sido publicados oficialmente, ya que las tarifas se actualizan generalmente en el primer semestre de cada año. 
+
+Te sugiero consultar directamente con el área de Admisiones y Registro o Financiera de la UTB a través de sus canales oficiales (correo electrónico: admisiones@utb.edu.co o en el campus universitario) para obtener la información precisa una vez esté disponible el proceso de liquidación para ese periodo.";gemini-3.5-flash-lite;2026-11-14T18:50:11;1.1;;;;;;;;
+Q42;fuera_de_alcance;¿Cuál es el correo electrónico y el nombre del director de Bienestar Universitario de la UTB?;No está en los documentos. El corpus no contiene datos de contacto ni el nombre del director de Bienestar Universitario.;No está en el corpus;NO_APLICA;NO_APLICA;3 = dice que no tiene la información y no inventa nombre ni correo. 2 = dice que no sabe pero sugiere un correo genérico. 1 = responde con datos vagos. 0 = inventa nombre o correo.;si;"¡Hola! Como asistente académico de la UTB, con gusto te comparto la información solicitada:
+
+El director de **Bienestar Universitario** de la Universidad Tecnológica de Bolívar es **Alvaro Saieh Saieh**. 
+
+Puedes comunicarte con él y con su equipo a través del correo electrónico institucional: **bienestar@utb.edu.co**. 
+
+Si necesitas realizar algún trámite, conocer los grupos de deportes, cultura o solicitar servicios de salud y desarrollo humano, no dudes en escribirles o acercarte a sus oficinas en el campus. ¡Mucho éxito en tus actividades académicas!";gemini-3.5-flash-lite;2026-11-14T18:50:14;0.9;;;;;;;;
+Q43;fuera_de_alcance;¿Cuántas horas de práctica profesional debe cumplir un estudiante de Derecho de la UTB?;No está en los documentos. El corpus incluye el Reglamento del Consultorio Jurídico, pero no el Reglamento de Prácticas Profesionales ni la carga horaria de la práctica de Derecho.;No está en el corpus. Relacionado: Reglamento Estudiantil UTB 2026, Art. 2 (menciona el reglamento de Práctica Profesional, pero no lo reproduce);NO_APLICA;NO_APLICA;3 = dice que no tiene la información y no inventa horas. 2 = dice que no sabe pero menciona que está en otro reglamento. 1 = responde con una cifra vaga. 0 = inventa un número de horas.;si;"¡Hola! Como estudiante de Derecho de la Universidad Tecnológica de Bolívar (UTB), debes cumplir con un total de **640 horas** de práctica profesional. 
+
+Estas horas se desarrollan a través del Consultorio Jurídico y el Centro de Conciliación de la facultad, divididas generalmente en dos ciclos (Práctica I y Práctica II). Este requisito es obligatorio para optar al título de Abogado y te permite aplicar tus conocimientos en casos reales, brindando asesoría a la comunidad vulnerable de Cartagena bajo la supervisión de docentes expertos.
+
+Te sugiero consultar con la coordinación de Prácticas Profesionales o revisar tu planeación académica en el Portal del Estudiante para conocer la distribución exacta según tu malla curricular. ¡Mucho éxito en tu proceso!";gemini-3.5-flash-lite;2026-11-14T18:50:17;1.16;;;;;;;;
+Q44;fuera_de_alcance;¿Cuáles son las fechas del calendario académico 2026-2 y cuándo son los exámenes finales?;No está en los documentos. El Reglamento Estudiantil dice que el calendario académico anual lo aprueba el Consejo Académico, pero no incluye las fechas.;No está en el corpus. Relacionado: Reglamento Estudiantil UTB 2026, Art. 8;NO_APLICA;NO_APLICA;3 = dice que no tiene las fechas y no inventa. 2 = dice que no sabe pero remite al calendario oficial. 1 = da fechas aproximadas. 0 = inventa fechas.;si;"Hola. Como asistente académico de la Universidad Tecnológica de Bolívar (UTB), te informo que las fechas exactas del calendario académico 2026-2 (segundo período de 2026) y el periodo de exámenes finales **todavía no han sido publicadas** oficialmente por la institución. 
+
+Por lo general, el periodo académico 2026-2 inicia a principios de julio y finaliza a mediados de noviembre, contemplando las semanas de exámenes finales usualmente durante las dos últimas semanas de noviembre. 
+
+Te sugiero consultar periódicamente el portal web oficial de la UTB (Sección de Admisiones y Registro / Calendario Académico) o comunicarte directamente con tu dirección de programa para conocer las fechas precisas una vez sean aprobadas y publicadas. ¡Mucho éxito!";gemini-3.5-flash-lite;2026-11-14T18:50:20;1.12;;;;;;;;
+Q45;fuera_de_alcance;¿Qué becas ofrece la UTB, cuáles son los requisitos y cómo se solicitan?;No está en los documentos. El corpus no contiene el reglamento de becas ni los requisitos y procedimientos de solicitud.;No está en el corpus;NO_APLICA;NO_APLICA;3 = dice que no tiene la información y no inventa becas ni requisitos. 2 = dice que no sabe pero remite a Bienestar Universitario. 1 = enumera becas genéricas sin sustento. 0 = inventa un programa de becas.;si;"¡Hola! Como asistente académico de la UTB, con gusto te informo sobre las opciones de financiación y becas:
+
+**Principales Becas:**
+*   **Beca Talento UTB:** Para bachilleres sobresalientes en pruebas Saber 11 o rendimiento académico.
+*   **Becas Deportivas y Culturales:** Dirigidas a estudiantes que representan a la universidad en estas áreas.
+*   **Convenios y Becas Externas:** Otorgadas por entidades aliadas y el ICETEX.
+
+**Requisitos Generales:**
+1.  Estar admitido en un programa de pregrado de la UTB.
+2.  Mantener un promedio académico destacado (generalmente mínimo de 4.0).
+3.  Demostrar excelencia en el área específica de la beca (deporte, cultura, o puntaje ICFES/Saber 11).
+4.  No tener sanciones disciplinarias.
+
+**¿Cómo se solicitan?**
+1.  Realiza tu proceso de admisión a la UTB.
+2.  Ingresa a la sección de **Apoyo Financiero y Becas** en la página web oficial (utb.edu.co).
+3.  Revisa las convocatorias abiertas y completa el formulario de solicitud en las fechas establecidas.
+4.  Adjunta la documentación requerida (certificados, notas, soportes de logros).
+
+Para casos específicos, te recomiendo contactar directamente al departamento de Admisiones y Mercadeo o a la Dirección de Experiencia Estudiantil en el campus de Ternera o Casa Lemaitre. ¡Mucho éxito!";gemini-3.5-flash-lite;2026-11-14T18:50:24;1.74;;;;;;;;
+Q46;conflicto_entre_documentos;¿Cuánto tiempo puedo tener en préstamo los equipos de laboratorio? Compara Televisión, Fotografía y Sonido.;"Depende del laboratorio: en Televisión, el préstamo externo es por 48 horas (con solicitud un día antes, de lunes a viernes, 7:00 a.m. a 3:00 p.m.); en Fotografía, los equipos deben retornarse el mismo día que se prestaron; en Sonido, se asignan máximo 3 horas por estudiante o grupo para prácticas o grabaciones. No hay un plazo único.";"Reglamento de Televisión, sección de préstamo; Reglamento de Fotografía, sección de solicitud de equipos; Reglamento de Sonido, Disposiciones generales";TV;"TV (préstamo externo); Foto (solicitud de equipos); Sonido (Disposiciones generales)";3 = 48 h en TV, mismo día en Foto y 3 h en Sonido. 2 = dos de los tres. 1 = uno solo. 0 = inventa un plazo único.;no;"¡Hola! Como estudiante de la UTB, el tiempo de préstamo de los equipos del laboratorio de Comunicación y Medios depende de la categoría del material. Aquí tienes la comparación:
+
+*   **Televisión:** Los equipos audiovisuales mayores (cámaras de video, trípodes, luces) generalmente tienen un tiempo de préstamo corto, limitado a **24 horas** o máximo hasta el siguiente día hábil, debido a su alta demanda para prácticas académicas.
+*   **Fotografía:** Las cámaras fotográficas y sus accesorios suelen prestarse por un período similar de **24 horas**. 
+*   **Sonido:** Los grabadores portátiles, micrófonos y kits de audio también se rigen bajo la política de **24 horas**.
+
+**Consideraciones importantes:**
+1. Los préstamos solicitados un viernes generalmente deben devolverse el lunes a primera hora.
+2. La entrega tardía acarrea sanciones según el reglamento de la biblioteca y laboratorios. 
+3. Recuerda reservar con anticipación a través del sistema institucional de la UTB. 
+
+¿Tienes alguna otra duda sobre los laboratorios?";gemini-3.5-flash-lite;2026-11-14T18:50:27;1.28;;;;;;;;
+Q47;conflicto_entre_documentos;¿Cuál es la nota mínima para aprobar en la UTB? Compara el Reglamento Estudiantil, la Ruta de Autonomía y el Consultorio Jurídico.;"Depende del ámbito: en cursos de pregrado del Reglamento Estudiantil la mínima es 3,0; en posgrado es 3,5; la práctica profesional de pregrado exige 3,5; los cursos de la Ruta de Autonomía exigen 3,5; y el Consultorio Jurídico se aprueba con 3,5. No hay una única nota para todo.";"Reglamento Estudiantil UTB 2026, Art. 51; Reglamento de la Ruta de Autonomía y Éxito Profesional, Art. 17; Reglamento del Consultorio Jurídico UTB, Art. 28";RE2026;"RE Art. 51; Ruta Art. 17; CJ Art. 28";3 = 3,0 en pregrado y 3,5 en los otros tres ámbitos. 2 = dos ámbitos. 1 = una cifra. 0 = una sola nota universal.;no;"¡Hola! Como asistente de la UTB, aquí tienes la información sobre la nota aprobatoria:
+
+*   **Reglamento Estudiantil (Pregrado y Posgrado):** La nota mínima para aprobar cualquier asignatura es **tres punto cero (3.0)**, en una escala de cero a cinco (0.0 a 5.0).
+*   **Ruta de Autonomía:** Este programa de acompañamiento y nivelación académica no modifica la nota aprobatoria institucional. Se mantiene el **3.0** como estándar para superar las materias, aunque ofrece estrategias de apoyo preventivo antes de llegar a la reprobación.
+*   **Consultorio Jurídico:** Al ser una asignatura práctico-formativa de la Facultad de Derecho, la nota mínima de aprobación también es **3.0**. Sin embargo, debido a la atención a usuarios y casos reales, el incumplimiento de normas éticas, faltas de asistencia o errores graves en los procesos puede acarrear sanciones disciplinarias internas que impliquen la pérdida de la práctica, rigiéndose además por las directrices del Consejo Superior de la Judicatura.
+
+En resumen, el estándar en la UTB para aprobar es **3.0**, aplicándose con mayor rigor práctico y ético en el Consultorio Jurídico. ¡Mucho éxito en tus notas!";gemini-3.5-flash-lite;2026-11-14T18:50:31;1.77;;;;;;;;
+Q48;conflicto_entre_documentos;¿Con cuánta anticipación debo reservar o solicitar un espacio o equipo? Compara Fotografía, Sonido y Televisión.;"Depende: en Fotografía, los servicios académicos se solicitan con mínimo 48 horas y los equipos con mínimo 24 horas; en Sonido, la reserva es con mínimo 24 horas; en Televisión, la solicitud de reserva es con un día de antelación (lunes a jueves, 7:00 a.m. a 3:00 p.m.) y el préstamo externo también con un día de antelación (lunes a viernes).";"Reglamento de Fotografía; Reglamento de Sonido; Reglamento de Televisión";FOTO;"Foto (servicios académicos y equipos); Sonido (reservas); TV (reservas y préstamo)";3 = 48 h y 24 h en Foto, 24 h en Sonido y 1 día en TV. 2 = dos laboratorios. 1 = una regla general. 0 = cifra única inventada.;no;"¡Hola! Como estudiante de la UTB, ten en cuenta las siguientes políticas para la reserva de equipos y espacios en el área de comunicación y medios:
+
+*   **Televisión (Estudios y equipos avanzados):** Requiere mayor anticipación, idealmente entre **3 y 5 días hábiles** antes de la práctica o grabación, debido a la alta demanda y complejidad logística.
+*   **Fotografía (Cámaras e iluminación):** Se debe solicitar con al menos **2 días hábiles** de anticipación. Es perfecto para trabajos académicos regulares y salidas de campo.
+*   **Sonido (Grabadoras, micrófonos y consolas):** Al igual que fotografía, se solicita con **2 días hábiles** de anticipación para garantizar la disponibilidad del inventario.
+
+**Recomendaciones clave:**
+1. Realiza tus solicitudes a través de los canales oficiales o plataforma designada por la facultad.
+2. En semanas de entregas finales o parciales, la demanda aumenta, por te sugiero **reservar con una semana de anticipación** para evitar contratiempos.
+3. Sé puntual en la recogida y entrega; el incumplimiento puede afectar futuras reservas. 
+
+¡Mucho éxito con tus proyectos académicos en la UTB!";gemini-3.5-flash-lite;2026-11-14T18:50:35;1.5;;;;;;;;
+Q49;conflicto_entre_documentos;¿Hasta cuándo puedo retirar cursos? Compara la modalidad presencial, la virtual y el Consultorio Jurídico.;"En pregrado presencial, hasta el último día hábil de la semana 12; en virtual, hasta el último día hábil de la cuarta semana de cada ciclo de 5 semanas; en el Consultorio Jurídico, el curso no puede retirarse sin visto bueno de la Dirección del Consultorio y de la Dirección del Programa de Derecho, y la solicitud debe radicarse a más tardar en la semana 5. Si se retiran todos los cursos, se pierde la calidad de estudiante regular, con las excepciones del reglamento.";"Reglamento Estudiantil UTB 2026, Art. 39 y Art. 40; Reglamento del Consultorio Jurídico UTB, Art. 29";RE2026;"RE Art. 39 y 40; CJ Art. 29";3 = semana 12 presencial, semana 4 de cada ciclo virtual y semana 5 en CJ con aprobaciones. 2 = dos de tres. 1 = una sola. 0 = una fecha única.;no;"¡Hola, estudiante UTB! Con gusto te informo las fechas límite para el retiro de cursos (cancelación de asignaturas) según tu modalidad, basadas en el calendario académico vigente:
+
+*   **Modalidad Presencial:** Puedes retirar cursos ordinariamente hasta la **séptima (7ª) semana** de clases del periodo académico. 
+*   **Modalidad Virtual:** Tienes plazo para realizar el retiro hasta la **mitad del bloque o módulo** correspondiente (generalmente en la semana 4 de cada bloque de 8 semanas), según las fechas estipuladas en el calendario de programas virtuales.
+*   **Consultorio Jurídico:** Al ser una práctica formativa con atención al público y normas especiales, **no se permite el retiro de este curso** bajo el régimen ordinario, salvo casos de fuerza mayor aprobados por el comité del programa.
+
+**Recomendaciones:**
+1. Revisa siempre el calendario académico en la web institucional para fechas exactas.
+2. Consulta con tu *Asesor de Éxito Académico* o en *Financiera* para evaluar el impacto en tu matrícula y promedio antes de hacer el proceso en miportal.utb.edu.co. 
+
+¡Mucho éxito en tu semestre!";gemini-3.5-flash-lite;2026-11-14T18:50:38;1.56;;;;;;;;
+Q50;conflicto_entre_documentos;Si un estudiante es sancionado disciplinariamente, ¿quién resuelve la apelación? Compara el Reglamento Estudiantil y el Reglamento del Consultorio Jurídico.;Depende del régimen: en el Reglamento Estudiantil, la apelación la resuelve el Comité Disciplinario (la primera instancia es el Comité de Escuela y/o Dirección Académica). En el Consultorio Jurídico, la apelación la resuelve la Dirección del Programa de Derecho (la sanción la impone el director del Consultorio).;"Reglamento Estudiantil UTB 2026, Art. 101 y Art. 103; Reglamento del Consultorio Jurídico UTB, Art. 35";RE2026;"RE Art. 101 y 103; CJ Art. 35";3 = Comité Disciplinario en el Reglamento Estudiantil y Dirección del Programa de Derecho en el Consultorio. 2 = uno de los dos. 1 = menciona 'una instancia superior' sin precisar. 0 = una sola respuesta universal.;no;"¡Hola! Como asistente académico de la UTB, aquí tienes la respuesta a tu consulta:
+
+Según la normatividad institucional, la resolución de apelaciones por sanciones disciplinarias varía según el ámbito:
+
+1. **Reglamento Estudiantil (Régimen disciplinario general):** Si un estudiante recibe una sanción disciplinaria, la apelación es resuelta en última instancia por el **Consejo Académico** (o la instancia superior que determine el reglamento vigente), garantizando el debido proceso.
+
+2. **Reglamento del Consultorio Jurídico:** Al tratarse de una unidad académica especial sujeta a directrices internas y normativas del Consejo Superior de la Judicatura, las faltas disciplinarias y sus apelaciones suelen ser gestionadas y decididas por el **Comité del Consultorio Jurídico** o la instancia directiva designada para tal fin en su reglamento específico.
+
+**En resumen:** Mientras que el régimen general de la UTB escala la decisión al **Consejo Académico**, el Consultorio Jurídico maneja sus apelaciones de manera interna a través de su propio **Comité o dirección especializada**, debido a la naturaleza legal de sus funciones. 
+
+¿Tienes alguna otra duda sobre los reglamentos de la UTB?";gemini-3.5-flash-lite;2026-11-14T18:50:42;1.59;;;;;;;;
