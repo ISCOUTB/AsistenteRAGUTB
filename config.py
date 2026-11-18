@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 
 # Ruta raiz desde los modulos en src
-ROOT = Path(__file__).resolve()
+ROOT = Path(__file__).resolve().parent
 
 # URLs y nombres de archivos
 URLS = (
@@ -40,9 +40,12 @@ RUTAS_ARCHIVOS_TXT = tuple([CARPETA_TXT / f"{nombre}.txt" for nombre in NOMBRES_
 
 # Rutas de archivos csv 
 RUTA_PREGUNTAS = ROOT / "data/preguntas/preguntas.csv"
+
 DIR_RESULTADOS_BASELINE = ROOT / "experiments/linea_base"
+DIR_RESULTADOS_RAG = ROOT / "experiments/rag"
+
 RUTA_RESPUESTAS_BASELINE = DIR_RESULTADOS_BASELINE / "respuestas_baseline.csv"
-RUTA_RESPUESTAS_RAG = ROOT / "experiments/rag/respuestas_rag.csv"
+RUTA_RESPUESTAS_RAG = DIR_RESULTADOS_RAG / "respuestas_rag.csv"
 
 # --- LLM --------------------------------------------------------------------
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")

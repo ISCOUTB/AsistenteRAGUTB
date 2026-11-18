@@ -1,10 +1,10 @@
 from google import genai
-import os
 import pandas as pd
 import time
 
 from config import (
-    CARPETA_EMBEDDINGS
+    CARPETA_EMBEDDINGS,
+    GEMINI_API_KEY
 )
 
 # Llamar a modelo de embeddings
@@ -17,7 +17,6 @@ def main(df_chunks):
     
     # Conectar a Gemini API
 
-    GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
     client = genai.Client(api_key=GEMINI_API_KEY)
 
     # Crear los embeddings por cada chunk

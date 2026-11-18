@@ -6,3 +6,4 @@ data/chunks
 .vscode/*
 *__pycache__
 *.pyc
+.env
