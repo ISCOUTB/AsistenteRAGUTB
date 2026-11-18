@@ -22,17 +22,16 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from src.linea_base.config import (
+from config import (
     CODIFICACION_CSV,
     DELIMITADOR,
-    DIR_RESULTADOS,
     MAX_TOKENS_SALIDA,
     MODELO,
     PLANTILLA_PROMPT,
     PROMPT_SISTEMA,
     REINTENTOS,
     RUTA_PREGUNTAS,
-    RUTA_RESPUESTAS,
+    RUTA_RESPUESTAS_BASELINE,
     SEGUNDOS_ENTRE_LLAMADAS,
     TEMPERATURA,
     crear_cliente,
@@ -211,7 +210,7 @@ def mostrar_respuestas_csv(ruta):
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Línea base sin RAG con Gemini")
     parser.add_argument("--preguntas", default=str(RUTA_PREGUNTAS), help="CSV de preguntas")
-    parser.add_argument("--salida", default=str(RUTA_RESPUESTAS), help="CSV de respuestas")
+    parser.add_argument("--salida", default=str(RUTA_RESPUESTAS_BASELINE), help="CSV de respuestas")
     parser.add_argument("--modelo", default=MODELO, help="Modelo de Gemini")
     parser.add_argument("--temperatura", type=float, default=TEMPERATURA)
     parser.add_argument("--max-tokens", type=int, default=MAX_TOKENS_SALIDA)

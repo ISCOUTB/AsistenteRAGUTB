@@ -1,19 +1,48 @@
-"""
-Configuración compartida para los scripts de línea base.
-
-La clave de Gemini es la que está en el notebook `asistente-rag-utb.ipynb`.
-Se puede sobreescribir con la variable de entorno GEMINI_API_KEY sin tocar
-este archivo.
-"""
-
-import os
 from pathlib import Path
+import os
 
-# --- Rutas del proyecto -----------------------------------------------------
-RAIZ = Path(__file__).resolve().parent.parent.parent
-RUTA_PREGUNTAS = RAIZ / "data/preguntas/preguntas.csv"
-DIR_RESULTADOS = RAIZ / "experiments/linea_base"
-RUTA_RESPUESTAS = DIR_RESULTADOS / "respuestas_baseline.csv"
+# Ruta raiz desde los modulos en src
+ROOT = Path(__file__).resolve()
+
+# URLs y nombres de archivos
+URLS = (
+    "https://www.utb.edu.co/wp-content/uploads/2026/10/Reglamento-Estudiantil-2026.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2026/03/Reglamento-Ruta-de-autonomia.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2025/09/reglamento-del-CJ-26-09-25.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_estudio_de_television_y_laboratorio_de_posproduccion_0_0.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_laboratorio_de_fotografia_0.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_laboratorio_de_sonido_0.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_sala_multimedia.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2021/06/REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.pdf"
+)
+
+NOMBRES_ARCHIVOS = (
+    "Reglamento-Ruta-de-autonomia",
+    "reglamento-del-CJ-26-09-25",
+    "Reglamento-Estudiantil-2026",
+    "REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA",
+    "reglamento_estudio_de_television_y_laboratorio_de_posproduccion_0_0",
+    "reglamento_laboratorio_de_fotografia_0",
+    "reglamento_laboratorio_de_sonido_0",
+    "reglamento_sala_multimedia"
+)
+
+# Carpetas en data
+CARPETA_TXT = ROOT / "data/texto"
+CARPETA_PDF = ROOT / "data/pdf"
+CARPETA_CHUNKS = ROOT / "data/chunks"
+CARPETA_EMBEDDINGS = ROOT / "data/embeddings"
+
+#Rutas archivos txt y pdf
+
+RUTAS_ARCHIVOS_PDF = tuple([CARPETA_PDF / f"{nombre}.pdf" for nombre in NOMBRES_ARCHIVOS])
+RUTAS_ARCHIVOS_TXT = tuple([CARPETA_TXT / f"{nombre}.txt" for nombre in NOMBRES_ARCHIVOS])
+
+# Rutas de archivos csv 
+RUTA_PREGUNTAS = ROOT / "data/preguntas/preguntas.csv"
+DIR_RESULTADOS_BASELINE = ROOT / "experiments/linea_base"
+RUTA_RESPUESTAS_BASELINE = DIR_RESULTADOS_BASELINE / "respuestas_baseline.csv"
+RUTA_RESPUESTAS_RAG = ROOT / "experiments/rag/respuestas_rag.csv"
 
 # --- LLM --------------------------------------------------------------------
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -38,8 +67,9 @@ PROMPT_SISTEMA = (
 PLANTILLA_PROMPT = "{sistema}\n\nPregunta: {pregunta}"
 
 # --- Delimitador de los CSV -------------------------------------------------
-# Se usa punto y coma para que Excel en configuración regional española abra
-# el archivo con las columnas separadas. Todos los scripts leen con este valor.
+# Se usa punto y coma como delimitador. Se usa una codificación utf-8-sig
+# que usa BOM (Byte Order Mark) lo que permite que Excel y otros programas
+# puedan codificar correctamente el archivo.
 DELIMITADOR = ";"
 CODIFICACION_CSV = "utf-8-sig"
 
@@ -48,7 +78,7 @@ ESCALA_EXACTITUD = (0, 3)
 ESCALA_FIDELIDAD = (0, 3)
 ESCALA_ALUCINACION = (0, 2)
 
-# Orden "oficial" de los tipos de pregunta. Sirve para que las tablas de
+# Orden de los tipos de pregunta. Sirve para que las tablas de
 # métricas salgan siempre en el mismo orden.
 TIPOS = [
     "articulo_especifico",

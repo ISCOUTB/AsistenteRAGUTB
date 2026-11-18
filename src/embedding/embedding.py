@@ -3,14 +3,17 @@ import os
 import pandas as pd
 import time
 
+from config import (
+    CARPETA_EMBEDDINGS
+)
+
 # Llamar a modelo de embeddings
 
 def crear_embedding(client, model, contents):
     result = client.models.embed_content(model=model, contents=contents)
     return result.embeddings[0].values
 
-def main(ROOT, df_chunks):
-    CARPETA_EMBEDDINGS = ROOT + "/data/embeddings"
+def main(df_chunks):
     
     # Conectar a Gemini API
 
@@ -61,9 +64,3 @@ def main(ROOT, df_chunks):
     print(f"Guardado en {CARPETA_EMBEDDINGS}/db.html")
 
     return df_chunks
-
-if __name__ == "__main__":
-    # Leer csv
-    df = pd.read_csv("../../data/chunks/db.csv")
-
-    main("../..", df)

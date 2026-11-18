@@ -1,17 +1,20 @@
-import pymupdf, os
+import pymupdf
 
-def main(ROOT):
+from config import (
+    RUTAS_ARCHIVOS_PDF,
+    RUTAS_ARCHIVOS_TXT
+)
+
+def main():
         
-    CARPETA_PDF = ROOT + "/data/pdf"
     reglamentos = []       # textos de los pdfs
-    nombres = []           # nombres de los archivos
 
     # -------------- Reglamento de autonomía y del consultorio jurídico ------ #
 
-    for name in ["Reglamento-Ruta-de-autonomia.pdf", "reglamento-del-CJ-26-09-25.pdf"]:
+    for ruta in RUTAS_ARCHIVOS_PDF[0:2]:
             
         reglamento = ""   # aqui irá el texto completo del reglamento actual
-        doc = pymupdf.open(CARPETA_PDF + "/" + name)  # leer el pdf
+        doc = pymupdf.open(ruta)  # leer el pdf
 
         for i, pagina in enumerate(doc):    # iterar por paginas
             texto = pagina.get_text().strip()
@@ -24,13 +27,12 @@ def main(ROOT):
             reglamento += texto
         
         reglamentos.append(reglamento)
-        nombres.append(name)
 
     # --------------Reglamento estudiantil ------------------------------- #
     
     reglamento = ""
-    name = "Reglamento-Estudiantil-2026.pdf"
-    doc = pymupdf.open(CARPETA_PDF + "/" + name)
+    ruta = RUTAS_ARCHIVOS_PDF[2]
+    doc = pymupdf.open(ruta)
     reemplazo = """Reglamento Estudiantil
     Aprobado en Acta No. 03 del 17 de mayo de 2024 del Consejo Académico Resolución 
     No. 01 de 2024 y Modificado por la Resolución del Consejo Académico No. 01 de 2026"""
@@ -46,21 +48,12 @@ def main(ROOT):
         reglamento += texto
 
     reglamentos.append(reglamento)
-    nombres.append(name)
     
     # ------------ Otros reglamentos ------------------------------------- #
 
-    nombres_de_otros_reglamentos = [
-        "REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.pdf",
-        "reglamento_estudio_de_television_y_laboratorio_de_posproduccion_0_0.pdf",
-        "reglamento_laboratorio_de_fotografia_0.pdf",
-        "reglamento_laboratorio_de_sonido_0.pdf",
-        "reglamento_sala_multimedia.pdf"
-    ]
-
-    for name in nombres_de_otros_reglamentos:
+    for ruta in RUTAS_ARCHIVOS_PDF[3:]:
         reglamento = ""
-        doc = pymupdf.open(CARPETA_PDF + "/" + name)
+        doc = pymupdf.open(ruta)
 
         for i, pagina in enumerate(doc):
             texto = pagina.get_text().strip()
@@ -70,22 +63,11 @@ def main(ROOT):
             reglamento += texto
         
         reglamentos.append(reglamento)
-        nombres.append(name)
 
     # -------------- Guardar en archivos txt --------------------------- #
 
-    CARPETA_TXT = ROOT + "/data/texto"
-
-    if not os.path.isdir(CARPETA_TXT):
-        os.mkdir(CARPETA_TXT)
-
-
-    for reglamento, name in zip(reglamentos, nombres):
-        name = name[:-4] + ".txt"
-        with open(CARPETA_TXT + "/" + name, "w", encoding="utf-8") as f:
+    for reglamento, ruta in zip(reglamentos, RUTAS_ARCHIVOS_TXT):
+        with open(ruta, "w", encoding="utf-8") as f:
             f.write(reglamento)
 
-        print(f"Texto guardado: {CARPETA_TXT}/{name}")
-
-if __name__ == "__main__":
-    main("../..")
+        print(f"Texto guardado: {ruta}")

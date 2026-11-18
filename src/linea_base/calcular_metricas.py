@@ -23,15 +23,15 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from src.linea_base.config import (
+from config import (
     CODIFICACION_CSV,
     DELIMITADOR,
     DESCRIPCION_TIPOS,
-    DIR_RESULTADOS,
+    DIR_RESULTADOS_BASELINE,
     ESCALA_ALUCINACION,
     ESCALA_EXACTITUD,
     ESCALA_FIDELIDAD,
-    RUTA_RESPUESTAS,
+    RUTA_RESPUESTAS_BASELINE,
     TIPOS,
 )
 
@@ -172,8 +172,8 @@ def tabla_markdown(df, columnas, etiquetas):
 
 def main():
     parser = argparse.ArgumentParser(description="Calcula métricas de la línea base")
-    parser.add_argument("--archivo", default=str(RUTA_RESPUESTAS), help="CSV de respuestas calificadas")
-    parser.add_argument("--salida-dir", default=str(DIR_RESULTADOS), help="Carpeta de salida")
+    parser.add_argument("--archivo", default=str(RUTA_RESPUESTAS_BASELINE), help="CSV de respuestas calificadas")
+    parser.add_argument("--salida-dir", default=str(DIR_RESULTADOS_BASELINE), help="Carpeta de salida")
     args = parser.parse_args()
 
     archivo = Path(args.archivo)

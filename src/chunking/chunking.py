@@ -4,6 +4,10 @@ import re
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 
+from config import (
+    CARPETA_CHUNKS,
+    RUTAS_ARCHIVOS_TXT
+)
 
 def extraer(texto, titulos):
     contenidos = []
@@ -85,29 +89,17 @@ def insertar_chunks_en_db(reglamento, name, titulos_cap, regex_articulos, df):
 
     return df
 
-def main(ROOT):
-    CARPETA_TXT = ROOT + "/data/texto"
-    
+def main():
     reglamentos = []       # textos
     titulos_capitulos = [] # titulos de los capitulos de los reglamentos
     patrones = []          # patrones para encontrar los chunks o articulos
     nombres = []           # nombres de los reglamentos
 
-    nombres_archivos = [
-        "Reglamento-Ruta-de-autonomia.txt",
-        "reglamento-del-CJ-26-09-25.txt",
-        "Reglamento-Estudiantil-2026.txt",
-        "REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.txt",
-        "reglamento_estudio_de_television_y_laboratorio_de_posproduccion_0_0.txt",
-        "reglamento_laboratorio_de_fotografia_0.txt",
-        "reglamento_laboratorio_de_sonido_0.txt",
-        "reglamento_sala_multimedia.txt"
-    ]
 
     # --------- Reglamento ruta de autonomia y consultorio juridico ------- #
 
-    for nombre_archivo in nombres_archivos[:2]:
-        with open(CARPETA_TXT + "/" + nombre_archivo, encoding="utf8") as f:
+    for ruta in RUTAS_ARCHIVOS_TXT[:2]:
+        with open(ruta, encoding="utf8") as f:
             reglamento = f.read()
 
         patron_cap = re.compile(r"(?s)(CAP[ÍI]TULO\s*.*?)\s*Art[íi]culo")
@@ -121,8 +113,8 @@ def main(ROOT):
     nombres.append("Reglamento del Consultorio Jurídico")
 
     # --------------Reglamento estudiantil ------------------------------- #
-    
-    with open(CARPETA_TXT + "/" + nombres_archivos[2], encoding="utf8") as f:
+    ruta = RUTAS_ARCHIVOS_TXT[2]
+    with open(ruta, encoding="utf8") as f:
         reglamento = f.read()
 
     patron_cap = re.compile(r"(?m)^[IVXLM]+\.(?!\s+(?:LENGUAS EXTRANJERAS|RECLAMOS))\s[\s\S]*?(?=\nARTÍCULO|\nA\.)")
@@ -153,11 +145,11 @@ def main(ROOT):
         ["REGLAMENTO SALA DE REDACCIÓN.", "DISPOSICIONES GENERALES."]
     ]
 
-    for nombre_archivo, titulos_cap in zip(nombres_archivos[3:], cap_de_otros_reglamentos):
-        with open(CARPETA_TXT + "/" + nombre_archivo, encoding="utf8") as f:
+    for ruta, titulos_cap in zip(RUTAS_ARCHIVOS_TXT[3:], cap_de_otros_reglamentos):
+        with open(ruta, encoding="utf8") as f:
             reglamentos.append(f.read())
 
-        if nombre_archivo == "REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.txt":
+        if ruta == "REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.txt":
             patron_art = re.compile(r"\d+\.")
         else:
             patron_art = re.compile("-- ")
@@ -198,9 +190,7 @@ def main(ROOT):
     print("\nCantidad de chunks que exceden las 500 palabras: ", len(df[df["n_palabras"] > 500]))
     print()
 
-    # -------------- Guardar como csv y html ---------------- #
-
-    CARPETA_CHUNKS = ROOT + "/data/chunks"
+    # -------------- Guardar como csv ------------------------ #
 
     if not os.path.isdir(CARPETA_CHUNKS):
         os.mkdir(CARPETA_CHUNKS)
@@ -210,6 +200,3 @@ def main(ROOT):
     print(f"Guardado en {CARPETA_CHUNKS}/db.csv")
     
     return df
-
-if __name__ == "__main__":
-    main("../..")
