@@ -56,8 +56,8 @@ def main(df_chunks):
 
     # -------------- Guardar como csv y html ---------------- #
 
-    df_chunks.to_csv(CARPETA_EMBEDDINGS + "/db.csv", index=False)
-    df_chunks.to_html(CARPETA_EMBEDDINGS + "/db.html", index=False)
+    df_chunks.to_csv(CARPETA_EMBEDDINGS / "db.csv", index=False)
+    df_chunks.to_html(CARPETA_EMBEDDINGS / "db.html", index=False)
 
     print(f"Guardado en {CARPETA_EMBEDDINGS}/db.csv")
     print(f"Guardado en {CARPETA_EMBEDDINGS}/db.html")

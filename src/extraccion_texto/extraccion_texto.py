@@ -33,9 +33,11 @@ def main():
     reglamento = ""
     ruta = RUTAS_ARCHIVOS_PDF[2]
     doc = pymupdf.open(ruta)
-    reemplazo = """Reglamento Estudiantil
-    Aprobado en Acta No. 03 del 17 de mayo de 2024 del Consejo Académico Resolución 
-    No. 01 de 2024 y Modificado por la Resolución del Consejo Académico No. 01 de 2026"""
+    reemplazo = (
+        "Reglamento Estudiantil\n"
+        "Aprobado en Acta No. 03 del 17 de mayo de 2024 del Consejo Académico Resolución \n"
+        "No. 01 de 2024 y Modificado por la Resolución del Consejo Académico No. 01 de 2026"
+    )
 
     for i, pagina in enumerate(doc):
         if (i+1) in [2,3,4]:   # omitir paginas de CONTENIDO

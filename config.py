@@ -4,28 +4,19 @@ import os
 # Ruta raiz desde los modulos en src
 ROOT = Path(__file__).resolve().parent
 
-# URLs y nombres de archivos
+# URLs y nombres de archivos. Están en un orden específico
 URLS = (
-    "https://www.utb.edu.co/wp-content/uploads/2026/10/Reglamento-Estudiantil-2026.pdf",
     "https://www.utb.edu.co/wp-content/uploads/2026/03/Reglamento-Ruta-de-autonomia.pdf",
     "https://www.utb.edu.co/wp-content/uploads/2025/09/reglamento-del-CJ-26-09-25.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2026/10/Reglamento-Estudiantil-2026.pdf",
+    "https://www.utb.edu.co/wp-content/uploads/2021/06/REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.pdf",
     "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_estudio_de_television_y_laboratorio_de_posproduccion_0_0.pdf",
     "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_laboratorio_de_fotografia_0.pdf",
     "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_laboratorio_de_sonido_0.pdf",
     "https://www.utb.edu.co/wp-content/uploads/2021/04/reglamento_sala_multimedia.pdf",
-    "https://www.utb.edu.co/wp-content/uploads/2021/06/REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.pdf"
 )
 
-NOMBRES_ARCHIVOS = (
-    "Reglamento-Ruta-de-autonomia",
-    "reglamento-del-CJ-26-09-25",
-    "Reglamento-Estudiantil-2026",
-    "REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA",
-    "reglamento_estudio_de_television_y_laboratorio_de_posproduccion_0_0",
-    "reglamento_laboratorio_de_fotografia_0",
-    "reglamento_laboratorio_de_sonido_0",
-    "reglamento_sala_multimedia"
-)
+NOMBRES_ARCHIVOS = tuple([url.split("/")[-1][:-4] for url in URLS])
 
 # Carpetas en data
 CARPETA_TXT = ROOT / "data/texto"

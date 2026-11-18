@@ -149,8 +149,8 @@ def main():
         with open(ruta, encoding="utf8") as f:
             reglamentos.append(f.read())
 
-        if ruta == "REGLAMENTO-DE-USO-DE-LOS-LABORATORIOS-DE-PSICOLOGIA.txt":
-            patron_art = re.compile(r"\d+\.")
+        if str(ruta).count("PSICOLOGIA") > 0:  # Si es el reglamento de laboratorios de psicologia,
+            patron_art = re.compile(r"\d+\.")  # insertar una expresion regular diferente
         else:
             patron_art = re.compile("-- ")
 
@@ -195,7 +195,7 @@ def main():
     if not os.path.isdir(CARPETA_CHUNKS):
         os.mkdir(CARPETA_CHUNKS)
 
-    df.to_csv(CARPETA_CHUNKS + "/db.csv", index=False)
+    df.to_csv(CARPETA_CHUNKS / "db.csv", index=False)
 
     print(f"Guardado en {CARPETA_CHUNKS}/db.csv")
     
