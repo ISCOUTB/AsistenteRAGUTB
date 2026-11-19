@@ -5,12 +5,14 @@ from dotenv import load_dotenv
 ROOT = os.path.dirname(__file__)
 load_dotenv(ROOT + "/.env")
 
+import pandas as pd
+import ast
 from src.fetching import fetching
 from src.linea_base import linea_base
 from src.extraccion_texto import extraccion_texto
 from src.chunking import chunking
 from src.embedding import embedding
-
+from src.linea_rag import linea_rag
 from src.ejecutar_experimento import calcular_metricas
 
 from config import (
@@ -21,7 +23,8 @@ from config import (
     DIR_RESULTADOS_BASELINE,
     DIR_RESULTADOS_RAG,
     GEMINI_API_KEY,
-    RUTA_RESPUESTAS_BASELINE
+    RUTA_RESPUESTAS_BASELINE,
+    RUTA_RESPUESTAS_RAG
 )
 
 #Verificar si existen los directorios necesarios
@@ -44,8 +47,10 @@ if GEMINI_API_KEY == None:
     print("Ejecute 'python set_api_key.py SU_API_KEY'")
     exit(1)
 
+df = None
 
 print("\n              PIPELINE COMPLETO")
+
 
 print("\n\n-----------------------------------------")
 print("1. Fetching de PDFs institucionales")
@@ -62,6 +67,7 @@ extraccion_texto.main()
 print("\n\n-----------------------------------------")
 print("3. Linea base: LLM sin RAG")
 print("-----------------------------------------\n")
+
 
 if os.path.exists(RUTA_RESPUESTAS_BASELINE):
     opcion = input(
@@ -86,7 +92,7 @@ print(f"Después, regresa y presiona ENTER...")
 input()
 
 while calcular_metricas.main() == 1:
-    print("Termina la calificación y presiona ENTER para continuar...")
+    print("\nTermina la calificación y presiona ENTER para continuar...")
     input()
 
 print("\n\n-----------------------------------------")
@@ -100,3 +106,36 @@ print("5. Agregacion de embeddings")
 print("-----------------------------------------\n")
 
 df = embedding.main(df)
+
+print("\n\n-----------------------------------------")
+print("6. Linea RAG: LLM + RAG")
+print("-----------------------------------------\n")
+
+if type(df) != pd.DataFrame:
+    df = pd.read_csv(CARPETA_EMBEDDINGS / "db.csv", converters={"embeddings": ast.literal_eval})
+
+if os.path.exists(RUTA_RESPUESTAS_RAG):
+    opcion = input(
+        f"Ya existe la línea RAG en {RUTA_RESPUESTAS_RAG}.\n"
+        "¿Quieres ver las respuestas ya generadas (v), regenerarlas (r) " +
+        "o continuar generando las respuestas (c)? [v/r/c]: "
+    ).strip().lower()
+
+    if opcion == "v":
+        linea_rag.main(df, ver_existentes=True)
+    elif opcion == "r":
+        linea_rag.main(df, reemplazar=True)
+    elif opcion == "c":
+        linea_rag.main(df)
+else:
+    linea_rag.main(df)
+
+print("\n- EVALUACIÓN DE LA LÍNEA RAG\n")
+print(f"Edita el archivo {RUTA_RESPUESTAS_RAG} para calificar exactitud, fidelidad y alucinación.")
+print(f"Después, regresa y presiona ENTER...")
+
+input()
+
+while calcular_metricas.main() == 1:
+    print("\nTermina la calificación y presiona ENTER para continuar...")
+    input()

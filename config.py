@@ -41,6 +41,7 @@ RUTA_RESPUESTAS_RAG = DIR_RESULTADOS_RAG / "respuestas_rag.csv"
 # --- LLM --------------------------------------------------------------------
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 MODELO = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
+MODELO_EMBEDDINGS = "gemini-embedding-2"
 TEMPERATURA = 0.0
 MAX_TOKENS_SALIDA = 700
 
@@ -106,3 +107,7 @@ def crear_cliente():
     from google import genai
 
     return genai.Client(api_key=GEMINI_API_KEY)
+
+def crear_embedding(client, contents):
+    result = client.models.embed_content(model=MODELO_EMBEDDINGS, contents=contents)
+    return result.embeddings[0].values

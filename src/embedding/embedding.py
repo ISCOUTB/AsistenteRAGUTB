@@ -4,24 +4,19 @@ import time
 
 from config import (
     CARPETA_EMBEDDINGS,
-    GEMINI_API_KEY
+    crear_cliente,
+    crear_embedding
 )
 
-# Llamar a modelo de embeddings
-
-def crear_embedding(client, model, contents):
-    result = client.models.embed_content(model=model, contents=contents)
-    return result.embeddings[0].values
 
 def main(df_chunks):
     
     # Conectar a Gemini API
 
-    client = genai.Client(api_key=GEMINI_API_KEY)
+    client = crear_cliente()
 
     # Crear los embeddings por cada chunk
 
-    modelo = "gemini-embedding-2"
     embeddings = []
     cantidad = len(df_chunks)
 
@@ -38,7 +33,7 @@ def main(df_chunks):
     espera = 0.61
 
     for i, chunk in enumerate(df_chunks["chunk"]):
-        emb = crear_embedding(client, modelo, chunk)
+        emb = crear_embedding(client, chunk)
         embeddings.append(emb)
         
         time.sleep(espera)

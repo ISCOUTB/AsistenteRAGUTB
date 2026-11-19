@@ -74,9 +74,9 @@ def leer_resultados(ruta):
         return {row["id"]: dict(row) for row in reader if row.get("id")}
 
 
-def fila_vacia(pregunta):
+def fila_vacia(pregunta, campos_adicionales=()):
     fila = {c: pregunta.get(c, "") for c in CAMPOS_ENTRADA}
-    for c in CAMPOS_SALIDA:
+    for c in tuple(CAMPOS_SALIDA) + campos_adicionales:
         fila.setdefault(c, "")
     return fila
 
@@ -151,14 +151,20 @@ def llamar_modelo(cliente, prompt, modelo, temperatura, max_tokens):
     return "", ultimo_error, round(time.perf_counter() - inicio, 2)
 
 
-def escribir_csv(ruta, filas):
+def escribir_csv(ruta, filas, campos_adicionales=()):
     ruta = Path(ruta)
     ruta.parent.mkdir(parents=True, exist_ok=True)
     tmp = ruta.with_suffix(ruta.suffix + ".tmp")
+
+    campos = list(CAMPOS_SALIDA)
+    for campo in campos_adicionales:
+        if campo not in campos:
+            campos.append(campo)
+
     with open(tmp, "w", encoding=CODIFICACION_CSV, newline="") as f:
         writer = csv.DictWriter(
             f,
-            fieldnames=CAMPOS_SALIDA,
+            fieldnames=campos,
             delimiter=DELIMITADOR,
             quoting=csv.QUOTE_MINIMAL,
             extrasaction="ignore",
@@ -194,7 +200,7 @@ def mostrar_respuestas_csv(ruta):
 
 def main(*,
          ruta_salida: Path,
-         construir_prompt: Callable[[str], str],
+         construir_prompt: Callable[[str], (str,dict|None)],
          ruta_preguntas=RUTA_PREGUNTAS,
          modelo=MODELO,
          temperatura=TEMPERATURA,
@@ -204,7 +210,8 @@ def main(*,
          reemplazar=False,
          dry_run=False,
          silencioso=False,
-         ver_existentes=False):
+         ver_existentes=False,
+         campos_adicionales=[]):
     
     '''       Argumentos:
 - preguntas: Ruta que apunta al CSV de preguntas
@@ -230,12 +237,13 @@ def main(*,
         preguntas = preguntas[: limite]
 
     anteriores = leer_resultados(ruta_salida)
+    campos_totales = tuple(CAMPOS_SALIDA) + campos_adicionales
     filas = []
     for pregunta in preguntas:
-        fila = fila_vacia(pregunta)
+        fila = fila_vacia(pregunta, campos_adicionales)
         anterior = anteriores.get(pregunta["id"])
         if anterior:
-            for c in CAMPOS_SALIDA:
+            for c in campos_totales:
                 if c in anterior:
                     fila[c] = anterior[c]
         filas.append(fila)
@@ -245,16 +253,18 @@ def main(*,
     ids_en_curso = {p["id"] for p in preguntas}
     for pid, anterior in anteriores.items():
         if pid not in ids_en_curso:
-            fila = fila_vacia(anterior)
-            for c in CAMPOS_SALIDA:
+            fila = fila_vacia(anterior, campos_adicionales)
+            for c in campos_totales:
                 fila[c] = anterior.get(c, "")
             filas.append(fila)
 
     if dry_run:
         for fila in filas:
+            resultado = construir_prompt(fila)
+            prompt = resultado[0] if isinstance(resultado, tuple) else resultado
             print("=" * 70)
             print(f"{fila['id']} [{fila['tipo']}]")
-            print(construir_prompt(fila))
+            print(prompt)
         print("=" * 70)
         print(f"Dry-run: {len(filas)} preguntas. No se llamó a la API.")
         return
@@ -278,7 +288,13 @@ def main(*,
         if reemplazar and ya_respondida:
             limpiar_calificacion(fila)
 
-        prompt = construir_prompt(fila)
+        prompt = construir_prompt(fila["pregunta"])
+        metadatos = {}
+        if isinstance(prompt, tuple):
+            prompt, metadatos = prompt
+        if isinstance(metadatos, dict):
+            fila.update(metadatos)
+
         if not silencioso:
             print(f"[{i}/{total}] {fila['id']} [{fila['tipo']}] {fila['pregunta'][:90]}...")
 
@@ -300,12 +316,12 @@ def main(*,
             procesadas += 1
             print(f"    OK ({latencia}s, {len(texto.split())} palabras)")
 
-        escribir_csv(ruta_salida, filas)
+        escribir_csv(ruta_salida, filas, campos_adicionales)
 
         if i < total and delay > 0:
             time.sleep(delay)
 
-    escribir_csv(ruta_salida, filas)
+    escribir_csv(ruta_salida, filas, campos_adicionales)
 
     print("-" * 70)
     print(f"Respuestas nuevas/actualizadas: {procesadas}")
