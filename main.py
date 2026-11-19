@@ -1,15 +1,17 @@
-from src.fetching import fetching
-from src.linea_base import linea_base
-from src.linea_base import calcular_metricas
-from src.extraccion_texto import extraccion_texto
-from src.chunking import chunking
-from src.embedding import embedding
+# Cargar el contenido del .env antes de importar las librerias
 import os
-
 from dotenv import load_dotenv
 
 ROOT = os.path.dirname(__file__)
 load_dotenv(ROOT + "/.env")
+
+from src.fetching import fetching
+from src.linea_base import linea_base
+from src.extraccion_texto import extraccion_texto
+from src.chunking import chunking
+from src.embedding import embedding
+
+from src.ejecutar_experimento import calcular_metricas
 
 from config import (
     CARPETA_TXT,
@@ -69,9 +71,9 @@ if os.path.exists(RUTA_RESPUESTAS_BASELINE):
     ).strip().lower()
 
     if opcion == "v":
-        linea_base.main(["--ver-existentes"])
+        linea_base.main(ver_existentes=True)
     elif opcion == "r":
-        linea_base.main(["--reemplazar"])
+        linea_base.main(reemplazar=True)
     elif opcion == "c":
         linea_base.main()
 else:

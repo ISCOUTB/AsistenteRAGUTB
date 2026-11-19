@@ -58,7 +58,9 @@ PROMPT_SISTEMA = (
     "Universidad Tecnológica de Bolívar (UTB). Responde en español, de forma "
     "clara y concisa, en un máximo de 200 palabras."
 )
-PLANTILLA_PROMPT = "{sistema}\n\nPregunta: {pregunta}"
+
+PLANTILLA_PROMPT_BASELINE = PROMPT_SISTEMA + "\n\n**Pregunta**: {pregunta}"
+PLANTILLA_PROMPT_RAG = PLANTILLA_PROMPT_BASELINE + "\n\n**Documentos de referencia**:\n{docs}"
 
 # --- Delimitador de los CSV -------------------------------------------------
 # Se usa punto y coma como delimitador. Se usa una codificación utf-8-sig
