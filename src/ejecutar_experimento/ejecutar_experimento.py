@@ -74,9 +74,9 @@ def leer_resultados(ruta):
         return {row["id"]: dict(row) for row in reader if row.get("id")}
 
 
-def fila_vacia(pregunta, campos_adicionales=()):
+def fila_vacia(pregunta):
     fila = {c: pregunta.get(c, "") for c in CAMPOS_ENTRADA}
-    for c in tuple(CAMPOS_SALIDA) + campos_adicionales:
+    for c in CAMPOS_SALIDA:
         fila.setdefault(c, "")
     return fila
 
@@ -151,15 +151,27 @@ def llamar_modelo(cliente, prompt, modelo, temperatura, max_tokens):
     return "", ultimo_error, round(time.perf_counter() - inicio, 2)
 
 
-def escribir_csv(ruta, filas, campos_adicionales=()):
+def leer_campos_existentes(ruta):
+    """Devuelve las columnas adicionales ya presentes en el CSV de salida."""
+    ruta = Path(ruta)
+    if not ruta.exists():
+        return []
+    with open(ruta, "r", encoding=CODIFICACION_CSV, newline="") as f:
+        reader = csv.DictReader(f, delimiter=DELIMITADOR)
+        conocidos = set(CAMPOS_SALIDA)
+        return [c for c in (reader.fieldnames or []) if c not in conocidos]
+
+
+def escribir_csv(ruta, filas):
     ruta = Path(ruta)
     ruta.parent.mkdir(parents=True, exist_ok=True)
     tmp = ruta.with_suffix(ruta.suffix + ".tmp")
 
     campos = list(CAMPOS_SALIDA)
-    for campo in campos_adicionales:
-        if campo not in campos:
-            campos.append(campo)
+    for fila in filas:
+        for campo in fila:
+            if campo not in campos:
+                campos.append(campo)
 
     with open(tmp, "w", encoding=CODIFICACION_CSV, newline="") as f:
         writer = csv.DictWriter(
@@ -172,6 +184,7 @@ def escribir_csv(ruta, filas, campos_adicionales=()):
         writer.writeheader()
         writer.writerows(filas)
     os.replace(tmp, ruta)
+
 
 def mostrar_respuestas_csv(ruta):
     ruta = Path(ruta)
@@ -210,8 +223,7 @@ def main(*,
          reemplazar=False,
          dry_run=False,
          silencioso=False,
-         ver_existentes=False,
-         campos_adicionales=[]):
+         ver_existentes=False):
     
     '''       Argumentos:
 - preguntas: Ruta que apunta al CSV de preguntas
@@ -237,10 +249,11 @@ def main(*,
         preguntas = preguntas[: limite]
 
     anteriores = leer_resultados(ruta_salida)
-    campos_totales = tuple(CAMPOS_SALIDA) + campos_adicionales
+    campos_existentes = leer_campos_existentes(ruta_salida)
+    campos_totales = tuple(CAMPOS_SALIDA) + tuple(campos_existentes)
     filas = []
     for pregunta in preguntas:
-        fila = fila_vacia(pregunta, campos_adicionales)
+        fila = fila_vacia(pregunta)
         anterior = anteriores.get(pregunta["id"])
         if anterior:
             for c in campos_totales:
@@ -253,7 +266,7 @@ def main(*,
     ids_en_curso = {p["id"] for p in preguntas}
     for pid, anterior in anteriores.items():
         if pid not in ids_en_curso:
-            fila = fila_vacia(anterior, campos_adicionales)
+            fila = fila_vacia(anterior)
             for c in campos_totales:
                 fila[c] = anterior.get(c, "")
             filas.append(fila)
@@ -316,12 +329,12 @@ def main(*,
             procesadas += 1
             print(f"    OK ({latencia}s, {len(texto.split())} palabras)")
 
-        escribir_csv(ruta_salida, filas, campos_adicionales)
+        escribir_csv(ruta_salida, filas)
 
         if i < total and delay > 0:
             time.sleep(delay)
 
-    escribir_csv(ruta_salida, filas, campos_adicionales)
+    escribir_csv(ruta_salida, filas)
 
     print("-" * 70)
     print(f"Respuestas nuevas/actualizadas: {procesadas}")

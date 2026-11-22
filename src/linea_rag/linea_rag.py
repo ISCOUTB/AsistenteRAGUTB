@@ -26,15 +26,16 @@ def find_top_k_passages(client, query, df_embeddings, k=5):
 
 
 def preparar_texto(results):
-    texto = ""
+    lista_docs = []
     for fila in results.iloc:
-        texto += f"\n - DOCUMENTO: {fila["documento"]}"
+        texto = f"\n - DOCUMENTO: {fila["documento"]}"
         texto += f"\n - CAPITULO: {fila["capitulo"].replace("\n", " ")}"
         texto += f"\n - SCORE: {fila["score"]}"
         texto += f"\n - TEXTO: «{fila["chunk"].strip()}»"
-        texto += "\n--------------------------------------------------\n"
-    
-    return texto
+        texto += "\n\n--------------------------------------------------\n"
+        lista_docs.append(texto)
+
+    return lista_docs
 
 def crear_funcion_prompt_rag(df_embeddings, k=5):
     cliente = crear_cliente()
@@ -46,13 +47,19 @@ def crear_funcion_prompt_rag(df_embeddings, k=5):
             df_embeddings,
             k
         )
-        docs = preparar_texto(results)
+        lista_docs = preparar_texto(results)
+        docs = "".join(lista_docs)
 
         prompt = PLANTILLA_PROMPT_RAG.format(
             pregunta=pregunta.strip(),
             docs=docs,
         )
-        return prompt, {"docs_enviados": docs}
+
+        metadatos = {}
+        for i in range(len(lista_docs)):
+            metadatos[f"doc_enviado_{i}"] = lista_docs[i]
+        
+        return prompt, metadatos
 
     return construir_prompt
 
@@ -65,7 +72,6 @@ def main(df_embeddings, *, ver_existentes=False, reemplazar=False):
         ejecutar_experimento.main(
             ruta_salida=RUTA_RESPUESTAS_RAG,
             construir_prompt=construir_prompt,
-            campos_adicionales=("docs_enviados",),
             ver_existentes=ver_existentes,
             reemplazar=reemplazar,
         )
