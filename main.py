@@ -95,6 +95,7 @@ while calcular_metricas.main() == 1:
     print("\nTermina la calificación y presiona ENTER para continuar...")
     input()
 
+
 print("\n\n-----------------------------------------")
 print("4. Procesamiento de texto: division en chunkings")
 print("-----------------------------------------\n")
@@ -104,6 +105,9 @@ df = chunking.main()
 print("\n\n-----------------------------------------")
 print("5. Agregacion de embeddings")
 print("-----------------------------------------\n")
+
+if type(df) != pd.DataFrame:
+    df = pd.read_csv(CARPETA_CHUNKS / "db.csv")
 
 df = embedding.main(df)
 

@@ -100,13 +100,13 @@ DESCRIPCION_TIPOS = {
 
 def crear_cliente():
     """Crea el cliente de Gemini con un error claro si falta la clave."""
-    if not GEMINI_API_KEY:
+    if not os.getenv("GEMINI_API_KEY"):
         raise RuntimeError(
-            "Falta GEMINI_API_KEY. Defínela como variable de entorno o edita config.py."
+            "Falta GEMINI_API_KEY. Defínela como variable de entorno."
         )
     from google import genai
 
-    return genai.Client(api_key=GEMINI_API_KEY)
+    return genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def crear_embedding(client, contents):
     result = client.models.embed_content(model=MODELO_EMBEDDINGS, contents=contents)

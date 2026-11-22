@@ -4,10 +4,16 @@ import re
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 
+MAXIMO = 500  # límite 500 palabras
+
+
 from config import (
     CARPETA_CHUNKS,
     RUTAS_ARCHIVOS_TXT
 )
+
+def num_palabras(texto):
+    return len(texto.split())
 
 def extraer(texto, titulos):
     contenidos = []
@@ -29,12 +35,12 @@ def extraer(texto, titulos):
     return dict(zip(titulos, contenidos))
 
 
-def insertar_chunks_en_db(reglamento, name, titulos_cap, regex_articulos, df):
+def insertar_chunks_en_db(reglamento, name, titulos_cap, df, regex_articulos=None):
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,   # Máximo 500 palabras por bloque
+        chunk_size=MAXIMO,   # Máximo de palabras por bloque
         chunk_overlap=0, # No solapamiento de palabras entre bloques
         length_function=lambda x: len(x.split()),  # Cuenta palabras separadas por espacios
-        separators=["\n\n", "\n", ". ", " ", ""]
+        separators=["\n\n", "\n", ". ", ""]
     )
     # cuando se va a extraer, a la lista de capitulos se le añade uno llamado "INFORMACIÓN PREVIA"
     # para capturar el contenido anterior al primer capitulo y para que no
@@ -49,14 +55,17 @@ def insertar_chunks_en_db(reglamento, name, titulos_cap, regex_articulos, df):
     for titulo in capitulos:
         # eliminar el titulo del capitulo del texto del capitulo y hacerle strip
         content_cap = capitulos[titulo].replace(titulo, '').strip()
-        lista_art = regex_articulos.findall(content_cap) # lista de articulos
+        titulo = titulo.replace("\n", " ").replace("\t", " ")  # Quitar tabulaciones y saltos de linea
+        
+        if regex_articulos != None:
+            lista_art = regex_articulos.findall(content_cap) # lista de articulos
 
         # si el texto del capitulo no tiene articulos sino texto continuo,
         # dividir en chunks de 500 palabras
-        if len(lista_art) == 0:
+        if regex_articulos == None or len(lista_art) == 0:
             docs =  [Document(content_cap)] # convertir a Document de langchain
             splits = text_splitter.split_documents(docs)  # llamar al splitter
-            
+
             for split in splits: # agregar cada chunk
                 chunk = split.page_content   # contenido del chunk
                 if chunk.strip() == "": continue
@@ -73,11 +82,28 @@ def insertar_chunks_en_db(reglamento, name, titulos_cap, regex_articulos, df):
 
         # si el texto del capítulo sí se puede dividir en artículos,
         # extraer diccionario con los articulos. A lista_art se le agrega un
-        # titulo vacío "" para que no se descuadre el diccionario
-        articulos = extraer(content_cap, [""] + lista_art)
+        # titulo vacío "" para que no se descuadre el diccionario. Los valores
+        # del diccionario se convierten a lista
+        dicc = extraer(content_cap, [""] + lista_art)
+        articulos = list(dicc.values())
+
+        chunks = []
+        chunk_actual = ""
+        i=0
+        while i < len(articulos):
+            texto = chunk_actual + "\n\n" + articulos[i].strip()
+            if num_palabras(texto) > MAXIMO or num_palabras(articulos[i]) > MAXIMO:
+                chunks.append(chunk_actual.strip())
+                chunk_actual = articulos[i]
+            else:
+                chunk_actual = texto
+            
+            i += 1
+
+        chunks.append(chunk_actual.strip())
 
         # por cada articulo, agregar un chunk
-        for name_chunk, chunk in zip(articulos.keys(), articulos.values()):
+        for chunk in chunks:
             if chunk.strip() == "": continue
             nuevafila = pd.DataFrame({
                 "chunk": [chunk],
@@ -163,7 +189,7 @@ def main():
     nombres.append("Reglamento del laboratorio de sonido")
     nombres.append("Reglamento sala de redacción")
 
-    # ------------------------ Guardar en csv y html ------------------ #
+    # ------------------------ Crear dataframe ------------------ #
 
     df = pd.DataFrame({
         "chunk": [],
@@ -173,30 +199,41 @@ def main():
     })
 
     for i in range(len(reglamentos)):
-        df = insertar_chunks_en_db(reglamentos[i], nombres[i], titulos_capitulos[i], patrones[i], df)
-
-    print(f"{len(df)} registros agregados.")
+        df = insertar_chunks_en_db(reglamentos[i], nombres[i], titulos_capitulos[i], df, patrones[i])
 
     df["n_palabras"] = (
         df["chunk"].str.split().str.len()
     )
 
-    print("\nDataframe resultante:\n")
-    print(df)
-
-    print("\nEstadisticas de longitud de chunks:\n")
-    print(df["n_palabras"].describe())
-
-    print("\nCantidad de chunks que exceden las 500 palabras: ", len(df[df["n_palabras"] > 500]))
+    print("\n- Chunks que exceden las 500 palabras: ", len(df[df["n_palabras"] > 500]))
+    print(df[df["n_palabras"] > 500])
     print()
 
-    # -------------- Guardar como csv ------------------------ #
+    print("\n- Chunks con menos de 10 palabrasdf:", len(df[ df["n_palabras"] < 10 ]), ". Se eliminarán:\n")
+    print(df[ df["n_palabras"] < 10 ])
+    print()
+
+    # Eliminar registros de menos de 10 palabras
+    df = df[ df["n_palabras"] >= 10 ].reset_index(drop=True)
+
+    print("\n- Estadisticas de longitud de chunks:\n")
+    print(df["n_palabras"].describe())
+
+    print("\n- Dataframe resultante:\n")
+    print(df)
+
+    print(f"{len(df)} registros agregados.")
+
+
+    # -------------- Guardar en csv y html ------------------------ #
 
     if not os.path.isdir(CARPETA_CHUNKS):
         os.mkdir(CARPETA_CHUNKS)
 
     df.to_csv(CARPETA_CHUNKS / "db.csv", index=False)
+    df.to_html(CARPETA_CHUNKS / "db.html")
 
     print(f"Guardado en {CARPETA_CHUNKS}/db.csv")
+    print(f"Guardado en {CARPETA_CHUNKS}/db.html")
     
     return df
