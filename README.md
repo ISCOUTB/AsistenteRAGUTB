@@ -9,12 +9,12 @@ base) y **con** recuperación (RAG). Las respuestas y las métricas se guardan e
 
 ## Requisitos
 
-- Windows y Python 3.11.9, la versión usada para validar el proyecto.
+- Python 3.11.9, la versión usada para validar el proyecto.
 - Conexión a internet y una clave de Gemini API.
 
 ## Instalación y ejecución
 
-Desde PowerShell, en la carpeta del proyecto, ejecuta estos **4 comandos** en
+En la carpeta del proyecto, ejecuta estos **4 comandos** en
 orden. Cada uno va en su propio bloque.
 
 **1. Crear el entorno virtual**
