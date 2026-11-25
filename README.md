@@ -54,11 +54,3 @@ El flujo se puede reanudar sin repetir todo. Usa `--etapa` con uno de estos
 valores: `fetching`, `preprocesamiento`, `lineabase`, `procesamiento`,
 `embedding` o `rag`. Por ejemplo, `--etapa rag` continúa desde la línea RAG y
 `--etapa rag --only` ejecuta únicamente esa etapa.
-
-## Archivos que puedes modificar
-
-- `config.py`: URL de los PDF, modelos, prompts y parámetros del flujo.
-- `data/preguntas/preguntas.csv`: preguntas y criterios de evaluación.
-- `src/chunking/chunking.py`: reglas de división del texto en fragmentos.
-- `src/linea_rag/linea_rag.py`: recuperación de documentos y contexto RAG.
-- `.env`: clave privada de Gemini.
