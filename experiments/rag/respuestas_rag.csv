@@ -2,7 +2,7 @@
 Q01;articulo_especifico;¿Cuál es la nota mínima aprobatoria de un curso de pregrado y de un curso de posgrado en la UTB?;"En pregrado la nota mínima aprobatoria es 3,0; en posgrado es 3,5. La práctica profesional de pregrado también exige 3,5.";Reglamento Estudiantil UTB 2026, Art. 51 y Parágrafo 1;RE2026;3 = da 3,0 para pregrado y 3,5 para posgrado (puede añadir la práctica profesional). 2 = acierta solo una de las dos cifras o confunde la práctica. 1 = menciona cifras cercanas sin precisar el ámbito. 0 = cifras incorrectas o inventadas.;"Según el Reglamento Estudiantil de la UTB (Artículo 51), las notas mínimas aprobatorias son:
 
 *   **Cursos de pregrado:** 3,0
-*   **Cursos de posgrado:** 3,5";gemini-3.5-flash-lite;2026-11-21T18:14:56;;;;;;;"
+*   **Cursos de posgrado:** 3,5";gemini-3.5-flash-lite;2026-11-21T18:14:56;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.7196498426883982
@@ -213,7 +213,7 @@ Este artículo se aplica cuando los créditos matriculados acumulados por el est
 mayores que los créditos correspondientes al primer nivel de su programa.»
 
 --------------------------------------------------"
-Q02;articulo_especifico;¿Cuántas semanas dura un periodo académico regular de pregrado en la modalidad presencial?;16 semanas.;Reglamento Estudiantil UTB 2026, Art. 35;RE2026;3 = 16 semanas. 2 = 16 semanas con una duda o una cifra adicional que no contradiga. 1 = 'alrededor de 16'. 0 = otra duración.;Según el Reglamento Estudiantil de la Universidad Tecnológica de Bolívar (UTB), el periodo académico regular para los programas de pregrado en modalidad presencial tiene una duración de **16 semanas**.;gemini-3.5-flash-lite;2026-11-21T18:15:11;;;;;;;"
+Q02;articulo_especifico;¿Cuántas semanas dura un periodo académico regular de pregrado en la modalidad presencial?;16 semanas.;Reglamento Estudiantil UTB 2026, Art. 35;RE2026;3 = 16 semanas. 2 = 16 semanas con una duda o una cifra adicional que no contradiga. 1 = 'alrededor de 16'. 0 = otra duración.;Según el Reglamento Estudiantil de la Universidad Tecnológica de Bolívar (UTB), el periodo académico regular para los programas de pregrado en modalidad presencial tiene una duración de **16 semanas**.;gemini-3.5-flash-lite;2026-11-21T18:15:11;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: III. MATRÍCULA
  - SCORE: 0.7268294378933315
@@ -472,7 +472,7 @@ Q03;articulo_especifico;¿Cuántos créditos como máximo puede matricular un es
 *   **Matrícula parcial:** Hasta 8.5 créditos.
 
 **Excepción:**
-Sí existe una excepción para la matrícula completa. La dirección de programa puede autorizar la matrícula de **hasta 20 créditos** únicamente a aquellos estudiantes que posean un Promedio Ponderado Acumulado (PPA) mayor a cuatro con cero (4,00).";gemini-3.5-flash-lite;2026-11-21T18:15:23;;;;;;;"
+Sí existe una excepción para la matrícula completa. La dirección de programa puede autorizar la matrícula de **hasta 20 créditos** únicamente a aquellos estudiantes que posean un Promedio Ponderado Acumulado (PPA) mayor a cuatro con cero (4,00).";gemini-3.5-flash-lite;2026-11-21T18:15:23;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: III. MATRÍCULA
  - SCORE: 0.7668688483277308
@@ -679,7 +679,7 @@ ARTÍCULO 124: Para los programas en modalidad virtual se aplicarán las políti
 devolución y aplazamiento de matrícula para programas virtuales.»
 
 --------------------------------------------------"
-Q04;articulo_especifico;¿A cuántas horas de trabajo del estudiante equivale un crédito académico en la UTB?;A 48 horas de trabajo del estudiante, distribuidas en horas de acompañamiento directo y horas de trabajo independiente.;Reglamento Estudiantil UTB 2026, Art. 42;RE2026;3 = 48 horas y menciona la distribución entre acompañamiento e independiente. 2 = 48 horas sin distribución. 1 = 'alrededor de 48'. 0 = otra cifra.;En la Universidad Tecnológica de Bolívar (UTB), según el Artículo 42 del Reglamento Estudiantil, un crédito académico equivale a **cuarenta y ocho (48) horas** de trabajo del estudiante durante el desarrollo del curso. Estas horas se distribuyen entre actividades de acompañamiento directo y trabajo independiente.;gemini-3.5-flash-lite;2026-11-21T18:15:33;;;;;;;"
+Q04;articulo_especifico;¿A cuántas horas de trabajo del estudiante equivale un crédito académico en la UTB?;A 48 horas de trabajo del estudiante, distribuidas en horas de acompañamiento directo y horas de trabajo independiente.;Reglamento Estudiantil UTB 2026, Art. 42;RE2026;3 = 48 horas y menciona la distribución entre acompañamiento e independiente. 2 = 48 horas sin distribución. 1 = 'alrededor de 48'. 0 = otra cifra.;En la Universidad Tecnológica de Bolívar (UTB), según el Artículo 42 del Reglamento Estudiantil, un crédito académico equivale a **cuarenta y ocho (48) horas** de trabajo del estudiante durante el desarrollo del curso. Estas horas se distribuyen entre actividades de acompañamiento directo y trabajo independiente.;gemini-3.5-flash-lite;2026-11-21T18:15:33;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.7191861813103718
@@ -928,7 +928,7 @@ periodo regular.»
 --------------------------------------------------"
 Q05;articulo_especifico;¿Cuál es el Promedio Ponderado Acumulado (PPA) mínimo que debe mantener un estudiante de pregrado?;3,20.;Reglamento Estudiantil UTB 2026, Art. 68;RE2026;3 = 3,20. 2 = 3,2 con explicación correcta. 1 = menciona 3,0 o 3,5 sin precisar. 0 = otra cifra.;"Según el Reglamento Estudiantil de la UTB, todo estudiante de pregrado debe mantener un Promedio Ponderado Acumulado (PPA) mínimo de **3,20**. 
 
-Si al finalizar un periodo académico el PPA es inferior a este valor, el estudiante ingresará en condición de Prueba Académica Parcial.";gemini-3.5-flash-lite;2026-11-21T18:15:44;;;;;;;"
+Si al finalizar un periodo académico el PPA es inferior a este valor, el estudiante ingresará en condición de Prueba Académica Parcial.";gemini-3.5-flash-lite;2026-11-21T18:15:44;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.7520801492106723
@@ -1165,7 +1165,7 @@ RÉGIMEN DISCIPLINARIO: Conjunto de normas y procedimientos internos que regulan
 comportamiento de los estudiantes en aras de mantener una sana convivencia en la Universidad.»
 
 --------------------------------------------------"
-Q06;articulo_especifico;En un proceso disciplinario, ¿cuántos días hábiles tiene el estudiante para presentar sus descargos?;Cinco (5) días hábiles, contados a partir del día siguiente al de la notificación.;Reglamento Estudiantil UTB 2026, Art. 107, numeral 1, literal b;RE2026;3 = 5 días hábiles y aclara que se cuentan desde el día siguiente a la notificación. 2 = 5 días hábiles sin el cómputo. 1 = 'varios días' o una cifra cercana. 0 = cifra incorrecta.;En un proceso disciplinario en la UTB (tanto según el Reglamento Estudiantil como el Reglamento del Consultorio Jurídico), el estudiante dispone de **cinco (5) días hábiles** para presentar sus descargos por escrito. Este plazo se cuenta a partir del día hábil siguiente al de la notificación de la apertura del proceso.;gemini-3.5-flash-lite;2026-11-21T18:15:53;;;;;;;"
+Q06;articulo_especifico;En un proceso disciplinario, ¿cuántos días hábiles tiene el estudiante para presentar sus descargos?;Cinco (5) días hábiles, contados a partir del día siguiente al de la notificación.;Reglamento Estudiantil UTB 2026, Art. 107, numeral 1, literal b;RE2026;3 = 5 días hábiles y aclara que se cuentan desde el día siguiente a la notificación. 2 = 5 días hábiles sin el cómputo. 1 = 'varios días' o una cifra cercana. 0 = cifra incorrecta.;En un proceso disciplinario en la UTB (tanto según el Reglamento Estudiantil como el Reglamento del Consultorio Jurídico), el estudiante dispone de **cinco (5) días hábiles** para presentar sus descargos por escrito. Este plazo se cuenta a partir del día hábil siguiente al de la notificación de la apertura del proceso.;gemini-3.5-flash-lite;2026-11-21T18:15:53;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: VI.  RÉGIMEN DISCIPLINARIO
  - SCORE: 0.8104974771361708
@@ -1362,7 +1362,7 @@ H.	 COMPETENCIA ANTE ESTUDIANTES DE DIFERENTES PROGRAMAS»
 --------------------------------------------------"
 Q07;articulo_especifico;¿Cuál es el horario de atención al público del Consultorio Jurídico de la UTB?;De 8:00 a.m. a 12:00 p.m. y de 1:00 p.m. a 5:00 p.m., de lunes a viernes, de manera presencial y virtual.;Reglamento del Consultorio Jurídico UTB, Art. 7;CJ2025;3 = ambos bloques (8-12 y 1-5) y lunes a viernes. 2 = ambos bloques sin días o sin la modalidad virtual. 1 = solo un bloque. 0 = horario incorrecto.;"El horario de atención al público del Consultorio Jurídico de la UTB es de lunes a viernes, de **8:00 a.m. a 12:00 p.m.** y de **1:00 p.m. a 5:00 p.m.** 
 
-La atención se presta de manera presencial en la sede del Consultorio Jurídico y de forma virtual a través del micro sitio web oficial de la Universidad Tecnológica de Bolívar.";gemini-3.5-flash-lite;2026-11-21T18:16:06;;;;;;;"
+La atención se presta de manera presencial en la sede del Consultorio Jurídico y de forma virtual a través del micro sitio web oficial de la Universidad Tecnológica de Bolívar.";gemini-3.5-flash-lite;2026-11-21T18:16:06;;3;3;0;;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: CAPÍTULO II  Atención al Público
  - SCORE: 0.8368882247342995
@@ -1574,7 +1574,7 @@ Q08;articulo_especifico;Para obtener la insignia básica Líderes UTB, ¿cuánto
 
 * **Semestres:** Participar entre el tercer (3°) y el sexto (6°) semestre académico.
 * **Eventos:** Mínimo once (11) eventos de formación en liderazgo, ética y responsabilidad social.
-* **Horas:** Un total de veintidós (22) horas equivalentes a dichos eventos.";gemini-3.5-flash-lite;2026-11-21T18:16:16;;;;;;;"
+* **Horas:** Un total de veintidós (22) horas equivalentes a dichos eventos.";gemini-3.5-flash-lite;2026-11-21T18:16:16;;3;3;0;;;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: CAPÍTULO VI HABILITADOR III: LÍDERES UTB
  - SCORE: 0.8216887351895776
@@ -1737,7 +1737,7 @@ Q09;articulo_especifico;¿Cuál es el plazo máximo y el horario para el présta
 * **Horario de atención (solicitud y entrega):** De lunes a viernes, desde las **7:00 a. m. hasta las 3:00 p. m.** No se realizan préstamos externos después de las 3:00 p. m., ni los sábados, domingos o festivos.
 * **Requisito:** Aplica únicamente para estudiantes de Comunicación Social con asignaturas específicas inscritas (Análisis Audiovisual, Producción Audiovisual, y Teoría y Técnica del Lenguaje Audiovisual) y solicitando con un (1) día de antelación en el Laboratorio de Posproducción.
 
-¿Tienes alguna otra duda sobre los reglamentos de la UTB?";gemini-3.5-flash-lite;2026-11-21T18:16:25;;;;;;;"
+¿Tienes alguna otra duda sobre los reglamentos de la UTB?";gemini-3.5-flash-lite;2026-11-21T18:16:25;;3;3;0;;;"
  - DOCUMENTO: Reglamento del estudio de televisión y laboratorio de posproducción
  - CAPITULO: Utilización de equipos al interior y fuera de la Universidad Tecnológica de Bolívar.
  - SCORE: 0.7710136479063665
@@ -1895,7 +1895,7 @@ calidad de préstamo.»
 --------------------------------------------------"
 Q10;articulo_especifico;¿Con cuánta anticipación se deben solicitar los servicios académicos del Laboratorio de Fotografía y a quién?;Con mínimo 48 horas de anticipación, a la auxiliar Mónica Yepes.;Reglamento Laboratorio de Fotografía, Disposiciones generales;FOTO;3 = 48 horas y menciona a la auxiliar o la coordinación del laboratorio. 2 = 48 horas sin destinatario. 1 = 'con anticipación' sin cifra. 0 = otra cifra.;"Hola. Para solicitar los servicios académicos y equipos del Laboratorio de Fotografía de la UTB (tanto para uso al interior como fuera de la institución), debes hacerlo **personalmente con un mínimo de 24 horas de antelación** al **auxiliar del Laboratorio de Fotografía**. 
 
-Para ello, es necesario que diligencies el respectivo formulario de solicitud de equipos antes de realizar tu práctica o trabajo académico.";gemini-3.5-flash-lite;2026-11-21T18:19:31;;;;;;;"
+Para ello, es necesario que diligencies el respectivo formulario de solicitud de equipos antes de realizar tu práctica o trabajo académico.";gemini-3.5-flash-lite;2026-11-21T18:19:31;;0;0;1;No le llegó el fragmento relevante que menciona las 48 horas y a la persona, por lo que alucinó diciendo que eran 24 horas, pero no fue tan grave porque dio detalles correctos de los fragmentos que le llegaron y que consideró relevantes;;"
  - DOCUMENTO: Reglamento del laboratorio de fotografía
  - CAPITULO: DISPOSICIONES GENERALES.
  - SCORE: 0.7889106633701262
@@ -1999,7 +1999,7 @@ retornados el mismo día que se prestaron.»
 --------------------------------------------------"
 Q11;interpretacion_simple;Un estudiante de pregrado presencial matricula 10 créditos en un periodo. ¿Qué proporción del valor de matrícula le corresponde pagar?;El 100%, porque 10 créditos están en el Rango 2 (más de 8,5 hasta 18,5 créditos).;Reglamento Estudiantil UTB 2026, Art. 120;RE2026;3 = 100% y explica que está en el Rango 2. 2 = 100% sin explicación. 1 = duda entre 60% y 100%. 0 = 60% u otro valor.;"Un estudiante de pregrado presencial que matricula 10 créditos se encuentra en el **Rango 2** (más de 8.5 hasta 18.5 créditos) según el Reglamento Estudiantil de la UTB. 
 
-Por lo tanto, le corresponde pagar el **100%** del valor de la matrícula del periodo.";gemini-3.5-flash-lite;2026-11-21T18:19:49;;;;;;;"
+Por lo tanto, le corresponde pagar el **100%** del valor de la matrícula del periodo.";gemini-3.5-flash-lite;2026-11-21T18:19:49;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: VII. DERECHOS PECUNIARIOS
  - SCORE: 0.8055134383811803
@@ -2212,7 +2212,7 @@ Según el régimen de transición del reglamento, para estos estudiantes la part
 
 La obligatoriedad de la Ruta aplica únicamente para los estudiantes adscritos a planes de estudio vigentes a partir del año 2026 o para aquellos que decidan acogerse voluntariamente a dichos planes mediante procesos de homologación o cambio de malla curricular.
 
-Si tienes más dudas sobre tu proceso académico, no dudes en consultar.";gemini-3.5-flash-lite;2026-11-21T18:20:10;;;;;;;"
+Si tienes más dudas sobre tu proceso académico, no dudes en consultar.";gemini-3.5-flash-lite;2026-11-21T18:20:10;;3;3;0;;;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: CAPÍTULO IX DISPOSICIONES FINALES
  - SCORE: 0.8044372718084866
@@ -2348,7 +2348,7 @@ Q13;interpretacion_simple;¿Puedo usar el celular durante una práctica en el La
 
 Sin embargo, te recuerdo que en el Laboratorio de Sonido debes mantener un buen comportamiento, evitar faltas de respeto hacia tus compañeros, docentes, personal administrativo o auxiliares, y cumplir con los requisitos establecidos (como traer el guion técnico-literario impreso y llegar a tiempo) para no perder tu turno de práctica o recibir sanciones. 
 
-Si tienes dudas específicas sobre el uso de dispositivos electrónicos, te sugiero consultarlo directamente con el auxiliar o el coordinador del laboratorio.";gemini-3.5-flash-lite;2026-11-21T18:20:26;;;;;;;"
+Si tienes dudas específicas sobre el uso de dispositivos electrónicos, te sugiero consultarlo directamente con el auxiliar o el coordinador del laboratorio.";gemini-3.5-flash-lite;2026-11-21T18:20:26;;1;0;0;No le llegó la información;;"
  - DOCUMENTO: Reglamento del laboratorio de sonido
  - CAPITULO: REGLAMENTO LABORATORIO DE SONIDO
  - SCORE: 0.7349898726670726
@@ -2451,7 +2451,7 @@ prácticas, sanciones disciplinarias y uso del Laboratorio de Fotografía.»
 --------------------------------------------------"
 Q14;interpretacion_simple;¿Puedo comer o tomar bebidas en la Sala de Redacción?;No. Está prohibido comer, tomar bebidas y fumar en la Sala de Redacción.;Reglamento Sala de Redacción, Disposiciones generales;SALA;3 = no, y menciona comida, bebidas y fumar. 2 = no, solo comida o bebidas. 1 = 'no es recomendable'. 0 = sí se permite.;"Hola. Basándome en los documentos de referencia proporcionados sobre el reglamento de la Sala de Redacción de la Universidad Tecnológica de Bolívar (UTB), **no se menciona explícitamente** una prohibición sobre comer o tomar bebidas. 
 
-Sin embargo, te sugiero consultar directamente con el docente o el auxiliar encargado de la Sala de Redacción en el Centro de Medios Alcatraz para confirmar las normas vigentes de cuidado de los equipos en dicho espacio. ¡Mucho éxito en tus actividades académicas!";gemini-3.5-flash-lite;2026-11-21T18:20:49;;;;;;;"
+Sin embargo, te sugiero consultar directamente con el docente o el auxiliar encargado de la Sala de Redacción en el Centro de Medios Alcatraz para confirmar las normas vigentes de cuidado de los equipos en dicho espacio. ¡Mucho éxito en tus actividades académicas!";gemini-3.5-flash-lite;2026-11-21T18:20:49;;1;0;0;No le llegó la información;;"
  - DOCUMENTO: Reglamento sala de redacción
  - CAPITULO: DISPOSICIONES GENERALES.
  - SCORE: 0.7149223967804892
@@ -2544,7 +2544,7 @@ Q15;interpretacion_simple;¿Puedo llevar a un amigo que no estudia Comunicación
 
 Los documentos de referencia no especifican el ingreso de personas externas o estudiantes de otros programas al laboratorio, ya que el reglamento está enfocado en regular las normas para los estudiantes del programa, la solicitud de equipos y la responsabilidad sobre los mismos. 
 
-Para confirmar si puedes ingresar con un acompañante externo, te sugiero consultar directamente y de manera presencial con el auxiliar del Laboratorio de Fotografía o con la dirección del programa de Comunicación Social.";gemini-3.5-flash-lite;2026-11-21T18:21:04;;;;;;;"
+Para confirmar si puedes ingresar con un acompañante externo, te sugiero consultar directamente y de manera presencial con el auxiliar del Laboratorio de Fotografía o con la dirección del programa de Comunicación Social.";gemini-3.5-flash-lite;2026-11-21T18:21:04;;2;0;0;No le llegó el fragmento relevante que dice que solo se permiten estudiantes de asignaturas específicas;;"
  - DOCUMENTO: Reglamento del laboratorio de fotografía
  - CAPITULO: REGLAMENTO LABORATORIO DE FOTOGRAFÍA.
  - SCORE: 0.7544090921657522
@@ -2645,7 +2645,7 @@ Q16;interpretacion_simple;¿Cuántas insignias básicas debe obtener un estudian
 * **Insignias básicas:** Debes obtener **cuatro (4) insignias básicas** (una por cada uno de los cuatro habilitadores de éxito). Su obtención es de carácter obligatorio y requisito institucional de formación integral.
 * **Total máximo de insignias:** Como cada uno de los cuatro habilitadores contempla una insignia básica y una opcional (Plus), puedes obtener un **máximo de ocho (8) insignias en total** si decides voluntariamente cursar todas las insignias Plus. 
 
-Quedo a tu disposición si tienes más dudas sobre tu ruta académica en la UTB.";gemini-3.5-flash-lite;2026-11-21T18:21:18;;;;;;;"
+Quedo a tu disposición si tienes más dudas sobre tu ruta académica en la UTB.";gemini-3.5-flash-lite;2026-11-21T18:21:18;;3;3;0;;;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: CAPÍTULO III ESTRUCTURA DE LA RUTA Y SISTEMA DE INSIGNIAS
  - SCORE: 0.7707353891963182
@@ -2738,7 +2738,7 @@ Q17;interpretacion_simple;¿Qué debe hacer un estudiante antes de ingresar a lo
 
 *   **Registrarte en la oficina de coordinación** antes de ingresar a las instalaciones. 
 
-Además, recuerda que tu comportamiento dentro del laboratorio debe regirse por las normas del código ético del psicólogo y el reglamento general de la UTB. ¡Muchos éxitos en tu práctica académica!";gemini-3.5-flash-lite;2026-11-21T18:21:37;;;;;;;"
+Además, recuerda que tu comportamiento dentro del laboratorio debe regirse por las normas del código ético del psicólogo y el reglamento general de la UTB. ¡Muchos éxitos en tu práctica académica!";gemini-3.5-flash-lite;2026-11-21T18:21:37;;3;3;0;;;"
  - DOCUMENTO: Reglamento de uso de los laboratorios de psicología
  - CAPITULO: REGLAMENTO DE USO DE LOS LABORATORIOS DE PSICOLOGÍA  LABPSIC
  - SCORE: 0.7865527478742136
@@ -2855,7 +2855,7 @@ hacen parte del mismo.»
 --------------------------------------------------"
 Q18;interpretacion_simple;¿Se pueden fotocopiar o reproducir las pruebas psicotécnicas del LABPSIC?;No. El uso se realiza dentro de las áreas del LABPSIC y no pueden ser fotocopiadas ni reproducidas por ningún medio, conforme al Código Deontológico y de Ética del Psicólogo.;Reglamento de Uso de los Laboratorios de Psicología (LABPSIC), numeral 4;PSICO;3 = no, y menciona que el uso es dentro del LABPSIC o el Código Deontológico. 2 = no, sin justificación. 1 = 'solo con permiso'. 0 = sí se permite.;"Hola. No, **no se pueden fotocopiar ni reproducir** las pruebas psicotécnicas del LABPSIC por ningún medio. 
 
-Según el Reglamento de uso de los laboratorios de psicología (LABPSIC) de la UTB, su uso es exclusivo dentro de las instalaciones del laboratorio y su reproducción está prohibida por el Código Deontológico y de Ética del Psicólogo.";gemini-3.5-flash-lite;2026-11-21T18:21:51;;;;;;;"
+Según el Reglamento de uso de los laboratorios de psicología (LABPSIC) de la UTB, su uso es exclusivo dentro de las instalaciones del laboratorio y su reproducción está prohibida por el Código Deontológico y de Ética del Psicólogo.";gemini-3.5-flash-lite;2026-11-21T18:21:51;;3;3;0;;;"
  - DOCUMENTO: Reglamento de uso de los laboratorios de psicología
  - CAPITULO: REGLAMENTO DE USO DE LOS LABORATORIOS DE PSICOLOGÍA  LABPSIC
  - SCORE: 0.7160817960267598
@@ -2969,7 +2969,7 @@ Q19;multi_articulo;¿Qué requisitos debe cumplir un estudiante de pregrado de l
 3. **Formación integral:** Cumplir con los requisitos de la Ruta de Autonomía y Éxito Profesional (obtener las cuatro insignias básicas).
 4. **Trabajo de grado:** Elaborar y aprobar el trabajo de grado según las modalidades definidas.
 5. **Idioma inglés:** Demostrar un nivel B2 en inglés (aplica para programas presenciales y estudiantes que iniciaron a partir del 1 de enero de 2024).
-6. **Paz y salvo y disciplina:** Estar a paz y salvo con la universidad por todo concepto y no tener sanciones disciplinarias vigentes.";gemini-3.5-flash-lite;2026-11-21T18:22:08;;;;;;;"
+6. **Paz y salvo y disciplina:** Estar a paz y salvo con la universidad por todo concepto y no tener sanciones disciplinarias vigentes.";gemini-3.5-flash-lite;2026-11-21T18:22:08;;3;3;0;;;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: CAPÍTULO VI HABILITADOR III: LÍDERES UTB
  - SCORE: 0.7074384863499754
@@ -3187,7 +3187,7 @@ Q20;multi_articulo;¿Qué condiciones debe cumplir un estudiante para cursar un 
 3. **No tener** sanciones disciplinarias vigentes.
 4. Presentar la solicitud a la dirección del segundo programa y **ser aceptado** por esta.
 
-En cuanto al pago de la matrícula, el estudiante que cursa un doble programa debe pagar el **costo de matrícula estipulado para el programa de mayor valor**.";gemini-3.5-flash-lite;2026-11-21T18:22:27;;;;;;;"
+En cuanto al pago de la matrícula, el estudiante que cursa un doble programa debe pagar el **costo de matrícula estipulado para el programa de mayor valor**.";gemini-3.5-flash-lite;2026-11-21T18:22:27;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.7236210672273145
@@ -3410,7 +3410,7 @@ G.	 ADMISIÓN POR TRANSFERENCIA EXTERNA»
 --------------------------------------------------"
 Q21;multi_articulo;Un estudiante se transfiere desde otra universidad a la UTB. ¿Cuántos créditos puede homologar y qué porcentaje debe cursar en la UTB para poder titularse aquí?;"La homologación no puede superar el 50% de los créditos del plan de estudios; la Vicerrectoría Académica puede ajustar ese porcentaje por convenios específicos. Además, un estudiante admitido por transferencia externa debe haber cursado en la UTB por lo menos el 50% de los créditos del programa para recibir el título.";Reglamento Estudiantil UTB 2026, Art. 29 Parágrafo 2 y Art. 79;RE2026;3 = 50% máximo de homologación y 50% mínimo cursado en la UTB para titularse, con la salvedad de convenios. 2 = una de las dos reglas. 1 = menciona 'un porcentaje' sin cifra. 0 = cifras incorrectas.;"Hola. Según el Reglamento Estudiantil de la UTB, la homologación de cursos por transferencia externa **no podrá superar el 50%** de los créditos académicos del plan de estudios (salvo que la Vicerrectoría Académica ajuste este porcentaje por convenios específicos). 
 
-En consecuencia, debes cursar al menos el **50% restante** de los créditos en la UTB para poder titularte en nuestra institución.";gemini-3.5-flash-lite;2026-11-21T18:22:57;;;;;;;"
+En consecuencia, debes cursar al menos el **50% restante** de los créditos en la UTB para poder titularte en nuestra institución.";gemini-3.5-flash-lite;2026-11-21T18:22:57;;3;2;0;No le llegó el artículo 79;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: II. INSCRIPCIÓN Y ADMISIÓN
  - SCORE: 0.7957254490023575
@@ -3643,7 +3643,7 @@ Debes solicitarlo mediante un escrito justificado ante el **Comité Curricular**
 Al reingresar, durante el doble del tiempo que duró tu sanción, perderás los siguientes derechos:
 1. Ser representante de los estudiantes en cualquier organismo de la Universidad.
 2. Ser representante de la Universidad en eventos internos o externos.
-3. Ser becario de la institución (si ya tenías beca al momento de la sanción, la pierdes desde la fecha de la notificación).";gemini-3.5-flash-lite;2026-11-21T18:23:18;;;;;;;"
+3. Ser becario de la institución (si ya tenías beca al momento de la sanción, la pierdes desde la fecha de la notificación).";gemini-3.5-flash-lite;2026-11-21T18:23:18;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: VI.  RÉGIMEN DISCIPLINARIO
  - SCORE: 0.7608451098619614
@@ -3843,7 +3843,7 @@ Por tratarse de una falta gravísima, el estudiante puede recibir sanciones que 
 La decisión en primera instancia es tomada por el **Comité de Escuela y/o la Dirección Académica**, quienes evalúan el caso mediante un proceso disciplinario.
 
 **Recursos:** 
-Contra la decisión final del Comité o Dirección Académica, al estudiante le asiste el derecho de interponer el **recurso de apelación** ante el Comité Disciplinario, dentro de los cinco (5) días hábiles siguientes a la notificación de la decisión. Adicionalmente, si en el proceso se deniegan pruebas solicitadas, procede la apelación de dicha negativa dentro de los tres (3) días hábiles siguientes.";gemini-3.5-flash-lite;2026-11-21T18:23:33;;;;;;;"
+Contra la decisión final del Comité o Dirección Académica, al estudiante le asiste el derecho de interponer el **recurso de apelación** ante el Comité Disciplinario, dentro de los cinco (5) días hábiles siguientes a la notificación de la decisión. Adicionalmente, si en el proceso se deniegan pruebas solicitadas, procede la apelación de dicha negativa dentro de los tres (3) días hábiles siguientes.";gemini-3.5-flash-lite;2026-11-21T18:23:33;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: VI.  RÉGIMEN DISCIPLINARIO
  - SCORE: 0.7369888329534162
@@ -4100,7 +4100,7 @@ Q24;multi_articulo;¿Cómo se calcula el Promedio Ponderado del Periodo (PPP) y 
 El Promedio Ponderado del Periodo (PPP) se calcula sumando los productos de los créditos de cada curso del periodo por su respectiva calificación definitiva. Esta suma se divide entre el total de créditos cursados en dicho periodo. El resultado final se expresa con dos decimales y se aproxima por defecto a la centésima más cercana.
 
 **¿Qué ocurre con los cursos reprobados en el primer periodo?**
-Para los estudiantes de pregrado con admisión de **primera vez o reinicio**, los cursos que sean reprobados durante su primer periodo **no se incluyen** en el cálculo de los promedios ponderados (ni el PPP ni el PPA).";gemini-3.5-flash-lite;2026-11-21T18:23:47;;;;;;;"
+Para los estudiantes de pregrado con admisión de **primera vez o reinicio**, los cursos que sean reprobados durante su primer periodo **no se incluyen** en el cálculo de los promedios ponderados (ni el PPP ni el PPA).";gemini-3.5-flash-lite;2026-11-21T18:23:47;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.7572767405666423
@@ -4344,7 +4344,7 @@ Por otro lado, si un estudiante no puede asistir a un turno asignado, debe tener
 * **Con anticipación:** Debe presentar por escrito una solicitud de permiso a la Dirección del Consultorio Jurídico con cinco (5) días hábiles de anticipación, adjuntando su respectivo soporte y con el compromiso de compensarlo asistiendo a un turno equivalente.
 * **Por inasistencia:** Si ya ocurrió la inasistencia, deberá radicar la excusa correspondiente dentro de los tres (3) días hábiles siguientes. 
 
-Recuerda que los turnos son de obligatoria asistencia, inmodificables e intransferibles, y solo se reasignan en caso de excusa médica o una firmada por un docente o directivo de la UTB.";gemini-3.5-flash-lite;2026-11-21T18:24:07;;;;;;;"
+Recuerda que los turnos son de obligatoria asistencia, inmodificables e intransferibles, y solo se reasignan en caso de excusa médica o una firmada por un docente o directivo de la UTB.";gemini-3.5-flash-lite;2026-11-21T18:24:07;;3;3;0;;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: CAPÍTULO IV  Estudiantes de Consultorio Jurídico UTB
  - SCORE: 0.8135919358499564
@@ -4610,7 +4610,7 @@ contenidas en la Ley 2113 de 2021.»
 Q26;multi_articulo;¿Quiénes pueden usar el Laboratorio de Psicología (LABPSIC) y quiénes el Laboratorio de Fotografía?;El LABPSIC pueden usarlo los estudiantes de pregrado y posgrado de toda la comunidad UTB. El Laboratorio de Fotografía solo los estudiantes de las asignaturas Producción Fotográfica y Fotografía y Lenguaje Audiovisual inscritos en las listas oficiales del Programa de Comunicación Social.;"Reglamento de Uso de los Laboratorios de Psicología (LABPSIC), numeral 1; Reglamento Laboratorio de Fotografía, Disposiciones generales";PSICO;3 = LABPSIC toda la comunidad UTB (pregrado y posgrado) y Foto solo esas asignaturas de Comunicación Social. 2 = acierta uno de los dos. 1 = respuesta vaga. 0 = dice que todos pueden usar ambos.;"Hola. Con base en los reglamentos de la UTB, el uso de cada laboratorio se define así:
 
 *   **Laboratorio de Psicología (LABPSIC):** Está disponible para los estudiantes de **pregrado y postgrado de toda la comunidad UTB**.
-*   **Laboratorio de Fotografía:** Es para uso **exclusivamente académico**, enfocado principalmente en los estudiantes del **programa de Comunicación Social** que realizan prácticas y trabajos académicos.";gemini-3.5-flash-lite;2026-11-21T18:24:33;;;;;;;"
+*   **Laboratorio de Fotografía:** Es para uso **exclusivamente académico**, enfocado principalmente en los estudiantes del **programa de Comunicación Social** que realizan prácticas y trabajos académicos.";gemini-3.5-flash-lite;2026-11-21T18:24:33;;2;2;0;No le llegó ni menciona que fotografía es para unas materias especificas;;"
  - DOCUMENTO: Reglamento de uso de los laboratorios de psicología
  - CAPITULO: REGLAMENTO DE USO DE LOS LABORATORIOS DE PSICOLOGÍA  LABPSIC
  - SCORE: 0.7592259420270627
@@ -4732,7 +4732,7 @@ Q27;ambigua;¿Cuántos créditos puedo matricular?;"Depende de la modalidad y de
     *   Hasta 6 créditos en cada uno de los cuatro ciclos que componen el periodo académico.
 
 *   **Periodo intersemestral (presencial):**
-    *   No podrás cursar más de seis (6) créditos.";gemini-3.5-flash-lite;2026-11-21T18:24:46;;;;;;;"
+    *   No podrás cursar más de seis (6) créditos.";gemini-3.5-flash-lite;2026-11-21T18:24:46;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: III. MATRÍCULA
  - SCORE: 0.6507396409513091
@@ -4952,7 +4952,7 @@ Q28;ambigua;¿Puedo retirar una materia en la semana 10 del periodo?;"Depende de
 **Consideraciones importantes:**
 * Las prácticas profesionales no se pueden retirar sin previa autorización de la dirección de programa.
 * Si estás en situación de Prueba Académica o Recuperación Académica, necesitas la autorización de tu dirección de programa para realizar el retiro.
-* Ten en cuenta que el retiro voluntario de cursos no genera devolución parcial del valor de la matrícula.";gemini-3.5-flash-lite;2026-11-21T18:25:03;;;;;;;"
+* Ten en cuenta que el retiro voluntario de cursos no genera devolución parcial del valor de la matrícula.";gemini-3.5-flash-lite;2026-11-21T18:25:03;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: III. MATRÍCULA
  - SCORE: 0.7528786136173707
@@ -5203,7 +5203,7 @@ Q29;ambigua;¿Qué nota necesito para aprobar?;"Depende del tipo de curso: en pr
 *   **Práctica profesional de pregrado y Consultorio Jurídico:** Se aprueban con una nota mínima de **3,5**.
 *   **Cursos de la Ruta de Autonomía y Éxito Profesional:** La nota mínima es **3,5**.
 
-Recuerda que la escala de calificaciones va de 0,0 a 5,0.";gemini-3.5-flash-lite;2026-11-21T18:25:16;;;;;;;"
+Recuerda que la escala de calificaciones va de 0,0 a 5,0.";gemini-3.5-flash-lite;2026-11-21T18:25:16;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.6364764577094192
@@ -5425,7 +5425,7 @@ Q30;ambigua;Si me retiro de la Universidad, ¿me devuelven el valor de la matrí
 * A partir de la cuarta semana de clases no aplica ningún reembolso, y debes presentar tu solicitud antes del último día hábil de esa semana.
 * Es tu responsabilidad solicitar la devolución dentro de las fechas establecidas por la Universidad.
 * No hay devolución parcial por la reducción de créditos debido al retiro voluntario de cursos individuales.
-* Para los programas en modalidad virtual, se aplican políticas específicas de devolución y aplazamiento establecidas por la institución.";gemini-3.5-flash-lite;2026-11-21T18:25:48;;;;;;;"
+* Para los programas en modalidad virtual, se aplican políticas específicas de devolución y aplazamiento establecidas por la institución.";gemini-3.5-flash-lite;2026-11-21T18:25:48;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: VII. DERECHOS PECUNIARIOS
  - SCORE: 0.7441657783141651
@@ -5605,7 +5605,7 @@ Consejo Académico No. 03 de 2026»
 --------------------------------------------------"
 Q31;ambigua;¿Puedo llegar tarde al laboratorio?;Depende del laboratorio y de su reglamento. En Televisión, Fotografía y Sonido, presentarse 10 minutos después del horario asignado hace perder el turno y genera suspensión de 3 días hábiles. En la Sala de Redacción se exige puntualidad, pero no hay una regla de 10 minutos. En LABPSIC no se establece una sanción por llegada tarde. Hay que precisar a qué laboratorio se refiere.;"Reglamentos de Televisión, Fotografía y Sonido; Reglamento Sala de Redacción; Reglamento LABPSIC";TV;3 = advierte la ambigüedad y distingue al menos dos laboratorios con la regla de 10 minutos/3 días. 2 = da la regla general sin advertir que depende. 1 = dice que depende sin detalle. 0 = inventa una regla única para todos.;"Hola. No, no debes llegar tarde. Según los reglamentos de los laboratorios de **Fotografía** y **Sonido** de la UTB, presentarse **diez (10) minutos después** del horario asignado es una causal para perder el turno de práctica. 
 
-Además de perder el turno, la sanción por llegar tarde implica una **suspensión de tres (3) días hábiles** (de lunes a viernes, sin incluir festivos), tiempo durante el cual no podrás reservar ni realizar actividades en dichos laboratorios. Se recomienda llegar puntualmente para evitar estas sanciones académicas.";gemini-3.5-flash-lite;2026-11-21T18:26:07;;;;;;;"
+Además de perder el turno, la sanción por llegar tarde implica una **suspensión de tres (3) días hábiles** (de lunes a viernes, sin incluir festivos), tiempo durante el cual no podrás reservar ni realizar actividades en dichos laboratorios. Se recomienda llegar puntualmente para evitar estas sanciones académicas.";gemini-3.5-flash-lite;2026-11-21T18:26:07;;3;3;0;;;"
  - DOCUMENTO: Reglamento del laboratorio de fotografía
  - CAPITULO: Son causales para perder el turno de prácticas.
  - SCORE: 0.530618690196448
@@ -5738,7 +5738,7 @@ Q32;ambigua;¿Quién puede usar el laboratorio?;"Depende del laboratorio: LABPSI
 * **Laboratorio de Psicología (LABPSIC):** Pueden hacer uso de las instalaciones, equipos y materiales todos los **estudiantes de pregrado y postgrado de la comunidad UTB**. Recuerda registrarte en la oficina de coordinación antes de ingresar.
 * **Laboratorio de Fotografía:** Su uso es **exclusivamente académico** para los estudiantes que lo requieran para sus prácticas y trabajos del Programa de Comunicación Social, previa solicitud de turnos y equipos con 24 horas de antelación.
 
-¿Tienes alguna duda sobre algún laboratorio en específico?";gemini-3.5-flash-lite;2026-11-21T18:26:25;;;;;;;"
+¿Tienes alguna duda sobre algún laboratorio en específico?";gemini-3.5-flash-lite;2026-11-21T18:26:25;;2;2;0;No distingue mínimo 3 laboratorios y, una vez más, no le llega la información de que fotografía es solo para unas materias específicas ;;"
  - DOCUMENTO: Reglamento de uso de los laboratorios de psicología
  - CAPITULO: REGLAMENTO DE USO DE LOS LABORATORIOS DE PSICOLOGÍA  LABPSIC
  - SCORE: 0.6330118351508285
@@ -5860,7 +5860,7 @@ Q33;ambigua;¿Qué pasa si no asisto a una cita?;"Depende de si quien falta es e
 *   **Inasistencia del usuario:** 
     *   Debes esperar al usuario un máximo de 30 minutos. 
     *   Si el usuario incumple de manera injustificada a **tres (3) citas programadas**, puedes solicitar el archivo del caso con el visto bueno del tutor. 
-    *   Si transcurren cinco (5) días hábiles sin que el usuario se pronuncie ante una inasistencia injustificada, el caso también podrá ser archivado.";gemini-3.5-flash-lite;2026-11-21T18:26:42;;;;;;;"
+    *   Si transcurren cinco (5) días hábiles sin que el usuario se pronuncie ante una inasistencia injustificada, el caso también podrá ser archivado.";gemini-3.5-flash-lite;2026-11-21T18:26:42;;3;3;0;;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: CAPÍTULO VI  Prerrequisitos y caliﬁcación
  - SCORE: 0.5436294361624061
@@ -6152,7 +6152,7 @@ Q34;dificil;"Un estudiante obtuvo estas calificaciones: curso A, 4 créditos, 3,
 
 Aplicando la norma institucional, el resultado se expresa con dos decimales y se aproxima por defecto a la centésima más cercana. 
 
-Por lo tanto, el Promedio Ponderado del Periodo (PPP) es **3,54**.";gemini-3.5-flash-lite;2026-11-21T18:26:58;;;;;;;"
+Por lo tanto, el Promedio Ponderado del Periodo (PPP) es **3,54**.";gemini-3.5-flash-lite;2026-11-21T18:26:58;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.7425082272731552
@@ -6392,7 +6392,7 @@ mayores que los créditos correspondientes al primer nivel de su programa.»
 --------------------------------------------------"
 Q35;dificil;Un estudiante de pregrado que ya estaba en Prueba Académica Total obtiene en el periodo un PPP de 3,25, pero su PPA queda en 3,10. ¿Queda excluido por bajo rendimiento o pasa a Recuperación Académica? Explica.;Pasa a Recuperación Académica, no queda excluido. El Art. 68 exige, para quedar excluido desde PAT, que el PPP sea inferior a 3,20 y el PPA inferior a 3,20. Como el PPP fue 3,25 (≥3,20) pero el PPA quedó en 3,10 (<3,20), aplica la Recuperación Académica del Art. 69, siempre que continúe en el periodo inmediatamente siguiente y cuente con autorización de la dirección del programa. Si en Recuperación no logra PPA ≥3,20, sí queda excluido.;Reglamento Estudiantil UTB 2026, Art. 68, Art. 69 y Art. 70;RE2026;3 = Recuperación Académica y explica la diferencia PPP/PPA. 2 = Recuperación sin explicación. 1 = duda entre las dos figuras. 0 = afirma que queda excluido.;"El estudiante **pasa a Recuperación Académica**, no queda excluido. 
 
-Según el **Artículo 69 del Reglamento Estudiantil**, un estudiante que inicia un periodo en Prueba Académica Total (PAT) y obtiene un Promedio Ponderado del Periodo (PPP) igual o superior a 3,20 (en este caso obtuvo 3,25) ingresa a la condición de Recuperación Académica, aun cuando su Promedio Ponderado Acumulado (PPA) se mantenga por debajo de 3,20 (3,10).";gemini-3.5-flash-lite;2026-11-21T18:27:08;;;;;;;"
+Según el **Artículo 69 del Reglamento Estudiantil**, un estudiante que inicia un periodo en Prueba Académica Total (PAT) y obtiene un Promedio Ponderado del Periodo (PPP) igual o superior a 3,20 (en este caso obtuvo 3,25) ingresa a la condición de Recuperación Académica, aun cuando su Promedio Ponderado Acumulado (PPA) se mantenga por debajo de 3,20 (3,10).";gemini-3.5-flash-lite;2026-11-21T18:27:08;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.8032705785802249
@@ -6640,7 +6640,7 @@ Para calcularla, debes multiplicar cada nota por su respectivo porcentaje y suma
 **Cálculo:** 
 $1,14 + 1,225 + 1,47 = 3,835$
 
-Según el Artículo 48, el resultado del cómputo de cada reporte se aproxima por defecto a la décima más cercana. Aplicando este criterio a la calificación final, esta corresponde a **3,8**. ¡Mucho éxito en tus cursos!";gemini-3.5-flash-lite;2026-11-21T18:27:18;;;;;;;"
+Según el Artículo 48, el resultado del cómputo de cada reporte se aproxima por defecto a la décima más cercana. Aplicando este criterio a la calificación final, esta corresponde a **3,8**. ¡Mucho éxito en tus cursos!";gemini-3.5-flash-lite;2026-11-21T18:27:18;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IV.  RÉGIMEN ACADÉMICO
  - SCORE: 0.7281068089859134
@@ -6868,7 +6868,7 @@ Adicionalmente, según el Artículo 33, la inasistencia o el retardo reiterado a
 1. Una sanción pedagógica.
 2. Un descuento de **-0.5** en la nota definitiva del curso, lo cual es acumulable (según lo dispuesto para este tipo de faltas). 
 
-Todo ello se tramitará mediante el proceso disciplinario correspondiente ante la Dirección del Consultorio Jurídico.";gemini-3.5-flash-lite;2026-11-21T18:27:27;;;;;;;"
+Todo ello se tramitará mediante el proceso disciplinario correspondiente ante la Dirección del Consultorio Jurídico.";gemini-3.5-flash-lite;2026-11-21T18:27:27;;3;3;0;;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: CAPÍTULO VI  Prerrequisitos y caliﬁcación
  - SCORE: 0.7925745954264435
@@ -7153,7 +7153,7 @@ Q38;dificil;En un proceso disciplinario del Reglamento Estudiantil, ¿cuál es e
 * **Con periodo probatorio:** Si se solicitan u ordenan pruebas, se conceden 5 días hábiles para descargos, 10 días hábiles para la práctica de pruebas y hasta 25 días hábiles siguientes al vencimiento de dicho periodo para la decisión final. Esto suma un total de **40 días hábiles** (más el tiempo de notificación).
 * **Sin periodo probatorio:** Si no hay práctica de pruebas, la decisión se toma con base en las pruebas obrantes, reduciendo el plazo sustancialmente.
 
-Por su parte, el **recurso de apelación** debe interponerse dentro de los cinco (5) días hábiles siguientes a la notificación de la decisión. Este recurso se resolverá en un plazo máximo de **quince (15) días hábiles** siguientes a su presentación, salvo que sea necesario practicar nuevas pruebas, caso en el cual el término correrá tras la culminación de las mismas.";gemini-3.5-flash-lite;2026-11-21T18:27:40;;;;;;;"
+Por su parte, el **recurso de apelación** debe interponerse dentro de los cinco (5) días hábiles siguientes a la notificación de la decisión. Este recurso se resolverá en un plazo máximo de **quince (15) días hábiles** siguientes a su presentación, salvo que sea necesario practicar nuevas pruebas, caso en el cual el término correrá tras la culminación de las mismas.";gemini-3.5-flash-lite;2026-11-21T18:27:40;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: VI.  RÉGIMEN DISCIPLINARIO
  - SCORE: 0.8023954180084857
@@ -7350,7 +7350,7 @@ podrá acudir a la instancia superior.»
 --------------------------------------------------"
 Q39;dificil;Según el Art. 21 del Reglamento del Consultorio Jurídico, ¿cuál es el plazo para que el caso se archive si el usuario no se pronuncia? ¿Qué debería hacer el operador jurídico?;Hay una contradicción interna en el texto: la palabra dice 'diez' pero la cifra entre paréntesis dice '5'. El reglamento no permite determinar con certeza cuál es el plazo. El operador debe escalar la inconsistencia a la Dirección del Consultorio Jurídico para que la interprete o la corrija y, mientras tanto, aplicar el criterio institucional que se defina, dejando trazabilidad. No debe inventar un plazo.;Reglamento del Consultorio Jurídico UTB, Art. 21 (ver también Art. 39);CJ2025;3 = identifica la contradicción 10 vs 5 y propone escalar/aclarar. 2 = identifica la contradicción pero elige uno sin justificar. 1 = menciona solo un número. 0 = no detecta la contradicción.;"Según el Artículo 21 del Reglamento del Consultorio Jurídico de la UTB, el plazo para que un caso se archive por abandono o inasistencia injustificada es de **cinco (5) días hábiles** (el texto indica textualmente «diez (5) días hábiles» como error tipográfico del reglamento, pero se refiere a ese término) sin que el usuario se pronuncie de forma presencial o virtual. 
 
-Ante esta situación, el operador jurídico (estudiante) debe **presentar una solicitud por escrito** al director o al docente asesor encargado, manifestando la imposibilidad de iniciar la actuación correspondiente.";gemini-3.5-flash-lite;2026-11-21T18:27:47;;;;;;;"
+Ante esta situación, el operador jurídico (estudiante) debe **presentar una solicitud por escrito** al director o al docente asesor encargado, manifestando la imposibilidad de iniciar la actuación correspondiente.";gemini-3.5-flash-lite;2026-11-21T18:27:47;;2;3;0;;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: CAPÍTULO IV  Estudiantes de Consultorio Jurídico UTB
  - SCORE: 0.7883848297243727
@@ -7632,7 +7632,7 @@ Q40;dificil;Un estudiante de un plan de estudios aprobado en 2024 se incorpora e
 
 2. **¿Puede la Universidad ajustar los requisitos por transición?** Sí. La Vicerrectoría de Autonomía y Éxito Profesional puede establecer ajustes temporales y generales exclusivamente para los **componentes no curriculares** de la Ruta. No obstante, estos ajustes tienen limitaciones: no pueden suprimir las exigencias de las insignias básicas, ni sustituir cursos obligatorios, ni aplicar tratos diferenciados individuales. 
 
-Quedo a tu disposición si tienes más dudas sobre tu proceso de homologación en la UTB.";gemini-3.5-flash-lite;2026-11-21T18:27:56;;;;;;;"
+Quedo a tu disposición si tienes más dudas sobre tu proceso de homologación en la UTB.";gemini-3.5-flash-lite;2026-11-21T18:27:56;;3;3;0;;;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: CAPÍTULO IX DISPOSICIONES FINALES
  - SCORE: 0.8238604045038267
@@ -7779,7 +7779,7 @@ para establecer componentes curriculares y formativos obligatorios;
 ACUERDA:»
 
 --------------------------------------------------"
-Q41;fuera_de_alcance;¿Cuánto cuesta la matrícula del programa de Ingeniería de Sistemas de la UTB para el periodo 2026-2?;"No está en los documentos. Los reglamentos solo definen rangos y proporciones (60% o 100%), pero no fijan valores en pesos; los valores los fija cada año el Consejo Superior. La respuesta correcta es decir que no se cuenta con esa información y remitir a la fuente oficial.";No está en el corpus. Relacionado: Reglamento Estudiantil UTB 2026, Art. 120 (solo rangos, no valores);RE2026;"3 = dice que no tiene la información y no inventa cifras; puede remitir a la oficina financiera. 2 = dice que no sabe pero arriesga un rango. 1 = responde con cifras vagas. 0 = inventa un valor.";Lo siento, en los documentos de referencia disponibles no se encuentra información sobre el costo de la matrícula para el programa de Ingeniería de Sistemas para el periodo 2026-2. Te sugiero consultar directamente con el departamento de admisiones y admisiones o la oficina de asuntos financieros de la UTB.;gemini-3.5-flash-lite;2026-11-21T18:28:08;;;;;;;"
+Q41;fuera_de_alcance;¿Cuánto cuesta la matrícula del programa de Ingeniería de Sistemas de la UTB para el periodo 2026-2?;"No está en los documentos. Los reglamentos solo definen rangos y proporciones (60% o 100%), pero no fijan valores en pesos; los valores los fija cada año el Consejo Superior. La respuesta correcta es decir que no se cuenta con esa información y remitir a la fuente oficial.";No está en el corpus. Relacionado: Reglamento Estudiantil UTB 2026, Art. 120 (solo rangos, no valores);RE2026;"3 = dice que no tiene la información y no inventa cifras; puede remitir a la oficina financiera. 2 = dice que no sabe pero arriesga un rango. 1 = responde con cifras vagas. 0 = inventa un valor.";Lo siento, en los documentos de referencia disponibles no se encuentra información sobre el costo de la matrícula para el programa de Ingeniería de Sistemas para el periodo 2026-2. Te sugiero consultar directamente con el departamento de admisiones y admisiones o la oficina de asuntos financieros de la UTB.;gemini-3.5-flash-lite;2026-11-21T18:28:08;;3;3;0;"No sé si penalizar el hecho de que inventa ""departamento de admisiones y admisiones"" y una ""oficina de asuntos financieros""";;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: CAPÍTULO III ESTRUCTURA DE LA RUTA Y SISTEMA DE INSIGNIAS
  - SCORE: 0.6745246544993951
@@ -7936,7 +7936,7 @@ d)
 Promover experiencias prácticas y de interacción con el entorno empresarial y social.»
 
 --------------------------------------------------"
-Q42;fuera_de_alcance;¿Cuál es el correo electrónico y el nombre del director de Bienestar Universitario de la UTB?;No está en los documentos. El corpus no contiene datos de contacto ni el nombre del director de Bienestar Universitario.;No está en el corpus;NO_APLICA;3 = dice que no tiene la información y no inventa nombre ni correo. 2 = dice que no sabe pero sugiere un correo genérico. 1 = responde con datos vagos. 0 = inventa nombre o correo.;Lo siento, en los documentos de referencia proporcionados no se encuentra la información sobre el nombre y el correo electrónico del director de Bienestar Universitario de la UTB. Te sugiero consultar el directorio institucional en la página web oficial de la universidad (www.utb.edu.co) para obtener este dato.;gemini-3.5-flash-lite;2026-11-21T18:28:21;;;;;;;"
+Q42;fuera_de_alcance;¿Cuál es el correo electrónico y el nombre del director de Bienestar Universitario de la UTB?;No está en los documentos. El corpus no contiene datos de contacto ni el nombre del director de Bienestar Universitario.;No está en el corpus;NO_APLICA;3 = dice que no tiene la información y no inventa nombre ni correo. 2 = dice que no sabe pero sugiere un correo genérico. 1 = responde con datos vagos. 0 = inventa nombre o correo.;Lo siento, en los documentos de referencia proporcionados no se encuentra la información sobre el nombre y el correo electrónico del director de Bienestar Universitario de la UTB. Te sugiero consultar el directorio institucional en la página web oficial de la universidad (www.utb.edu.co) para obtener este dato.;gemini-3.5-flash-lite;2026-11-21T18:28:21;;3;3;0;;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: INFORMACIÓN PREVIA
  - SCORE: 0.6586009816332385
@@ -8122,7 +8122,7 @@ Q43;fuera_de_alcance;¿Cuántas horas de práctica profesional debe cumplir un e
 
 Sin embargo, el reglamento indica que pueden matricular el Consultorio Jurídico y realizar estas prácticas los estudiantes que estén cursando los **dos últimos años de la carrera** y hayan aprobado el nivel académico respectivo. Estos estudiantes deben cumplir con los turnos de atención asignados, gestionar los procesos judiciales y participar en las actividades y capacitaciones programadas por la Dirección.
 
-Para conocer el número exacto de horas exigidas, te sugiero consultar el plan de estudios de tu programa o comunicarte directamente con la Dirección del Consultorio Jurídico o la coordinación académica de la Facultad de Derecho de la UTB.";gemini-3.5-flash-lite;2026-11-21T18:28:35;;;;;;;"
+Para conocer el número exacto de horas exigidas, te sugiero consultar el plan de estudios de tu programa o comunicarte directamente con la Dirección del Consultorio Jurídico o la coordinación académica de la Facultad de Derecho de la UTB.";gemini-3.5-flash-lite;2026-11-21T18:28:35;;3;3;0;;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: CAPÍTULO IV  Estudiantes de Consultorio Jurídico UTB
  - SCORE: 0.7284692836177591
@@ -8369,7 +8369,7 @@ miembro activo del mismo.»
 --------------------------------------------------"
 Q44;fuera_de_alcance;¿Cuáles son las fechas del calendario académico 2026-2 y cuándo son los exámenes finales?;No está en los documentos. El Reglamento Estudiantil dice que el calendario académico anual lo aprueba el Consejo Académico, pero no incluye las fechas.;No está en el corpus. Relacionado: Reglamento Estudiantil UTB 2026, Art. 8;NO_APLICA;3 = dice que no tiene las fechas y no inventa. 2 = dice que no sabe pero remite al calendario oficial. 1 = da fechas aproximadas. 0 = inventa fechas.;"Hola. Como asistente académico de la UTB, lamento informarte que en los documentos de referencia actuales (Reglamento Estudiantil y Reglamento Ruta de Autonomía) **no se encuentran especificadas** las fechas exactas del calendario académico 2026-2 ni la programación específica de los exámenes finales. 
 
-Te sugiero consultar el portal institucional, el calendario académico oficial publicado en la página web de la universidad o comunicarte directamente con admisiones y registro para obtener esta información detallada.";gemini-3.5-flash-lite;2026-11-21T18:28:46;;;;;;;"
+Te sugiero consultar el portal institucional, el calendario académico oficial publicado en la página web de la universidad o comunicarte directamente con admisiones y registro para obtener esta información detallada.";gemini-3.5-flash-lite;2026-11-21T18:28:46;;3;3;0;"Al final menciona ""admisiones y registro"", que en realidad serían ""Oficina de Admisionesy Registro académico""";;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: IX.  VIGENCIA
  - SCORE: 0.6562766487187517
@@ -8537,7 +8537,7 @@ El presente reglamento rige a partir de su aprobación y deroga las disposicione
 --------------------------------------------------"
 Q45;fuera_de_alcance;¿Qué becas ofrece la UTB, cuáles son los requisitos y cómo se solicitan?;No está en los documentos. El corpus no contiene el reglamento de becas ni los requisitos y procedimientos de solicitud.;No está en el corpus;NO_APLICA;3 = dice que no tiene la información y no inventa becas ni requisitos. 2 = dice que no sabe pero remite a Bienestar Universitario. 1 = enumera becas genéricas sin sustento. 0 = inventa un programa de becas.;"Hola. Como asistente académico de la UTB, lamento informarte que los documentos institucionales proporcionados actualmente (Reglamento Estudiantil, Reglamento Ruta de Autonomía y Reglamento del Consultorio Jurídico) no contienen información sobre los tipos de becas que ofrece la universidad, sus requisitos ni el proceso para solicitarlas. 
 
-Te sugiero consultar directamente la página web oficial de la UTB (www.utb.edu.co) en la sección de admisiones y apoyos financieros, o comunicarte con la Oficina de Admisiones y Registro Académico para obtener detalles precisos sobre las becas disponibles.";gemini-3.5-flash-lite;2026-11-21T18:29:05;;;;;;;"
+Te sugiero consultar directamente la página web oficial de la UTB (www.utb.edu.co) en la sección de admisiones y apoyos financieros, o comunicarte con la Oficina de Admisiones y Registro Académico para obtener detalles precisos sobre las becas disponibles.";gemini-3.5-flash-lite;2026-11-21T18:29:05;;3;3;0;;;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: CAPÍTULO VI HABILITADOR III: LÍDERES UTB
  - SCORE: 0.6590425751440243
@@ -8734,7 +8734,7 @@ Q46;conflicto_entre_documentos;¿Cuánto tiempo puedo tener en préstamo los equ
 *   **Televisión:** El préstamo externo se realiza hasta por **48 horas** (de lunes a viernes), bajo condiciones específicas para estudiantes de Comunicación Social con materias inscritas. Si se prestan el jueves, se devuelven el viernes; si se solicitan para el viernes, deben devolverse ese mismo día antes de las 3:00 p. m.
 *   **Sonido:** Los documentos provistos **no contienen información** sobre el tiempo de préstamo para los equipos de sonido.
 
-Recuerda solicitar tus equipos a tiempo con el auxiliar correspondiente y cumplir con los horarios de devolución para evitar sanciones.";gemini-3.5-flash-lite;2026-11-21T18:29:14;;;;;;;"
+Recuerda solicitar tus equipos a tiempo con el auxiliar correspondiente y cumplir con los horarios de devolución para evitar sanciones.";gemini-3.5-flash-lite;2026-11-21T18:29:14;;2;2;0;No menciona lo de Sonido porque no le llegó la información;;"
  - DOCUMENTO: Reglamento del laboratorio de fotografía
  - CAPITULO: Utilización de equipos al interior de la Universidad Tecnológica de Bolívar
  - SCORE: 0.7242793116269657
@@ -8896,7 +8896,7 @@ Q47;conflicto_entre_documentos;¿Cuál es la nota mínima para aprobar en la UTB
 * **Consultorio Jurídico:** Según el Artículo 28 de su reglamento específico, al ser una práctica de pregrado de naturaleza formativa profesional, se entiende aprobado cuando el estudiante obtiene una **nota mínima de 3.5** (en una escala de 0.5 a 5.0).
 * **Ruta de Autonomía:** Los documentos del Reglamento de la Ruta de Autonomía detallan su estructura basada en cuatro habilitadores de éxito y la obtención obligatoria de cuatro (4) insignias básicas como requisito de formación integral, pero no especifican una nota numérica mínima de aprobación en sus textos presentados. 
 
-En resumen, mientras que para el Consultorio Jurídico la exigencia es explícitamente de 3.5, los documentos provistos no especifican la nota mínima general del Reglamento Estudiantil ni de la Ruta de Autonomía.";gemini-3.5-flash-lite;2026-11-21T18:29:22;;;;;;;"
+En resumen, mientras que para el Consultorio Jurídico la exigencia es explícitamente de 3.5, los documentos provistos no especifican la nota mínima general del Reglamento Estudiantil ni de la Ruta de Autonomía.";gemini-3.5-flash-lite;2026-11-21T18:29:22;;1;1;0;No le llegó los artículos necesarios del reg. Estudiantil ni la ruta de autonomía;;"
  - DOCUMENTO: Reglamento Ruta de Autonomía
  - CAPITULO: INFORMACIÓN PREVIA
  - SCORE: 0.7418897760809743
@@ -9032,7 +9032,7 @@ Q48;conflicto_entre_documentos;¿Con cuánta anticipación debo reservar o solic
 *   **Televisión:** La solicitud de reserva de equipos (para préstamos externos o internos del Centro de Medios) se realiza con **un (1) día de antelación**, de lunes a jueves en el horario de 7:00 a. m. a 3:00 p. m., presentándose en el Laboratorio de Posproducción y diligenciando los formatos respectivos.
 *   **Sonido:** Los documentos proporcionados **no** contienen información específica sobre los tiempos de anticipación para la reserva de equipos de sonido.
 
-Te sugiero consultar directamente en el Centro de Medios si necesitas detalles adicionales sobre el área de sonido. ¡Mucho éxito con tus prácticas académicas!";gemini-3.5-flash-lite;2026-11-21T18:29:31;;;;;;;"
+Te sugiero consultar directamente en el Centro de Medios si necesitas detalles adicionales sobre el área de sonido. ¡Mucho éxito con tus prácticas académicas!";gemini-3.5-flash-lite;2026-11-21T18:29:31;;1;1;0;Nuevamente, no le llegó informacion sobre servicios académicos de fotografía. No le llegó información de Sonido;;"
  - DOCUMENTO: Reglamento del estudio de televisión y laboratorio de posproducción
  - CAPITULO: DISPOSICIONES GENERALES.
  - SCORE: 0.7317786032611249
@@ -9174,7 +9174,7 @@ Q49;conflicto_entre_documentos;¿Hasta cuándo puedo retirar cursos? Compara la 
 *   **Modalidad virtual:** Puedes retirar cursos hasta el último día hábil de la **cuarta (4ª) semana** de cada ciclo.
 *   **Consultorio Jurídico:** Al tratarse de una práctica formativa, no se puede retirar libremente. Requiere el visto bueno de la Dirección del Consultorio Jurídico y de la Dirección del Programa de Derecho, debiendo radicar la solicitud a más tardar en la **quinta (5ª) semana** académica. 
 
-*Nota:* Ten en cuenta que los estudiantes en prueba o recuperación académica, así como quienes cursan prácticas profesionales, cuentan con condiciones y restricciones adicionales especificadas en sus respectivos reglamentos.";gemini-3.5-flash-lite;2026-11-21T18:29:49;;;;;;;"
+*Nota:* Ten en cuenta que los estudiantes en prueba o recuperación académica, así como quienes cursan prácticas profesionales, cuentan con condiciones y restricciones adicionales especificadas en sus respectivos reglamentos.";gemini-3.5-flash-lite;2026-11-21T18:29:49;;3;3;0;;;"
  - DOCUMENTO: Reglamento Estudiantil
  - CAPITULO: III. MATRÍCULA
  - SCORE: 0.7177069651657397
@@ -9330,7 +9330,7 @@ Q50;conflicto_entre_documentos;Si un estudiante es sancionado disciplinariamente
 * **Reglamento del Consultorio Jurídico:** La apelación contra las sanciones impuestas por el director del Consultorio Jurídico es resuelta por la **Dirección del programa de Derecho**.
 * **Reglamento Estudiantil:** Las apelaciones contra las decisiones de los Comités de Escuela y/o Dirección Académica son resueltas por el **Comité Disciplinario**.
 
-**Comparación:** Mientras que el Reglamento del Consultorio Jurídico otorga la competencia de apelación de forma específica a la Dirección del programa de Derecho para los casos de su ámbito, el Reglamento Estudiantil general asigna la resolución de la apelación al Comité Disciplinario. Cabe destacar que, según el mismo reglamento del consultorio, en caso de contradicción primará el Reglamento Estudiantil.";gemini-3.5-flash-lite;2026-11-21T18:30:09;;;;;;;"
+**Comparación:** Mientras que el Reglamento del Consultorio Jurídico otorga la competencia de apelación de forma específica a la Dirección del programa de Derecho para los casos de su ámbito, el Reglamento Estudiantil general asigna la resolución de la apelación al Comité Disciplinario. Cabe destacar que, según el mismo reglamento del consultorio, en caso de contradicción primará el Reglamento Estudiantil.";gemini-3.5-flash-lite;2026-11-21T18:30:09;;3;3;0;No le llegaron los articulos 101 y 103, pero contestó correctamente sin alucinar;;"
  - DOCUMENTO: Reglamento del Consultorio Jurídico
  - CAPITULO: CAPÍTULO VII  Faltas y Sanciones
  - SCORE: 0.8217147355114469

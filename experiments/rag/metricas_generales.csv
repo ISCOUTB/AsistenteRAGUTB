@@ -1,0 +1,17 @@
+﻿metrica;valor
+Preguntas totales;50
+Preguntas calificadas;50
+Cobertura de calificación (%);100.0
+Errores de API;0
+Sin respuesta generada;0
+Exactitud (%);89.33
+Fidelidad (%);86.66666666666667
+Tasa de alucinación (%);2.0
+Respuesta perfecta (%);78.0
+Exactitud plena (=3) (%);80.0
+Exactitud aceptable (>=2) (%);90.0
+Exactitud baja (<=1) (%);10.0
+Fidelidad plena (%);80.0
+Fidelidad baja (<=1) (%);12.0
+Sin alucinación (%);98.0
+Alucinación grave (=2) (%);0.0

@@ -1,0 +1,8 @@
+﻿tipo;n_total;n_evaluadas;%cobertura;%exactitud;%fidelidad;tasa_alucinacion;%exactitud_plena;%fidelidad_plena;%exactitud_aceptable;%exactitud_baja;%fidelidad_baja;%sin_alucinacion;%alucinacion_grave;%respuesta_perfecta;descripcion
+articulo_especifico;10;10;100.0;90.0;90.0;10.0;90.0;90.0;90.0;10.0;10.0;90.0;0.0;90.0;La respuesta está contenida en un artículo o sección concreta.
+interpretacion_simple;8;8;100.0;79.16666666666666;62.5;0.0;62.5;62.5;75.0;25.0;37.5;100.0;0.0;62.5;Aplicación directa de una sola regla a un caso sencillo.
+multi_articulo;8;8;100.0;95.83333333333334;91.66666666666666;0.0;87.5;75.0;100.0;0.0;0.0;100.0;0.0;75.0;Requiere combinar dos o más artículos, secciones o documentos.
+ambigua;7;7;100.0;95.23809523809524;95.23809523809524;0.0;85.71428571428571;85.71428571428571;100.0;0.0;0.0;100.0;0.0;85.71428571428571;"La pregunta no precisa contexto; la buena respuesta debe desambiguar o pedir aclaración."
+dificil;7;7;100.0;95.23809523809524;100.0;0.0;85.71428571428571;100.0;100.0;0.0;0.0;100.0;0.0;85.71428571428571;Requiere cálculo, excepciones, plazos encadenados o razonamiento sobre varios supuestos.
+fuera_de_alcance;5;5;100.0;100.0;100.0;0.0;100.0;100.0;100.0;0.0;0.0;100.0;0.0;100.0;"La respuesta no está en el corpus; lo correcto es abstenerse y no inventar."
+conflicto_entre_documentos;5;5;100.0;66.66666666666666;66.66666666666666;0.0;40.0;40.0;60.0;40.0;40.0;100.0;0.0;40.0;Un mismo dato cambia según el documento o régimen aplicable.

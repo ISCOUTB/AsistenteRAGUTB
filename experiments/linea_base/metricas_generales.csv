@@ -4,17 +4,14 @@ Preguntas calificadas;50
 Cobertura de calificación (%);100.0
 Errores de API;0
 Sin respuesta generada;0
-Exactitud media (0-3);1.18
-Exactitud sobre 100;39.33
-Exactitud plena (%);18.0
+Exactitud (%);39.33
+Fidelidad (%);N/A
+Tasa de alucinación (%);82.0
+Respuesta perfecta (%);N/A
+Exactitud plena (=3) (%);18.0
 Exactitud aceptable (>=2) (%);40.0
 Exactitud baja (<=1) (%);60.0
-Fidelidad media (0-3);1.08
-Fidelidad sobre 100;36.0
-Fidelidad plena (%);16.0
-Fidelidad baja (<=1) (%);62.0
-Alucinación media (0-2);1.3
+Fidelidad plena (%);N/A
+Fidelidad baja (<=1) (%);N/A
 Sin alucinación (%);18.0
-Con alucinación (>=1) (%);82.0
-Alucinación grave (2) (%);48.0
-Respuesta ideal: exactitud 3 + fidelidad 3 + alucinación 0 (%);12.0
+Alucinación grave (=2) (%);48.0

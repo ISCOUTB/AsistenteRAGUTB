@@ -1,14 +1,25 @@
 # Métricas de la línea base (sin RAG)
 
-Generado: 2026-11-16T22:56:53
+Generado: 2026-11-25T08:42:35
 
-- Archivo de respuestas: `/home/moises/Documents/utb2026-2/ia/proyecto-final/chatutb/experiments/linea_base/respuestas_baseline.csv`
+- Archivo de respuestas: `ROOT/experiments/linea_base/respuestas_baseline.csv`
 - Modelos usados: gemini-3.5-flash-lite
 - Preguntas totales: 50
 - Preguntas calificadas: 50 (100.0%)
 - Errores de API: 0
 
-## Métricas generales
+## Métricas principales
+
+La fidelidad y porcentaje de respuestas perfectas no aplican en la línea base.
+
+| Métrica | Valor |
+|---|---|
+| Exactitud (%) | 39.33 |
+| Fidelidad (%) | N/A |
+| Tasa de alucinación (%) | 82.0 |
+| Respuesta perfecta (%) | N/A |
+
+## Otras métricas
 
 | Métrica | Valor |
 |---|---|
@@ -17,60 +28,49 @@ Generado: 2026-11-16T22:56:53
 | Cobertura de calificación (%) | 100.0 |
 | Errores de API | 0 |
 | Sin respuesta generada | 0 |
-| Exactitud media (0-3) | 1.18 |
-| Exactitud sobre 100 | 39.33 |
-| Exactitud plena (%) | 18.0 |
+| Exactitud plena (=3) (%) | 18.0 |
 | Exactitud aceptable (>=2) (%) | 40.0 |
 | Exactitud baja (<=1) (%) | 60.0 |
-| Fidelidad media (0-3) | 1.08 |
-| Fidelidad sobre 100 | 36.0 |
-| Fidelidad plena (%) | 16.0 |
-| Fidelidad baja (<=1) (%) | 62.0 |
-| Alucinación media (0-2) | 1.3 |
+| Fidelidad plena (%) | N/A |
+| Fidelidad baja (<=1) (%) | N/A |
 | Sin alucinación (%) | 18.0 |
-| Con alucinación (>=1) (%) | 82.0 |
-| Alucinación grave (2) (%) | 48.0 |
-| Respuesta ideal: exactitud 3 + fidelidad 3 + alucinación 0 (%) | 12.0 |
+| Alucinación grave (=2) (%) | 48.0 |
 
 ## Métricas por tipo de pregunta
 
-| Tipo | n | Exact. media | Exact. plena | Fidel. media | Fidel. plena | Aluc. media | Con aluc. | Ideal |
-|---|---|---|---|---|---|---|---|---|
-| articulo_especifico | 10 | 1.50 | 30.0% | 1.50 | 40.0% | 1.00 | 60.0% | 30.0% |
-| interpretacion_simple | 8 | 1.50 | 0.0% | 1.50 | 12.5% | 1.12 | 87.5% | 0.0% |
-| multi_articulo | 8 | 1.75 | 37.5% | 1.62 | 25.0% | 1.12 | 75.0% | 25.0% |
-| ambigua | 7 | 0.86 | 0.0% | 0.57 | 0.0% | 1.43 | 100.0% | 0.0% |
-| dificil | 7 | 1.57 | 42.9% | 1.29 | 14.3% | 1.14 | 71.4% | 14.3% |
-| fuera_de_alcance | 5 | 0.00 | 0.0% | 0.00 | 0.0% | 2.00 | 100.0% | 0.0% |
-| conflicto_entre_documentos | 5 | 0.20 | 0.0% | 0.20 | 0.0% | 1.80 | 100.0% | 0.0% |
+| Tipo | n | Porc. Exact. | Tasa aluc. |
+|---|---|---|---|
+| articulo_especifico | 10 | 50.0% | 60.00 |
+| interpretacion_simple | 8 | 50.0% | 87.50 |
+| multi_articulo | 8 | 58.3% | 75.00 |
+| ambigua | 7 | 28.6% | 100.00 |
+| dificil | 7 | 52.4% | 71.43 |
+| fuera_de_alcance | 5 | 0.0% | 100.00 |
+| conflicto_entre_documentos | 5 | 6.7% | 100.00 |
 
 ## Métricas por documento
 
-| Documento | n | Exactitud | Fidelidad | Alucinación | Con aluc. |
-|---|---|---|---|---|---|
-| RE2026 | 25 | 1.48 | 1.40 | 1.04 | 68.0% |
-| CJ2025 | 5 | 0.60 | 0.40 | 1.80 | 100.0% |
-| RUTA2026 | 4 | 1.75 | 1.75 | 1.00 | 75.0% |
-| TV | 3 | 0.33 | 0.33 | 1.67 | 100.0% |
-| FOTO | 3 | 1.33 | 1.00 | 1.33 | 100.0% |
-| SONIDO | 1 | 2.00 | 2.00 | 1.00 | 100.0% |
-| SALA | 1 | 2.00 | 2.00 | 1.00 | 100.0% |
-| PSICO | 4 | 0.75 | 0.50 | 1.75 | 100.0% |
-| NO_APLICA | 4 | 0.00 | 0.00 | 2.00 | 100.0% |
+| Documento | n | Porc. Exactitud | Tasa aluc. |
+|---|---|---|---|
+| RE2026 | 25 | 49.3% | 68.00 |
+| CJ2025 | 5 | 20.0% | 100.00 |
+| RUTA2026 | 4 | 58.3% | 75.00 |
+| TV | 3 | 11.1% | 100.00 |
+| FOTO | 3 | 44.4% | 100.00 |
+| SONIDO | 1 | 66.7% | 100.00 |
+| SALA | 1 | 66.7% | 100.00 |
+| PSICO | 4 | 25.0% | 100.00 |
+| NO_APLICA | 4 | 0.0% | 100.00 |
 
-## Preguntas de control vs. preguntas del corpus
+## Resumen
 
-## Lectura rápida
-
-- Mejor exactitud media: **multi_articulo** (1.75/3).
-- Peor exactitud media: **fuera_de_alcance** (0.00/3).
+- Mejor %exactitud: **multi_articulo** (58.33/3).
+- Peor %exactitud: **fuera_de_alcance** (0.00/3).
 - Mayor tasa de alucinación: **conflicto_entre_documentos** (100.0% de respuestas con al menos una invención).
-- La línea base sirve como referencia: si el RAG no supera estos valores, la recuperación no está aportando.
 
 ## Definiciones
 
 - **Exactitud (0-3):** 0 = incorrecta; 1 = correcta en algo pero con errores importantes; 2 = parcialmente correcta u omite datos clave; 3 = correcta y completa frente a la respuesta esperada.
 - **Fidelidad (0-3):** 0 = no se sustenta en las fuentes o las contradice; 1 = mezcla datos fieles con inventados; 2 = mayormente fiel con imprecisiones; 3 = todos los datos relevantes son verificables en las fuentes.
 - **Alucinación (0-2):** 0 = no inventa; 1 = inventa un detalle menor (cifra, plazo, nombre, correo); 2 = inventa hechos centrales o contradice la fuente.
-- **Respuesta ideal:** exactitud 3, fidelidad 3 y alucinación 0.
-- **Abstención:** el modelo dice explícitamente que no tiene la información (esperado sobre todo en `fuera_de_alcance`).
+- **Respuesta perfecta:** exactitud 3, fidelidad 3 y alucinación 0.

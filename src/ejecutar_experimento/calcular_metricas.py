@@ -16,7 +16,6 @@ Uso:
   python calcular_metricas.py --archivo resultados/respuestas_baseline.csv
 """
 
-import argparse
 from datetime import datetime
 from pathlib import Path
 
@@ -27,13 +26,19 @@ from config import (
     CODIFICACION_CSV,
     DELIMITADOR,
     DESCRIPCION_TIPOS,
-    DIR_RESULTADOS_BASELINE,
     ESCALA_ALUCINACION,
     ESCALA_EXACTITUD,
     ESCALA_FIDELIDAD,
-    RUTA_RESPUESTAS_BASELINE,
     TIPOS,
+    ROOT
 )
+
+def redondear_si_numero(valor, decimales):
+    if type(valor) in [float,int]:
+        return round(valor, decimales)
+    else:
+        return valor
+
 
 
 def normalizar_si_no(valor):
@@ -85,45 +90,56 @@ def metricas_grupo(g):
     out = {
         "n_total": n_total,
         "n_evaluadas": n,
-        "cobertura_pct": (n / n_total * 100) if n_total else np.nan,
+        "%cobertura": (n / n_total * 100) if n_total else np.nan,
     }
     if n == 0:
         for k in [
-            "exactitud_media",
-            "exactitud_sobre_100",
-            "exactitud_plena_pct",
-            "exactitud_aceptable_pct",
-            "exactitud_baja_pct",
-            "fidelidad_media",
-            "fidelidad_sobre_100",
-            "fidelidad_plena_pct",
-            "fidelidad_baja_pct",
-            "alucinacion_media",
-            "sin_alucinacion_pct",
-            "con_alucinacion_pct",
-            "alucinacion_grave_pct",
-            "respuesta_ideal_pct",
+            "%exactitud",
+            "%fidelidad",
+            "tasa_alucinacion",
+
+            "%exactitud_plena",
+            "%exactitud_aceptable",
+            "%exactitud_baja",
+            "%fidelidad_plena",
+            "%fidelidad_baja",
+            "%sin_alucinacion",
+            "%alucinacion_grave",
+            "%respuesta_perfecta",
         ]:
             out[k] = np.nan
         return out
 
-    out["exactitud_media"] = ev["exactitud"].mean()
-    out["exactitud_sobre_100"] = ev["exactitud"].mean() / ESCALA_EXACTITUD[1] * 100
-    out["exactitud_plena_pct"] = (ev["exactitud"] == ESCALA_EXACTITUD[1]).mean() * 100
-    out["exactitud_aceptable_pct"] = (ev["exactitud"] >= 2).mean() * 100
-    out["exactitud_baja_pct"] = (ev["exactitud"] <= 1).mean() * 100
+    # ----------------------------------
+    # Métricas principales
+    # ----------------------------------
+    
+    # Porcentaje de exactitud y de fidelidad: como están en una escala de 0 a 3, se
+    # promedia, se divide entre 3 y se multiplica por 100%
+    out["%exactitud"] = ev["exactitud"].mean() / ESCALA_EXACTITUD[1] * 100
+    out["%fidelidad"] = ev["fidelidad"].mean() / ESCALA_FIDELIDAD[1] * 100
+    out["tasa_alucinacion"] = (ev["alucinacion"] >= 1).mean() * 100
 
-    out["fidelidad_media"] = ev["fidelidad"].mean()
-    out["fidelidad_sobre_100"] = ev["fidelidad"].mean() / ESCALA_FIDELIDAD[1] * 100
-    out["fidelidad_plena_pct"] = (ev["fidelidad"] == ESCALA_FIDELIDAD[1]).mean() * 100
-    out["fidelidad_baja_pct"] = (ev["fidelidad"] <= 1).mean() * 100
+    # ----------------------------------
+    # Otras metricas
+    # ----------------------------------
 
-    out["alucinacion_media"] = ev["alucinacion"].mean()
-    out["sin_alucinacion_pct"] = (ev["alucinacion"] == 0).mean() * 100
-    out["con_alucinacion_pct"] = (ev["alucinacion"] >= 1).mean() * 100
-    out["alucinacion_grave_pct"] = (ev["alucinacion"] == ESCALA_ALUCINACION[1]).mean() * 100
+    # Porcentaje de exactitud y fidelidad plena: respuestas que obtuvieron exactamente
+    # 3 de exactitud o de fidelidad
+    out["%exactitud_plena"] = (ev["exactitud"] == ESCALA_EXACTITUD[1]).mean() * 100
+    out["%fidelidad_plena"] = (ev["fidelidad"] == ESCALA_FIDELIDAD[1]).mean() * 100
+    
+    out["%exactitud_aceptable"] = (ev["exactitud"] >= 2).mean() * 100
 
-    out["respuesta_ideal_pct"] = (
+    out["%exactitud_baja"] = (ev["exactitud"] <= 1).mean() * 100
+    out["%fidelidad_baja"] = (ev["fidelidad"] <= 1).mean() * 100
+
+    out["%sin_alucinacion"] = (ev["alucinacion"] == 0).mean() * 100
+    out["%alucinacion_grave"] = (ev["alucinacion"] == ESCALA_ALUCINACION[1]).mean() * 100
+
+    # Porcentaje de respuestas perfectas: aquellas que obtuvieron 3 en exactitud,
+    # 3 en fidelidad y 0 en alucinacion
+    out["%respuesta_perfecta"] = (
         (ev["exactitud"] == ESCALA_EXACTITUD[1])
         & (ev["fidelidad"] == ESCALA_FIDELIDAD[1])
         & (ev["alucinacion"] == 0)
@@ -160,7 +176,7 @@ def tabla_markdown(df, columnas, etiquetas):
         celdas = []
         for c in columnas:
             v = fila[c]
-            if c.endswith("_pct"):
+            if c.startswith("%"):
                 celdas.append(fmt_pct(v))
             elif isinstance(v, (int, float, np.integer, np.floating)):
                 celdas.append(fmt_num(v) if c not in ("n_total", "n_evaluadas") else str(int(v)))
@@ -170,14 +186,9 @@ def tabla_markdown(df, columnas, etiquetas):
     return "\n".join(lineas)
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Calcula métricas de la línea base")
-    parser.add_argument("--archivo", default=str(RUTA_RESPUESTAS_BASELINE), help="CSV de respuestas calificadas")
-    parser.add_argument("--salida-dir", default=str(DIR_RESULTADOS_BASELINE), help="Carpeta de salida")
-    args = parser.parse_args()
-
-    archivo = Path(args.archivo)
-    salida = Path(args.salida_dir)
+def main(ruta_respuestas, dir_resultados, titulo):
+    archivo = Path(ruta_respuestas)
+    salida = Path(dir_resultados)
     salida.mkdir(parents=True, exist_ok=True)
 
     df = cargar(archivo)
@@ -194,29 +205,43 @@ def main():
         print("\nCalificación no terminada. Llena exactitud, fidelidad y alucinación")
         print("en el CSV y vuelve a ejecutar este script.")
         return 1
-
+    
     general = metricas_grupo(df)
+    
+    # En la linea base no aplica fidelidad ni % respuestas perfectas
+    linea_base = titulo == "Métricas de la línea base (sin RAG)"
+    
+    if linea_base:
+        general["%fidelidad"] = "N/A"
+        general["%fidelidad_plena"] = "N/A"
+        general["%fidelidad_baja"] = "N/A"
+        general["%respuesta_perfecta"] = "N/A"
+
     general_df = pd.DataFrame(
         [
             ("Preguntas totales", n_total),
             ("Preguntas calificadas", n_evaluadas),
-            ("Cobertura de calificación (%)", round(general["cobertura_pct"], 2)),
+            ("Cobertura de calificación (%)", round(general["%cobertura"], 2)),
             ("Errores de API", n_errores),
             ("Sin respuesta generada", n_sin_respuesta),
-            ("Exactitud media (0-3)", round(general["exactitud_media"], 4)),
-            ("Exactitud sobre 100", round(general["exactitud_sobre_100"], 2)),
-            ("Exactitud plena (%)", round(general["exactitud_plena_pct"], 2)),
-            ("Exactitud aceptable (>=2) (%)", round(general["exactitud_aceptable_pct"], 2)),
-            ("Exactitud baja (<=1) (%)", round(general["exactitud_baja_pct"], 2)),
-            ("Fidelidad media (0-3)", round(general["fidelidad_media"], 4)),
-            ("Fidelidad sobre 100", round(general["fidelidad_sobre_100"], 2)),
-            ("Fidelidad plena (%)", round(general["fidelidad_plena_pct"], 2)),
-            ("Fidelidad baja (<=1) (%)", round(general["fidelidad_baja_pct"], 2)),
-            ("Alucinación media (0-2)", round(general["alucinacion_media"], 4)),
-            ("Sin alucinación (%)", round(general["sin_alucinacion_pct"], 2)),
-            ("Con alucinación (>=1) (%)", round(general["con_alucinacion_pct"], 2)),
-            ("Alucinación grave (2) (%)", round(general["alucinacion_grave_pct"], 2)),
-            ("Respuesta ideal: exactitud 3 + fidelidad 3 + alucinación 0 (%)", round(general["respuesta_ideal_pct"], 2)),
+            
+            # Métricas principales
+            ("Exactitud (%)", round(general["%exactitud"], 2)),
+            ("Fidelidad (%)", redondear_si_numero(general["%fidelidad"], 2)),
+            ("Tasa de alucinación (%)", round(general["tasa_alucinacion"], 2)),
+            ("Respuesta perfecta (%)", redondear_si_numero(general["%respuesta_perfecta"], 2)),
+
+            # Otras
+            ("Exactitud plena (=3) (%)", round(general["%exactitud_plena"], 2)),
+            ("Exactitud aceptable (>=2) (%)", round(general["%exactitud_aceptable"], 2)),
+            ("Exactitud baja (<=1) (%)", round(general["%exactitud_baja"], 2)),
+            
+            ("Fidelidad plena (%)", redondear_si_numero(general["%fidelidad_plena"], 2)),
+            ("Fidelidad baja (<=1) (%)", redondear_si_numero(general["%fidelidad_baja"], 2)),
+            
+            ("Sin alucinación (%)", round(general["%sin_alucinacion"], 2)),
+            ("Alucinación grave (=2) (%)", round(general["%alucinacion_grave"], 2)),
+            
         ],
         columns=["metrica", "valor"],
         dtype=object,
@@ -230,83 +255,96 @@ def main():
     por_doc = tabla_por(df, "documento", orden=None)
     por_doc.to_csv(salida / "metricas_por_documento.csv", sep=DELIMITADOR, encoding=CODIFICACION_CSV, index=False)
 
-
     # --- Reporte Markdown -------------------------------------------------
+    metricas_principales = [
+        "Exactitud (%)",
+        "Fidelidad (%)",
+        "Tasa de alucinación (%)",
+        "Respuesta perfecta (%)"
+    ]
+
     columnas_tipo = [
         "tipo",
         "n_evaluadas",
-        "exactitud_media",
-        "exactitud_plena_pct",
-        "fidelidad_media",
-        "fidelidad_plena_pct",
-        "alucinacion_media",
-        "con_alucinacion_pct",
-        "respuesta_ideal_pct",
+        "%exactitud",
+        "%fidelidad",
+        "tasa_alucinacion",
+        "%respuesta_perfecta",
     ]
     etiquetas_tipo = {
         "tipo": "Tipo",
         "n_evaluadas": "n",
-        "exactitud_media": "Exact. media",
-        "exactitud_plena_pct": "Exact. plena",
-        "fidelidad_media": "Fidel. media",
-        "fidelidad_plena_pct": "Fidel. plena",
-        "alucinacion_media": "Aluc. media",
-        "con_alucinacion_pct": "Con aluc.",
-        "respuesta_ideal_pct": "Ideal",
+        "%exactitud": "Porc. Exact.",
+        "%fidelidad": "Porc. Fidel.",
+        "tasa_alucinacion": "Tasa aluc.",
+        "%respuesta_perfecta": "Porc. Resp. Perfectas",
     }
 
-    columnas_doc = ["documento", "n_evaluadas", "exactitud_media", "fidelidad_media", "alucinacion_media", "con_alucinacion_pct"]
+    columnas_doc = ["documento", "n_evaluadas", "%exactitud", "%fidelidad", "tasa_alucinacion", "%respuesta_perfecta"]
     etiquetas_doc = {
         "documento": "Documento",
         "n_evaluadas": "n",
-        "exactitud_media": "Exactitud",
-        "fidelidad_media": "Fidelidad",
-        "alucinacion_media": "Alucinación",
-        "con_alucinacion_pct": "Con aluc.",
+        "%exactitud": "Porc. Exactitud",
+        "%fidelidad": "Porc. Fidelidad",
+        "tasa_alucinacion": "Tasa aluc.",
+        "%respuesta_perfecta": "Porc. Resp. Perfectas",
     }
 
-    columnas_control = [
-        "grupo_control",
-        "n_evaluadas",
-        "exactitud_media",
-        "fidelidad_media",
-        "alucinacion_media",
-        "con_alucinacion_pct",
-    ]
-    etiquetas_control = {
-        "grupo_control": "Grupo",
-        "n_evaluadas": "n",
-        "exactitud_media": "Exactitud",
-        "fidelidad_media": "Fidelidad",
-        "alucinacion_media": "Alucinación",
-        "con_alucinacion_pct": "Con aluc.",
-    }
+    # La fidelidad y % resp. perfectas no aplica en la linea base
+    if linea_base:
+        columnas_tipo.remove("%fidelidad")
+        columnas_doc.remove("%fidelidad")
+        del etiquetas_tipo["%fidelidad"]
+        del etiquetas_doc["%fidelidad"]
+
+        columnas_tipo.remove("%respuesta_perfecta")
+        columnas_doc.remove("%respuesta_perfecta")
+        del etiquetas_tipo["%respuesta_perfecta"]
+        del etiquetas_doc["%respuesta_perfecta"]
+
 
     modelos = sorted(set(df["modelo"].dropna().astype(str))) if "modelo" in df.columns else []
-    tipos_ordenados = [t for t in TIPOS if t in set(df["tipo"])]
 
-    mejor_tipo = por_tipo.dropna(subset=["exactitud_media"]).sort_values("exactitud_media", ascending=False).head(1)
-    peor_tipo = por_tipo.dropna(subset=["exactitud_media"]).sort_values("exactitud_media").head(1)
-    mas_alucina = por_tipo.dropna(subset=["con_alucinacion_pct"]).sort_values("con_alucinacion_pct", ascending=False).head(1)
+    mejor_tipo = por_tipo.dropna(subset=["%exactitud"]).sort_values("%exactitud", ascending=False).head(1)
+    peor_tipo = por_tipo.dropna(subset=["%exactitud"]).sort_values("%exactitud").head(1)
+    mas_alucina = por_tipo.dropna(subset=["tasa_alucinacion"]).sort_values("tasa_alucinacion", ascending=False).head(1)
 
+    # Calcular ruta relativa desde la raíz del proyecto
+    ruta_relativa_archivo = archivo.relative_to(ROOT.absolute())
+
+    # Crear contenido markdown
     lineas = []
-    lineas.append("# Métricas de la línea base (sin RAG)")
+    lineas.append(f"# {titulo}")
     lineas.append("")
     lineas.append(f"Generado: {datetime.now().isoformat(timespec='seconds')}")
     lineas.append("")
-    lineas.append(f"- Archivo de respuestas: `{archivo}`")
+    lineas.append(f"- Archivo de respuestas: `ROOT/{ruta_relativa_archivo}`")
     lineas.append(f"- Modelos usados: {', '.join(modelos) if modelos else '—'}")
     lineas.append(f"- Preguntas totales: {n_total}")
-    lineas.append(f"- Preguntas calificadas: {n_evaluadas} ({general['cobertura_pct']:.1f}%)")
+    lineas.append(f"- Preguntas calificadas: {n_evaluadas} ({general['%cobertura']:.1f}%)")
     lineas.append(f"- Errores de API: {n_errores}")
     lineas.append("")
-    lineas.append("## Métricas generales")
+
+    lineas.append("## Métricas principales")
+    lineas.append("")
+    lineas.append("La fidelidad y porcentaje de respuestas perfectas no aplican en la línea base.")
     lineas.append("")
     lineas.append("| Métrica | Valor |")
     lineas.append("|---|---|")
     for _, r in general_df.iterrows():
-        lineas.append(f"| {r['metrica']} | {r['valor']} |")
+        if r['metrica'] in metricas_principales:
+            lineas.append(f"| {r['metrica']} | {r['valor']} |")
     lineas.append("")
+
+    lineas.append("## Otras métricas")
+    lineas.append("")
+    lineas.append("| Métrica | Valor |")
+    lineas.append("|---|---|")
+    for _, r in general_df.iterrows():
+        if r['metrica'] not in metricas_principales:
+            lineas.append(f"| {r['metrica']} | {r['valor']} |")
+    lineas.append("")
+
     lineas.append("## Métricas por tipo de pregunta")
     lineas.append("")
     lineas.append(tabla_markdown(por_tipo, columnas_tipo, etiquetas_tipo))
@@ -315,30 +353,25 @@ def main():
     lineas.append("")
     lineas.append(tabla_markdown(por_doc, columnas_doc, etiquetas_doc))
     lineas.append("")
-    lineas.append("## Preguntas de control vs. preguntas del corpus")
-    lineas.append("")
-    lineas.append("## Lectura rápida")
+    lineas.append("## Resumen")
     lineas.append("")
     if not mejor_tipo.empty:
         r = mejor_tipo.iloc[0]
-        lineas.append(f"- Mejor exactitud media: **{r['tipo']}** ({r['exactitud_media']:.2f}/3).")
+        lineas.append(f"- Mejor %exactitud: **{r['tipo']}** ({r['%exactitud']:.2f}/3).")
     if not peor_tipo.empty:
         r = peor_tipo.iloc[0]
-        lineas.append(f"- Peor exactitud media: **{r['tipo']}** ({r['exactitud_media']:.2f}/3).")
+        lineas.append(f"- Peor %exactitud: **{r['tipo']}** ({r['%exactitud']:.2f}/3).")
     if not mas_alucina.empty:
         r = mas_alucina.iloc[0]
-        lineas.append(f"- Mayor tasa de alucinación: **{r['tipo']}** ({r['con_alucinacion_pct']:.1f}% de respuestas con al menos una invención).")
-    lineas.append(
-        "- La línea base sirve como referencia: si el RAG no supera estos valores, la recuperación no está aportando."
-    )
+        lineas.append(f"- Mayor tasa de alucinación: **{r['tipo']}** ({r['tasa_alucinacion']:.1f}% de respuestas con al menos una invención).")
+
     lineas.append("")
     lineas.append("## Definiciones")
     lineas.append("")
     lineas.append("- **Exactitud (0-3):** 0 = incorrecta; 1 = correcta en algo pero con errores importantes; 2 = parcialmente correcta u omite datos clave; 3 = correcta y completa frente a la respuesta esperada.")
     lineas.append("- **Fidelidad (0-3):** 0 = no se sustenta en las fuentes o las contradice; 1 = mezcla datos fieles con inventados; 2 = mayormente fiel con imprecisiones; 3 = todos los datos relevantes son verificables en las fuentes.")
     lineas.append("- **Alucinación (0-2):** 0 = no inventa; 1 = inventa un detalle menor (cifra, plazo, nombre, correo); 2 = inventa hechos centrales o contradice la fuente.")
-    lineas.append("- **Respuesta ideal:** exactitud 3, fidelidad 3 y alucinación 0.")
-    lineas.append("- **Abstención:** el modelo dice explícitamente que no tiene la información (esperado sobre todo en `fuera_de_alcance`).")
+    lineas.append("- **Respuesta perfecta:** exactitud 3, fidelidad 3 y alucinación 0.")
     lineas.append("")
 
     (salida / "metricas.md").write_text("\n".join(lineas), encoding="utf-8")
@@ -354,11 +387,10 @@ def main():
             [
                 "tipo",
                 "n_evaluadas",
-                "exactitud_media",
-                "fidelidad_media",
-                "alucinacion_media",
-                "con_alucinacion_pct",
-                "respuesta_ideal_pct",
+                "%exactitud",
+                "%fidelidad",
+                "tasa_alucinacion",
+                "%respuesta_perfecta",
             ]
         ].to_string(index=False)
     )
