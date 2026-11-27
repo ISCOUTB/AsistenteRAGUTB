@@ -11,9 +11,6 @@ Lee `resultados/respuestas_baseline.csv` (o el archivo que indiques) y genera:
 Solo se incluyen en los cálculos las filas con exactitud, fidelidad y
 alucinación diligenciadas y dentro de rango.
 
-Uso:
-  python calcular_metricas.py
-  python calcular_metricas.py --archivo resultados/respuestas_baseline.csv
 """
 
 from datetime import datetime
