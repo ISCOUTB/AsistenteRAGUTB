@@ -7,7 +7,7 @@ from config import (
 
 def construir_prompt(pregunta):
     return PLANTILLA_PROMPT_BASELINE.format(
-        pregunta=pregunta["pregunta"].strip(),
+        pregunta=pregunta.strip(),
     ), {}
 
 def main(*, ver_existentes=False, reemplazar=False):

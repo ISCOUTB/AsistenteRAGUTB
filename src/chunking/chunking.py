@@ -209,7 +209,7 @@ def main():
     print(df[df["n_palabras"] > 500])
     print()
 
-    print("\n- Chunks con menos de 10 palabrasdf:", len(df[ df["n_palabras"] < 10 ]), ". Se eliminarán:\n")
+    print("\n- Chunks con menos de 10 palabras:", len(df[ df["n_palabras"] < 10 ]), ". Se eliminarán:\n")
     print(df[ df["n_palabras"] < 10 ])
     print()
 

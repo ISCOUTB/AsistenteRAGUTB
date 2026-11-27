@@ -205,12 +205,12 @@ def main(ruta_respuestas, dir_resultados, titulo):
         print("\nCalificación no terminada. Llena exactitud, fidelidad y alucinación")
         print("en el CSV y vuelve a ejecutar este script.")
         return 1
-    
+
     general = metricas_grupo(df)
-    
+
     # En la linea base no aplica fidelidad ni % respuestas perfectas
     linea_base = titulo == "Métricas de la línea base (sin RAG)"
-    
+
     if linea_base:
         general["%fidelidad"] = "N/A"
         general["%fidelidad_plena"] = "N/A"
@@ -377,22 +377,34 @@ def main(ruta_respuestas, dir_resultados, titulo):
     (salida / "metricas.md").write_text("\n".join(lineas), encoding="utf-8")
 
     # --- Consola ----------------------------------------------------------
-    print("\nMÉTRICAS GENERALES")
+    print("\nMÉTRICAS PRINCIPALES")
     for _, r in general_df.iterrows():
-        print(f"  {r['metrica']}: {r['valor']}")
+        if r['metrica'] in metricas_principales:
+            print(f"  {r['metrica']}: {r['valor']}")
+
+    print("\nOTRAS MÉTRICAS")
+    for _, r in general_df.iterrows():
+        if r['metrica'] not in metricas_principales:
+            print(f"  {r['metrica']}: {r['valor']}")
+
 
     print("\nMÉTRICAS POR TIPO")
+
+    lista_metricas = [
+        "tipo",
+        "n_evaluadas",
+        "%exactitud",
+        "%fidelidad",
+        "tasa_alucinacion",
+        "%respuesta_perfecta",
+    ]
+
+    if linea_base:
+        lista_metricas.remove("%fidelidad")
+        lista_metricas.remove("%respuesta_perfecta")
+
     print(
-        por_tipo[
-            [
-                "tipo",
-                "n_evaluadas",
-                "%exactitud",
-                "%fidelidad",
-                "tasa_alucinacion",
-                "%respuesta_perfecta",
-            ]
-        ].to_string(index=False)
+        por_tipo[lista_metricas].to_string(index=False)
     )
     print(f"\nReporte: {(salida / 'metricas.md').resolve()}")
     return 0

@@ -205,9 +205,16 @@ def mostrar_respuestas_csv(ruta):
     print("=" * 80)
 
     for fila in filas:
-        print(f"ID: {fila.get('id', '')}")
-        print(f"Pregunta: {fila.get('pregunta', '')[:200]}")
-        print(f"Respuesta: {fila.get('respuesta_generada', '')[:500]}")
+        print(f"▪ ID: {fila.get('id', '')}")
+        print(f"▪ Pregunta: {fila.get('pregunta', '')}")
+        print(f"▪ Respuesta Esperada: {fila.get('respuesta_esperada', '')}")
+        print(f"▪ Respuesta Generada: {fila.get('respuesta_generada', '')}")
+        print(f"▪ Documento: {fila.get('documento', '')}", end="\t")
+        print(f"▪ Fuente: {fila.get('fuentes', '')}")
+        print(f"▪ Exactitud calificada: {fila.get('exactitud', '')}", end="\t")
+        print(f"▪ Fidelidad calificada: {fila.get('fidelidad', '')}", end="\t")
+        print(f"▪ Alucinacion calificada: {fila.get('alucinacion', '')}")
+        
         print("-" * 80)
 
 
